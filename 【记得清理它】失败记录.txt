@@ -1,0 +1,604 @@
+已选择文件夹：G:\Shared drives\Migration\To Process\West\190T\Youma\編號\ESK  2020-08-23 00:55:52
+    >第1个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：G:\Shared drives\Migration\Torrent_F\有码\ESK\ESK-314
+    >第2个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：G:\Shared drives\Migration\Torrent_F\有码\ESK\ESK-313
+    >第3个失败！发生错误，如一直在该影片报错请截图并联系作者：\\ESK-305\ESK-305 エスカレートするドしろーと娘 305 ゆいちゃん20さい.mp4
+Traceback (most recent call last):
+  File "e:\VS Projects\Vscode\javsdt\javsdt\javbus_youma.py", line 818, in <module>
+    add_watermark_subt(path_poster)
+  File "e:\VS Projects\Vscode\javsdt\javsdt\functions_picture.py", line 124, in add_watermark_subt
+    img_subt = Image.open('subt.png')
+  File "E:\VS Projects\Vscode\javsdt\.venv\lib\site-packages\PIL\Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'subt.png'
+
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:10:20
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AKDL-041
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AKDL-042
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ARM-899
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-105
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-107
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-108
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-109
+    >第9个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-110
+    >第10个失败！javbus有码找不到该车牌的信息：BIG-2048，\\KFNE-061\big2048.com@KFNE-061.mp4
+    >第11个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\RVH-002
+    >第12个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SIM-086\big2048.com@SIM-086.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:20:31
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AKDL-041
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AKDL-042
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ARM-899
+    >第5个失败！javbus有码找不到该车牌的信息：BIG-2048，\\KFNE-061\big2048.com@KFNE-061.mp4
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\RVH-002
+    >第7个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SIM-086\big2048.com@SIM-086.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:26:14
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：BIG-2048，\\KFNE-061-\big2048.com@KFNE-061.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SIM-086-\big2048.com@SIM-086.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:29:30
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：BIG-2048，\\KFNE-061-\big2048.com@KFNE-061.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SIM-086-\big2048.com@SIM-086.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:52:19
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:55:27
+已选择文件夹：V:\Torrent\Auto  2020-08-23 12:58:11
+已选择文件夹：V:\Torrent\Auto  2020-08-23 21:19:31
+    >第1个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：V:\Torrent\Format\有码\ONIN\ONIN-051
+    >第2个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-110
+    >第4个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-23 21:22:04
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：V:\Torrent\Format\有码\GVH\GVH-110
+    >第3个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：V:\Torrent\Format\有码\ONIN\ONIN-051
+    >第4个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-24 17:31:44
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MGDN-135
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-179
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-180
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-396
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-397
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-398
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-399
+    >第9个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-24 23:53:25
+    >第1个失败！javbus有码找不到该车牌的信息：SSAN-006，\\SSAN-006.mp4
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MGDN-135
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-179
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-180
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-396
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-397
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-398
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-399
+    >第9个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-24 23:54:20
+已选择文件夹：V:\Torrent\Auto  2020-08-24 23:55:48
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-179
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MISM-180
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-396
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-397
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-398
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NNPJ-399
+已选择文件夹：V:\Torrent\Auto  2020-08-24 23:57:19
+已选择文件夹：V:\Torrent\Auto  2020-08-24 23:58:52
+已选择文件夹：V:\Torrent\Auto  2020-08-28 21:28:05
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ABBA-484
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AGAV-031
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AGAV-032
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\AGAV-033
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ANZD-035
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\APGH-007
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\APNS-198
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\APNS-199
+    >第9个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\APNS-200
+    >第10个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\BLOR-150
+    >第11个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\BLOR-151
+    >第12个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\CEAD-317
+    >第13个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\CEAD-318
+    >第14个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\CESD-920
+    >第15个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\FSDSS-082
+    >第16个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\FSDSS-083
+    >第17个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\FSDSS-084
+    >第18个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GENM-047
+    >第19个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\IBW-788
+    >第20个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\IBW-790
+    >第21个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KMHRS-026
+    >第22个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KSAT-019
+    >第23个警告！javbus搜索到同车牌的不同视频：MCST-001，\\MCST001\MCST001.mp4
+    >第24个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MGMQ-055
+    >第25个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NSPS-923
+    >第26个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ONSG-026
+    >第27个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SQTE-318
+    >第28个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SVS-070
+    >第29个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\TUNA-011
+    >第30个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\XVSR-551
+    >第31个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-28 21:36:58
+已选择文件夹：V:\Torrent\Auto  2020-08-28 21:38:28
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-30 00:16:52
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\CADV-778
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\EKDV-640
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\FSDSS-081
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\HONB-188
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KNAM-022
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SPRD-1316
+    >第7个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-722\big2048.com@SW-722.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-30 00:19:44
+    >第1个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-722-\big2048.com@SW-722.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-30 00:20:29
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-31 00:24:55
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-31 22:54:59
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GOWA-002
+    >第2个失败！javbus有码找不到该车牌的信息：BIG-2048，\\HMGL-185\big2048.com@HMGL-185.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：BIG-2048，\\HMNF-068\big2048.com@HMNF-068.mp4
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\JJDA-008
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KTKL-087
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\LULU-033
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\LULU-034
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\LULU-035
+    >第9个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\LULU-036
+    >第10个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SOAV-068
+    >第11个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SQTE-321
+    >第12个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SQTE-323
+    >第13个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SQTE-324
+    >第14个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-08-31 23:35:41
+    >第1个失败！javbus有码找不到该车牌的信息：BIG-2048，\\HMGL-185-\big2048.com@HMGL-185.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：BIG-2048，\\HMNF-068-\big2048.com@HMNF-068.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-01 00:14:22
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-01 20:34:49
+    >第1个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MMUS-044\big2048.com@MMUS-044.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-03 21:52:27
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\CLOT-012
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\DOKS-526
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\HDKA-216
+    >第4个失败！发生错误，如一直在该影片报错请截图并联系作者：\\HD_cdc-015\CDC-015 おっぱいとお尻で気持ちよくなりたい！ 男の欲望を叶える 柔らか巨乳パイズリ＆愛液べっとりご奉仕尻コキ-cd1.mp4
+Traceback (most recent call last):
+  File "e:\VS Projects\Vscode\javsdt\javsdt\javbus_youma.py", line 818, in <module>
+    add_watermark_subt(path_poster)
+  File "e:\VS Projects\Vscode\javsdt\javsdt\functions_picture.py", line 124, in add_watermark_subt
+    img_subt = Image.open('subt.png')
+  File "E:\VS Projects\Vscode\javsdt\.venv\lib\site-packages\PIL\Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'subt.png'
+
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KMHRS-028
+    >第6个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MMUS-044\big2048.com@MMUS-044.mp4
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MSFH-027
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NACR-349
+    >第9个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NACR-351
+    >第10个失败！javbus有码找不到该车牌的信息：UUV-82，\\ONNA-003.HD\N房间精彩直播 只有你想不到的刺激-uuv82.com.mp4
+    >第11个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SDMM-072
+    >第12个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SDNM-249
+    >第13个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-03 21:57:05
+    >第1个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MMUS-044-\big2048.com@MMUS-044.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-03 21:58:46
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-04 09:48:48
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ARM-901
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-112
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-113
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-114
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-115
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\GVH-117
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KCK-001
+    >第8个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KCK-002
+    >第9个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-04 09:51:24
+    >第1个失败！javbus有码找不到该车牌的信息：HD-2310，\\[ThZu.Cc]heyzo_hd_2310-\heyzo_hd_2310_full.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-04 09:52:52
+已选择文件夹：V:\Torrent\Auto  2020-09-04 23:14:51
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ABW-005
+已选择文件夹：V:\Torrent\Auto  2020-09-07 20:36:05
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ABW-004
+    >第2个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ABW-005
+    >第3个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ADN-250
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ADN-260
+    >第5个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\ATID-433
+    >第6个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\BBAN-288
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\BBAN-293
+    >第8个失败！javbus有码找不到该车牌的信息：BIG-2048，\\DVDMS-573\big2048.com@DVDMS-573.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：BIG-2048，\\DVDMS-574\big2048.com@DVDMS-574.mp4
+    >第10个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\JBD-258
+    >第11个失败！javbus有码找不到该车牌的信息：BIG-2048，\\NASH-350\big2048.com@NASH-350.mp4
+    >第12个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NGOD-131
+    >第13个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NGOD-132
+    >第14个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\NKKD-174
+    >第15个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\PRED-251
+    >第16个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\RBD-979
+    >第17个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\RBD-987
+    >第18个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SSNI-860
+    >第19个失败！javbus有码找不到该车牌的信息：BIG-2048，\\TSP-435\big2048.com@TSP-435.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-07 22:09:06
+    >第1个失败！javbus有码找不到该车牌的信息：BIG-2048，\\DVDMS-573-\big2048.com@DVDMS-573.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：BIG-2048，\\DVDMS-574-\big2048.com@DVDMS-574.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：BIG-2048，\\NASH-350-\big2048.com@NASH-350.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：BIG-2048，\\TSP-435-\big2048.com@TSP-435.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-07 22:31:08
+已选择文件夹：V:\Torrent\Auto  2020-09-08 20:50:19
+    >第1个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\BKD-246
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\DNJR-034\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\DNJR-035\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\FCDC-121\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：BIG-2048，\\KAGP-158\big2048.com@KAGP-158.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：VIP-2209，\\ktb00028\vip2209.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-62，\\LUKE-009\点击观看 房间火爆 uun62.com.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-62，\\MGMP-052\点击观看 房间火爆 uun62.com.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：UUN-62，\\MMB-322\点击观看 房间火爆 uun62.com.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-62，\\PKPD-109\点击观看 房间火爆 uun62.com.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-62，\\PKPD-110\点击观看 房间火爆 uun62.com.mp4
+    >第12个失败！javbus有码找不到该车牌的信息：UUN-62，\\PKPD-111\点击观看 房间火爆 uun62.com.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：UUN-62，\\PKPD-112\点击观看 房间火爆 uun62.com.mp4
+    >第14个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\SCD-186
+    >第15个失败！javbus有码找不到该车牌的信息：UUN-62，\\SNTJ-012\点击观看 房间火爆 uun62.com.mp4
+    >第16个失败！javbus有码找不到该车牌的信息：UUN-62，\\SOAN-049\点击观看 房间火爆 uun62.com.mp4
+    >第17个失败！javbus有码找不到该车牌的信息：UUN-62，\\SORA-265\点击观看 房间火爆 uun62.com.mp4
+    >第18个失败！javbus有码找不到该车牌的信息：UUN-62，\\SORA-266\点击观看 房间火爆 uun62.com.mp4
+    >第19个失败！javbus有码找不到该车牌的信息：UUN-62，\\SORA-267\点击观看 房间火爆 uun62.com.mp4
+    >第20个失败！javbus有码找不到该车牌的信息：UUN-62，\\SOTB-013\点击观看 房间火爆 uun62.com.mp4
+    >第21个失败！javbus有码找不到该车牌的信息：UUN-62，\\TSF-004\点击观看 房间火爆 uun62.com.mp4
+    >第22个失败！javbus有码找不到该车牌的信息：UUN-62，\\URKK-030\点击观看 房间火爆 uun62.com.mp4
+    >第23个失败！javbus有码找不到该车牌的信息：UUN-62，\\URLH-019\点击观看 房间火爆 uun62.com.mp4
+    >第24个失败！javbus有码找不到该车牌的信息：UUN-62，\\VEC-438\点击观看 房间火爆 uun62.com.mp4
+    >第25个失败！javbus有码找不到该车牌的信息：UUN-62，\\VEC-439\点击观看 房间火爆 uun62.com.mp4
+    >第26个失败！javbus有码找不到该车牌的信息：UUN-62，\\VENU-959\点击观看 房间火爆 uun62.com.mp4
+    >第27个失败！javbus有码找不到该车牌的信息：UUN-62，\\VENU-960\点击观看 房间火爆 uun62.com.mp4
+    >第28个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-08 21:30:25
+    >第1个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-09 22:27:33
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 21:20:07
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 21:37:15
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\EMOIS-008
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\KIRE-002
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第9个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\MSFH-028
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 21:52:04
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 21:53:19
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！重命名文件夹失败，已存在相同文件夹：V:\Torrent\Auto\EMOIS-008
+已选择文件夹：V:\Torrent\Auto  2020-09-10 21:56:35
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:01:01
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:30:14
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:32:27
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:34:05
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:35:02
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:42:49
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 22:51:58
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:01:28
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:02:34
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:03:32
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:04:41
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:05:35
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:08:39
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:13:04
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:17:51
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\CMV-146\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-56，\\DVDMS576\uun56.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-59，\\DVDMS576\uun59.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNBL-012\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\HUNTA-845\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\MEAT-023\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE264\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE264\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-10 23:19:51
+    >第1个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-11 21:30:51
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-56，\\OFJE280\uun56.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-59，\\OFJE280\uun59.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\RPIN-042\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-13 23:31:05
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\AMA-064\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\DAC-017\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\DNW-095\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\GGEN-007\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\GNAB-034\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\GNAB-035\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-989\h_086jrzd00989.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-990\h_086jrzd00990.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：UUN-62，\\MDBK-127\点击观看 房间火爆 uun62.com.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-62，\\MDTM-664\点击观看 房间火爆 uun62.com.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-62，\\MDTM-665\点击观看 房间火爆 uun62.com.mp4
+    >第12个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：UUN-62，\\MKMP-350\点击观看 房间火爆 uun62.com.mp4
+    >第14个失败！javbus有码找不到该车牌的信息：UUN-62，\\MKMP-352\点击观看 房间火爆 uun62.com.mp4
+    >第15个失败！javbus有码找不到该车牌的信息：UUN-62，\\MKMP-353\点击观看 房间火爆 uun62.com.mp4
+    >第16个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第17个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 09:04:58
+    >第1个失败！归类失败，重复的影片，归类的目标文件夹已存在相同文件夹：V:\Torrent\Format\有码\IPX\IPX-524
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-62，\\CESD-923\点击观看 房间火爆 uun62.com.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-62，\\DVAJ-473\点击观看 房间火爆 uun62.com.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：UUN-62，\\DVAJ-474\点击观看 房间火爆 uun62.com.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-62，\\EBOD-763\点击观看 房间火爆 uun62.com.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-62，\\IPIT-004\点击观看 房间火爆 uun62.com.mp4
+    >第12个失败！javbus有码找不到该车牌的信息：UUN-62，\\IPX-531\点击观看 房间火爆 uun62.com.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：UUN-62，\\IPX-532\点击观看 房间火爆 uun62.com.mp4
+    >第14个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-989\h_086jrzd00989.mp4
+    >第15个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-990\h_086jrzd00990.mp4
+    >第16个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第17个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第18个失败！javbus有码找不到该车牌的信息：UUN-62，\\VEC-440\点击观看 房间火爆 uun62.com.mp4
+    >第19个失败！javbus有码找不到该车牌的信息：UUN-62，\\VENU-962\点击观看 房间火爆 uun62.com.mp4
+    >第20个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:01:02
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-989\h_086jrzd00989.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-990\h_086jrzd00990.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:11:19
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-989\h_086jrzd00989.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-990\h_086jrzd00990.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:12:28
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：H-086，\\jrzd-989\h_086jrzd00989.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:14:52
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:19:25
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APKH-152\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-201\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-202\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：BIG-2048，\\MIST-311\big2048.com@MIST-311.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：BIG-2048，\\SW-725\big2048.com@SW-725.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:20:35
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-14 10:21:28
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APNS-203\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：MXX-32，\\[JAV] [Uncensored] MXX-32\MXX-32.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-15 21:53:51
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\ANX-127\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\APOD-034\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\BAHP-046\点击观看 房间火爆 uun62.com.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-62，\\BANK-013\点击观看 房间火爆 uun62.com.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-62，\\CHRV-115\点击观看 房间火爆 uun62.com.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\CHRV-116\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-62，\\GMEM-013\点击观看 房间火爆 uun62.com.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-62，\\HJMO-438\点击观看 房间火爆 uun62.com.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：UUN-62，\\IDBD-979\点击观看 房间火爆 uun62.com.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-62，\\IDBD-986\点击观看 房间火爆 uun62.com.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-62，\\MIBM-003\点击观看 房间火爆 uun62.com.mp4
+    >第12个失败！javbus有码找不到该车牌的信息：UUN-62，\\MOPG-063\点击观看 房间火爆 uun62.com.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：UUN-62，\\NSPS-926\点击观看 房间火爆 uun62.com.mp4
+    >第14个失败！javbus有码找不到该车牌的信息：UUN-62，\\SQTE-325\点击观看 房间火爆 uun62.com.mp4
+    >第15个失败！javbus有码找不到该车牌的信息：UUN-62，\\SQTE-327\点击观看 房间火爆 uun62.com.mp4
+    >第16个失败！javbus有码找不到该车牌的信息：UUN-62，\\USAG-020\点击观看 房间火爆 uun62.com.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-15 21:58:18
+已选择文件夹：V:\Torrent\Auto  2020-09-16 10:23:31
+已选择文件夹：V:\Torrent\Auto  2020-09-16 10:24:08
+已选择文件夹：V:\Torrent\Auto  2020-09-17 23:37:33
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-62，\\AKDL-046\点击观看 房间火爆 uun62.com.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-62，\\AKDL-047\点击观看 房间火爆 uun62.com.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUC-82，\\dipo-084\妹妹在精彩表演 哥哥快来大饱眼福uuc82.com_2.mp4
+    >第4个失败！javbus有码找不到该车牌的信息：UUN-56，\\HRV042\uun56.mp4
+    >第5个失败！javbus有码找不到该车牌的信息：UUN-59，\\HRV042\uun59.mp4
+    >第6个失败！javbus有码找不到该车牌的信息：UUN-62，\\NINE-038\点击观看 房间火爆 uun62.com.mp4
+    >第7个失败！javbus有码找不到该车牌的信息：UUN-56，\\PPT099\uun56.mp4
+    >第8个失败！javbus有码找不到该车牌的信息：UUN-59，\\PPT099\uun59.mp4
+    >第9个失败！javbus有码找不到该车牌的信息：UUC-82，\\sdab-143\妹妹在精彩表演 哥哥快来大饱眼福uuc82.com_2.mp4
+    >第10个失败！javbus有码找不到该车牌的信息：UUN-56，\\SKMJ122\uun56.mp4
+    >第11个失败！javbus有码找不到该车牌的信息：UUN-59，\\SKMJ122\uun59.mp4
+    >第12个失败！javbus有码找不到该车牌的信息：UUN-56，\\SKMJ123\uun56.mp4
+    >第13个失败！javbus有码找不到该车牌的信息：UUN-59，\\SKMJ123\uun59.mp4
+    >第14个失败！javbus有码找不到该车牌的信息：UUN-56，\\SSHN015\uun56.mp4
+    >第15个失败！javbus有码找不到该车牌的信息：UUN-59，\\SSHN015\uun59.mp4
+    >第16个失败！javbus有码找不到该车牌的信息：UUC-82，\\stars-270\妹妹在精彩表演 哥哥快来大饱眼福uuc82.com_2.mp4
+    >第17个失败！javbus有码找不到该车牌的信息：UUC-82，\\stars-278\妹妹在精彩表演 哥哥快来大饱眼福uuc82.com_2.mp4
+    >第18个失败！javbus有码找不到该车牌的信息：UUN-56，\\SUPA540\uun56.mp4
+    >第19个失败！javbus有码找不到该车牌的信息：UUN-59，\\SUPA540\uun59.mp4
+    >第20个失败！发生错误，如一直在该影片报错请截图并联系作者：\\UMSO-344_2K-C\UMSO-344\UMSO-344 妻に逃げられバツイチシングルファーザーになったボクにまさかのモテ期！？不憫な父子家庭に同情して何かと.mp4
+Traceback (most recent call last):
+  File "e:\VS Projects\Vscode\javsdt\javsdt\javbus_youma.py", line 822, in <module>
+    add_watermark_subt(path_poster)
+  File "e:\VS Projects\Vscode\javsdt\javsdt\functions_picture.py", line 124, in add_watermark_subt
+    img_subt = Image.open('subt.png')
+  File "E:\VS Projects\Vscode\javsdt\.venv\lib\site-packages\PIL\Image.py", line 2878, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'subt.png'
+
+    >第21个失败！javbus有码找不到该车牌的信息：UUN-56，\\UMSO340\uun56.mp4
+    >第22个失败！javbus有码找不到该车牌的信息：UUN-59，\\UMSO340\uun59.mp4
+    >第23个失败！javbus有码找不到该车牌的信息：UUC-82，\\zex-396\妹妹在精彩表演 哥哥快来大饱眼福uuc82.com_2.mp4
+已选择文件夹：V:\Torrent\Auto  2020-09-17 23:41:36

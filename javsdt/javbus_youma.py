@@ -18,7 +18,8 @@ from functions_process import find_num_bus, collect_sculpture
 from functions_translate import tran_plot
 from functions_picture import add_watermark_divulge, crop_poster_youma
 from functions_requests import steal_arzon_cookies, get_arzon_html, find_plot_arzon, get_bus_html
-
+#############################################################################
+from functions_clean import clean
 
 #  main开始
 print('1、避开21:00-1:00，访问javbus和arzon很慢。\n'
@@ -27,7 +28,9 @@ print('1、避开21:00-1:00，访问javbus和arzon很慢。\n'
 print('正在读取ini中的设置...', end='')
 try:
     config_settings = RawConfigParser()
-    config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
+    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+    print("config_path:", config_path)
+    config_settings.read(config_path, encoding='utf-8-sig')
     ####################################################################################################################
     # 是否 收集nfo
     bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False
@@ -657,7 +660,10 @@ while input_start_key == '':
                             del list_root_now[-1]
                             root_new = sep.join(list_root_now) + sep + jav_folder_new        # 【临时变量】新的影片路径。上级文件夹路径+新文件夹名称=新文件夹路径
                             # 想要重命名的目标影片文件夹不存在
-                            if not exists(root_new):
+                            # print(root_now)
+                            # print(root_now.upper())
+                            # print(root_new)
+                            if not exists(root_new) or (root_now != root_new and root_now.upper()==root_new.upper()):   #abc-123 is treated as ABC-123
                                 # 修改文件夹
                                 os.rename(root_now, root_new)
                                 root_now = root_new                                         # 【发生变化】root_now
@@ -875,4 +881,7 @@ while input_start_key == '':
     if num_warn > 0:
         print('“警告信息.txt”还记录了', num_warn, '个警告信息！\n')
     # os.system('pause')
-    input_start_key = input('回车继续选择文件夹整理：')
+    #print(root_choose)
+    print(clean(root_choose)) #clean  folder size less than 116MB
+
+    input_start_key = input('回车继续选择文件-夹整理：')

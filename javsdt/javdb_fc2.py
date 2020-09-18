@@ -27,7 +27,10 @@ print('1、若一直连不上javdb，请在ini中更新防屏蔽网址\n'
 print('正在读取ini中的设置...', end='')
 try:
     config_settings = RawConfigParser()
-    config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
+    # config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
+    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+    print("config_path:", config_path)
+    config_settings.read(config_path, encoding='utf-8-sig')
     ####################################################################################################################
     # 是否 收集nfo
     bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False

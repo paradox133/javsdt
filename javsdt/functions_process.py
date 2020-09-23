@@ -45,6 +45,8 @@ def find_num_bus(file_temp, list_suren_num):
     #customized for some special case
     elif search(r'BIG2048.COM@', file_temp):
         file_temp=file_temp.replace('BIG2048.COM@','')
+    elif search(r'FUN2048.COM@', file_temp):
+        file_temp=file_temp.replace('FUN2048.COM@','')
     if search(r'[^A-Z]?T28[-_ ]*\d\d+', file_temp):
         jav_pref = 'T28-'
         jav_suf = search(r'T28[-_ ]*(\d\d+)', file_temp).group(1)

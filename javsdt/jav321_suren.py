@@ -20,189 +20,185 @@ from functions_requests import get_321_html, post_321_html
 
 
 #  main开始
-print('1、请开启代理，建议美国节点，访问“https://www.jav321.com/”\n'
-      '2、影片信息没有导演，没有演员头像，可能没有演员姓名\n'
-      '3、只能整理列出车牌的素人影片\n'
-      '   如有素人车牌识别不出，请在ini中添加该车牌，或者告知作者\n')
-# 读取配置文件，这个ini文件用来给用户设置
-print('\n正在读取ini中的设置...', end='')
-try:
-    config_settings = RawConfigParser()
-    # config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
-    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
-    print("config_path:", config_path)
-    config_settings.read(config_path, encoding='utf-8-sig')
-    ####################################################################################################################
-    # 是否 收集nfo
-    bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False
-    # 是否 跳过已存在nfo的文件夹，不整理已有nfo的文件夹
-    bool_skip = True if config_settings.get("收集nfo", "是否跳过已存在nfo的文件夹？") == '是' else False
-    # 自定义 nfo中title的格式
-    custom_nfo_title = config_settings.get("收集nfo", "nfo中title的格式")
-    # 自定义 将片商等元素作为特征，因为emby不会直接在影片介绍页面上显示片商
-    custom_genres = config_settings.get("收集nfo", "额外将以下元素添加到特征中")
-    # 是否 将特征保存到风格中
-    bool_genre = True if config_settings.get("收集nfo", "是否将特征保存到genre？") == '是' else False
-    # 是否 将 片商 作为特征
-    bool_tag = True if config_settings.get("收集nfo", "是否将特征保存到tag？") == '是' else False
-    ####################################################################################################################
-    # 是否 重命名 视频
-    bool_rename_mp4 = True if config_settings.get("重命名影片", "是否重命名影片？") == '是' else False
-    # 自定义 新命名 视频
-    custom_video = config_settings.get("重命名影片", "重命名影片的格式")
-    # 是否 重命名视频所在文件夹，或者为它创建独立文件夹
-    bool_rename_folder = True if config_settings.get("修改文件夹", "是否重命名或创建独立文件夹？") == '是' else False
-    # 自定义 新命名 文件夹
-    custom_folder = config_settings.get("修改文件夹", "新文件夹的格式")
-    ####################################################################################################################
-    # 是否 重命名用户已拥有的字幕
-    bool_rename_subt = True if config_settings.get("字幕文件", "是否重命名已有的字幕文件？") == '是' else False
-    ####################################################################################################################
-    # 是否 归类jav
-    bool_classify = True if config_settings.get("归类影片", "是否归类影片？") == '是' else False
-    # 是否 针对“文件夹”归类jav，“否”即针对“文件”
-    bool_classify_folder = True if config_settings.get("归类影片", "针对文件还是文件夹？") == '文件夹' else False
-    # 自定义 路径 归类的jav放到哪
-    custom_root = config_settings.get("归类影片", "归类的根目录")
-    # 自定义 jav按什么类别标准来归类
-    custom_classify_basis = config_settings.get("归类影片", "归类的标准")
-    ####################################################################################################################
-    # 是否 下载图片
-    bool_jpg = True if config_settings.get("下载封面", "是否下载封面海报？") == '是' else False
-    # 自定义 命名 大封面fanart
-    custom_fanart = config_settings.get("下载封面", "DVD封面的格式")
-    # 自定义 命名 小海报poster
-    custom_poster = config_settings.get("下载封面", "海报的格式")
-    # 是否 如果视频有“中字”，给poster的左上角加上“中文字幕”的斜杠
-    bool_watermark_subt = True if config_settings.get("下载封面", "是否为海报加上中文字幕条幅？") == '是' else False
-    # 是否 如果视频是“无码流出”，给poster的右上角加上“无码流出”的斜杠
-    bool_watermark_divulge = True if config_settings.get("下载封面", "是否为海报加上无码流出条幅？") == '是' else False
-    ####################################################################################################################
-    # 是否 对于多cd的影片，kodi只需要一份图片和nfo
-    bool_cd_only = True if config_settings.get("kodi专用", "是否对多cd只收集一份图片和nfo？") == '是' else False
-    ####################################################################################################################
-    # 是否 使用局部代理
-    bool_proxy = True if config_settings.get("局部代理", "是否使用局部代理？") == '是' else False
-    # 是否 使用http代理，否 就是socks5
-    bool_http = True if config_settings.get("局部代理", "http还是socks5？") == 'http' else False
-    # 代理端口
-    custom_proxy = config_settings.get("局部代理", "代理端口")
-    # 是否 代理javbus，还有代理javbus上的图片cdnbus
-    bool_321_proxy = True if config_settings.get("局部代理", "是否代理jav321？") == '是' else False
-    ####################################################################################################################
-    # 是否 使用简体中文 简介翻译的结果和jav特征会变成“简体”还是“繁体”
-    bool_zh = True if config_settings.get("其他设置", "简繁中文？") == '简' else False
-    # 自定义 文件类型 只有列举出的视频文件类型，才会被处理
-    custom_file_type = config_settings.get("其他设置", "扫描文件类型")
-    # 自定义 命名格式中“标题”的长度 windows只允许255字符，所以限制长度，但nfo中的标题是全部
-    int_title_len = int(config_settings.get("其他设置", "重命名中的标题长度（50~150）"))
-    ####################################################################################################################
-    # 自定义 素人车牌 如果用户的视频名，在这些车牌中，用“jav321.exe"整理
-    custom_suren_pref = config_settings.get("信息来源", "列出车牌(素人为主，可自行添加)")
-    ####################################################################################################################
-    # 自定义 原影片性质 影片有中文，体现在视频名称中包含这些字符
-    custom_subt_video = config_settings.get("原影片文件的性质", "是否中字即文件名包含")
-    # 自定义 是否中字 这个元素的表现形式
-    custom_subt_expression = config_settings.get("原影片文件的性质", "是否中字的表现形式")
-    # 自定义 原影片性质 影片是无码流出片，体现在视频名称中包含这些字符
-    custom_divulge_video = config_settings.get("原影片文件的性质", "是否流出即文件名包含")
-    # 自定义 是否流出 这个元素的表现形式
-    custom_divulge_expression = config_settings.get("原影片文件的性质", "是否流出的表现形式")
-    ######################################## 不同 ####################################################
-    # 自定义 原影片性质 素人
-    custom_movie_type = config_settings.get("原影片文件的性质", "素人")
-    # 自定义 无视的字母数字 去除影响搜索结果的字母数字 xhd1080、mm616、FHD-1080
-    custom_surplus_words = config_settings.get("原影片文件的性质", "无视有码、素人视频文件名中多余的形如abc123的字母数字")
-    # 是否 把日语简介翻译为中文
-    bool_tran = True if config_settings.get("百度翻译API", "是否翻译为中文？") == '是' else False
-    # 账户 百度翻译api
-    tran_id = config_settings.get("百度翻译API", "APP ID")
-    tran_sk = config_settings.get("百度翻译API", "密钥")
-except:
-    print(format_exc())
-    print('\n无法读取ini文件，请修改它为正确格式，或者打开“【ini】重新创建ini.exe”创建全新的ini！')
-    os.system('pause')
+def process_suren(root_choose):
+    print('1、请开启代理，建议美国节点，访问“https://www.jav321.com/”\n'
+        '2、影片信息没有导演，没有演员头像，可能没有演员姓名\n'
+        '3、只能整理列出车牌的素人影片\n'
+        '   如有素人车牌识别不出，请在ini中添加该车牌，或者告知作者\n')
+    # 读取配置文件，这个ini文件用来给用户设置
+    print('\n正在读取ini中的设置...', end='')
+    try:
+        config_settings = RawConfigParser()
+        # config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
+        config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+        print("config_path:", config_path)
+        config_settings.read(config_path, encoding='utf-8-sig')
+        ####################################################################################################################
+        # 是否 收集nfo
+        bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False
+        # 是否 跳过已存在nfo的文件夹，不整理已有nfo的文件夹
+        bool_skip = True if config_settings.get("收集nfo", "是否跳过已存在nfo的文件夹？") == '是' else False
+        # 自定义 nfo中title的格式
+        custom_nfo_title = config_settings.get("收集nfo", "nfo中title的格式")
+        # 自定义 将片商等元素作为特征，因为emby不会直接在影片介绍页面上显示片商
+        custom_genres = config_settings.get("收集nfo", "额外将以下元素添加到特征中")
+        # 是否 将特征保存到风格中
+        bool_genre = True if config_settings.get("收集nfo", "是否将特征保存到genre？") == '是' else False
+        # 是否 将 片商 作为特征
+        bool_tag = True if config_settings.get("收集nfo", "是否将特征保存到tag？") == '是' else False
+        ####################################################################################################################
+        # 是否 重命名 视频
+        bool_rename_mp4 = True if config_settings.get("重命名影片", "是否重命名影片？") == '是' else False
+        # 自定义 新命名 视频
+        custom_video = config_settings.get("重命名影片", "重命名影片的格式")
+        # 是否 重命名视频所在文件夹，或者为它创建独立文件夹
+        bool_rename_folder = True if config_settings.get("修改文件夹", "是否重命名或创建独立文件夹？") == '是' else False
+        # 自定义 新命名 文件夹
+        custom_folder = config_settings.get("修改文件夹", "新文件夹的格式")
+        ####################################################################################################################
+        # 是否 重命名用户已拥有的字幕
+        bool_rename_subt = True if config_settings.get("字幕文件", "是否重命名已有的字幕文件？") == '是' else False
+        ####################################################################################################################
+        # 是否 归类jav
+        bool_classify = True if config_settings.get("归类影片", "是否归类影片？") == '是' else False
+        # 是否 针对“文件夹”归类jav，“否”即针对“文件”
+        bool_classify_folder = True if config_settings.get("归类影片", "针对文件还是文件夹？") == '文件夹' else False
+        # 自定义 路径 归类的jav放到哪
+        custom_root = config_settings.get("归类影片", "归类的根目录")
+        # 自定义 jav按什么类别标准来归类
+        custom_classify_basis = config_settings.get("归类影片", "归类的标准")
+        ####################################################################################################################
+        # 是否 下载图片
+        bool_jpg = True if config_settings.get("下载封面", "是否下载封面海报？") == '是' else False
+        # 自定义 命名 大封面fanart
+        custom_fanart = config_settings.get("下载封面", "DVD封面的格式")
+        # 自定义 命名 小海报poster
+        custom_poster = config_settings.get("下载封面", "海报的格式")
+        # 是否 如果视频有“中字”，给poster的左上角加上“中文字幕”的斜杠
+        bool_watermark_subt = True if config_settings.get("下载封面", "是否为海报加上中文字幕条幅？") == '是' else False
+        # 是否 如果视频是“无码流出”，给poster的右上角加上“无码流出”的斜杠
+        bool_watermark_divulge = True if config_settings.get("下载封面", "是否为海报加上无码流出条幅？") == '是' else False
+        ####################################################################################################################
+        # 是否 对于多cd的影片，kodi只需要一份图片和nfo
+        bool_cd_only = True if config_settings.get("kodi专用", "是否对多cd只收集一份图片和nfo？") == '是' else False
+        ####################################################################################################################
+        # 是否 使用局部代理
+        bool_proxy = True if config_settings.get("局部代理", "是否使用局部代理？") == '是' else False
+        # 是否 使用http代理，否 就是socks5
+        bool_http = True if config_settings.get("局部代理", "http还是socks5？") == 'http' else False
+        # 代理端口
+        custom_proxy = config_settings.get("局部代理", "代理端口")
+        # 是否 代理javbus，还有代理javbus上的图片cdnbus
+        bool_321_proxy = True if config_settings.get("局部代理", "是否代理jav321？") == '是' else False
+        ####################################################################################################################
+        # 是否 使用简体中文 简介翻译的结果和jav特征会变成“简体”还是“繁体”
+        bool_zh = True if config_settings.get("其他设置", "简繁中文？") == '简' else False
+        # 自定义 文件类型 只有列举出的视频文件类型，才会被处理
+        custom_file_type = config_settings.get("其他设置", "扫描文件类型")
+        # 自定义 命名格式中“标题”的长度 windows只允许255字符，所以限制长度，但nfo中的标题是全部
+        int_title_len = int(config_settings.get("其他设置", "重命名中的标题长度（50~150）"))
+        ####################################################################################################################
+        # 自定义 素人车牌 如果用户的视频名，在这些车牌中，用“jav321.exe"整理
+        custom_suren_pref = config_settings.get("信息来源", "列出车牌(素人为主，可自行添加)")
+        ####################################################################################################################
+        # 自定义 原影片性质 影片有中文，体现在视频名称中包含这些字符
+        custom_subt_video = config_settings.get("原影片文件的性质", "是否中字即文件名包含")
+        # 自定义 是否中字 这个元素的表现形式
+        custom_subt_expression = config_settings.get("原影片文件的性质", "是否中字的表现形式")
+        # 自定义 原影片性质 影片是无码流出片，体现在视频名称中包含这些字符
+        custom_divulge_video = config_settings.get("原影片文件的性质", "是否流出即文件名包含")
+        # 自定义 是否流出 这个元素的表现形式
+        custom_divulge_expression = config_settings.get("原影片文件的性质", "是否流出的表现形式")
+        ######################################## 不同 ####################################################
+        # 自定义 原影片性质 素人
+        custom_movie_type = config_settings.get("原影片文件的性质", "素人")
+        # 自定义 无视的字母数字 去除影响搜索结果的字母数字 xhd1080、mm616、FHD-1080
+        custom_surplus_words = config_settings.get("原影片文件的性质", "无视有码、素人视频文件名中多余的形如abc123的字母数字")
+        # 是否 把日语简介翻译为中文
+        bool_tran = True if config_settings.get("百度翻译API", "是否翻译为中文？") == '是' else False
+        # 账户 百度翻译api
+        tran_id = config_settings.get("百度翻译API", "APP ID")
+        tran_sk = config_settings.get("百度翻译API", "密钥")
+    except:
+        print(format_exc())
+        print('\n无法读取ini文件，请修改它为正确格式，或者打开“【ini】重新创建ini.exe”创建全新的ini！')
+        os.system('pause')
 
-print('\n读取ini文件成功!\n')
-# 初始化：简/繁中文，影响影片特征和简介
-if bool_zh:
-    url_search_web = 'https://www.jav321.com/search'
-    url_web = 'https://www.jav321.com/'
-    to_language = 'zh'  # 百度翻译，日译简中
-else:
-    url_search_web = 'https://tw.jav321.com/search'
-    url_web = 'https://tw.jav321.com/'
-    to_language = 'cht'
-# 初始化：代理设置，哪些站点需要代理
-if bool_proxy and custom_proxy:
-    if bool_http:
-        proxies = {"http": "http://" + custom_proxy, "https": "https://" + custom_proxy}
+    print('\n读取ini文件成功!\n')
+    # 初始化：简/繁中文，影响影片特征和简介
+    if bool_zh:
+        url_search_web = 'https://www.jav321.com/search'
+        url_web = 'https://www.jav321.com/'
+        to_language = 'zh'  # 百度翻译，日译简中
     else:
-        proxies = {"http": "socks5://" + custom_proxy, "https": "socks5://" + custom_proxy}
-    proxy_321 = proxies if bool_321_proxy else {}    # 请求jav321时传递的参数
-else:
-    proxy_321 = {}
-# 初始化：“是否重命名或创建独立文件夹”，还会受到“归类影片”影响。
-if bool_classify:                   # 如果需要归类
-    if bool_classify_folder:        # 并且是针对文件夹
-        bool_rename_folder = True   # 那么必须重命名文件夹或者创建新的文件夹
+        url_search_web = 'https://tw.jav321.com/search'
+        url_web = 'https://tw.jav321.com/'
+        to_language = 'cht'
+    # 初始化：代理设置，哪些站点需要代理
+    if bool_proxy and custom_proxy:
+        if bool_http:
+            proxies = {"http": "http://" + custom_proxy, "https": "https://" + custom_proxy}
+        else:
+            proxies = {"http": "socks5://" + custom_proxy, "https": "socks5://" + custom_proxy}
+        proxy_321 = proxies if bool_321_proxy else {}    # 请求jav321时传递的参数
     else:
-        bool_rename_folder = False  # 否则不会操作新文件夹
-# 初始化 当前系统的路径分隔符 windows是“\”，linux和mac是“/”
-sep = os.sep
-# 初始化：存放影片信息，用于给用户自定义各种命名
-dict_nfo = {'空格': ' ', '车牌': 'ABC-123', '标题': '素人标题', '完整标题': '完整标题', '导演': '素人导演',
-            '发行年月日': '1970-01-01', '发行年份': '1970', '月': '01', '日': '01',
-            '片商': '素人片商', '评分': '0', '首个演员': '素人', '全部演员': '素人',
-            '片长': '0', '\\': sep, '/': sep, '是否中字': '', '视频': 'ABC-123', '车牌前缀': 'ABC',
-            '是否流出': '', '影片类型': custom_movie_type, '系列': '素人系列',
-            '原文件名': 'ABC-123', '原文件夹名': 'ABC-123', }
-list_extra_genres = custom_genres.split('、') if custom_genres else []  # 需要的额外特征
-bool_write_studio = True if '片商' in list_extra_genres else False
-list_extra_genres = [i for i in list_extra_genres if i != '系列' and i != '片商']
-list_suren_num = custom_suren_pref.split('、')          # 素人番号的列表
-list_rename_video = custom_video.split('+')             # 重命名视频的格式
-list_rename_folder = custom_folder.split('+')           # 重命名文件夹的格式
-tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
-list_name_nfo_title = custom_nfo_title.replace('标题', '完整标题', 1).split('+')  # nfo中title的写法
-list_name_fanart = custom_fanart.split('+')            # fanart的格式
-list_name_poster = custom_poster.split('+')            # poster的格式
-list_subt_video = custom_subt_video.split('、')        # 包含哪些特殊含义的文字，判断是否中字
-list_divulge_video = custom_divulge_video.split('、')          # 包含哪些特殊含义的文字，判断是否是无码流出片
-list_surplus_words = custom_surplus_words.split('、')  # 视频文件名包含哪些多余的字母数字，需要无视
-# 七个for，如果有什么高效简介的办法，请告诉我
-for j in list_extra_genres:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_rename_video:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_rename_folder:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-list_classify_basis = []
-for i in custom_classify_basis.split('\\'):   # 归类标准，归类到哪个文件夹。不管是什么操作系统，用户写归类的规则，用“\”连接
-    for j in i.split('+'):
+        proxy_321 = {}
+    # 初始化：“是否重命名或创建独立文件夹”，还会受到“归类影片”影响。
+    if bool_classify:                   # 如果需要归类
+        if bool_classify_folder:        # 并且是针对文件夹
+            bool_rename_folder = True   # 那么必须重命名文件夹或者创建新的文件夹
+        else:
+            bool_rename_folder = False  # 否则不会操作新文件夹
+    # 初始化 当前系统的路径分隔符 windows是“\”，linux和mac是“/”
+    sep = os.sep
+    # 初始化：存放影片信息，用于给用户自定义各种命名
+    dict_nfo = {'空格': ' ', '车牌': 'ABC-123', '标题': '素人标题', '完整标题': '完整标题', '导演': '素人导演',
+                '发行年月日': '1970-01-01', '发行年份': '1970', '月': '01', '日': '01',
+                '片商': '素人片商', '评分': '0', '首个演员': '素人', '全部演员': '素人',
+                '片长': '0', '\\': sep, '/': sep, '是否中字': '', '视频': 'ABC-123', '车牌前缀': 'ABC',
+                '是否流出': '', '影片类型': custom_movie_type, '系列': '素人系列',
+                '原文件名': 'ABC-123', '原文件夹名': 'ABC-123', }
+    list_extra_genres = custom_genres.split('、') if custom_genres else []  # 需要的额外特征
+    bool_write_studio = True if '片商' in list_extra_genres else False
+    list_extra_genres = [i for i in list_extra_genres if i != '系列' and i != '片商']
+    list_suren_num = custom_suren_pref.split('、')          # 素人番号的列表
+    list_rename_video = custom_video.split('+')             # 重命名视频的格式
+    list_rename_folder = custom_folder.split('+')           # 重命名文件夹的格式
+    tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
+    list_name_nfo_title = custom_nfo_title.replace('标题', '完整标题', 1).split('+')  # nfo中title的写法
+    list_name_fanart = custom_fanart.split('+')            # fanart的格式
+    list_name_poster = custom_poster.split('+')            # poster的格式
+    list_subt_video = custom_subt_video.split('、')        # 包含哪些特殊含义的文字，判断是否中字
+    list_divulge_video = custom_divulge_video.split('、')          # 包含哪些特殊含义的文字，判断是否是无码流出片
+    list_surplus_words = custom_surplus_words.split('、')  # 视频文件名包含哪些多余的字母数字，需要无视
+    # 七个for，如果有什么高效简介的办法，请告诉我
+    for j in list_extra_genres:
         if j not in dict_nfo:
             dict_nfo[j] = j
-        list_classify_basis.append(j)
-    list_classify_basis.append(sep)
-for j in list_name_nfo_title:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_name_fanart:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_name_poster:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
+    for j in list_rename_video:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_rename_folder:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    list_classify_basis = []
+    for i in custom_classify_basis.split('\\'):   # 归类标准，归类到哪个文件夹。不管是什么操作系统，用户写归类的规则，用“\”连接
+        for j in i.split('+'):
+            if j not in dict_nfo:
+                dict_nfo[j] = j
+            list_classify_basis.append(j)
+        list_classify_basis.append(sep)
+    for j in list_name_nfo_title:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_name_fanart:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_name_poster:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
 
-# 用户输入“回车”就继续选择文件夹整理
-input_start_key = ''
-while input_start_key == '':
-    # 用户选择需要整理的文件夹
-    print('请选择要整理的文件夹：', end='')
-    root_choose = choose_directory()
+
     print(root_choose)
     # 在txt中记录一下用户的这次操作
     record_start(root_choose)
@@ -766,21 +762,21 @@ while input_start_key == '':
                 record_fail('    >第' + str(num_fail) + '个失败！发生错误，如一直在该影片报错请截图并联系作者：' + path_relative + '\n' + format_exc() + '\n')
                 continue   # 退出对该jav的整理
 
-    # 完结撒花
-    print('\n当前文件夹完成，', end='')
-    if num_fail > 0:
-        print('失败', num_fail, '个!  ', root_choose, '\n')
-        line = -1
-        with open('【记得清理它】失败记录.txt', 'r', encoding="utf-8") as f:
-            content = list(f)
-        while 1:
-            if content[line].startswith('已'):
-                break
-            line -= 1
-        for i in range(line+1, 0):
-            print(content[i], end='')
-        print('\n“【记得清理它】失败记录.txt”已记录错误\n')
-    else:
-        print(' “0”失败！  ', root_choose, '\n')
-    # os.system('pause')
-    input_start_key = input('回车继续选择文件夹整理：')
+        # 完结撒花
+        print('\n当前文件夹完成，', end='')
+        if num_fail > 0:
+            print('失败', num_fail, '个!  ', root_choose, '\n')
+            line = -1
+            with open('【记得清理它】失败记录.txt', 'r', encoding="utf-8") as f:
+                content = list(f)
+            while 1:
+                if content[line].startswith('已'):
+                    break
+                line -= 1
+            for i in range(line+1, 0):
+                print(content[i], end='')
+            print('\n“【记得清理它】失败记录.txt”已记录错误\n')
+        else:
+            print(' “0”失败！  ', root_choose, '\n')
+        # os.system('pause')
+

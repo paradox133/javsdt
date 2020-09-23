@@ -19,283 +19,281 @@ from functions_translate import tran_plot
 from functions_picture import add_watermark_divulge, crop_poster_youma
 from functions_requests import steal_arzon_cookies, get_arzon_html, find_plot_arzon, get_bus_html
 #############################################################################
+from functions_dbcheck import if_ID_exist
 from functions_clean import clean
 
-#  main开始
-print('1、避开21:00-1:00，访问javbus和arzon很慢。\n'
-      '2、若一直连不上javbus，请在ini中更新防屏蔽网址\n')
-# 读取配置文件，这个ini文件用来给用户设置
-print('正在读取ini中的设置...', end='')
-try:
-    config_settings = RawConfigParser()
-    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
-    print("config_path:", config_path)
-    config_settings.read(config_path, encoding='utf-8-sig')
-    ####################################################################################################################
-    # 是否 收集nfo
-    bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False
-    # 是否 跳过已存在nfo的文件夹，不整理已有nfo的文件夹
-    bool_skip = True if config_settings.get("收集nfo", "是否跳过已存在nfo的文件夹？") == '是' else False
-    # 自定义 nfo中title的格式
-    custom_nfo_title = config_settings.get("收集nfo", "nfo中title的格式")
-    # 是否 去除 标题 末尾可能存在的演员姓名
-    bool_strip_actors = True if config_settings.get("收集nfo", "是否去除标题末尾可能存在的演员姓名？") == '是' else False
-    # 自定义 有些用户想把“发行年份”“影片类型”作为特征
-    custom_genres = config_settings.get("收集nfo", "额外将以下元素添加到特征中")
-    # 是否 将特征保存到风格中
-    bool_genre = True if config_settings.get("收集nfo", "是否将特征保存到genre？") == '是' else False
-    # 是否 将 片商 作为特征
-    bool_tag = True if config_settings.get("收集nfo", "是否将特征保存到tag？") == '是' else False
-    ####################################################################################################################
-    # 是否 重命名 视频
-    bool_rename_mp4 = True if config_settings.get("重命名影片", "是否重命名影片？") == '是' else False
-    # 自定义 重命名 视频
-    custom_video = config_settings.get("重命名影片", "重命名影片的格式")
-    # 是否 重命名视频所在文件夹，或者为它创建独立文件夹
-    bool_rename_folder = True if config_settings.get("修改文件夹", "是否重命名或创建独立文件夹？") == '是' else False
-    # 自定义 新的文件夹名
-    custom_folder = config_settings.get("修改文件夹", "新文件夹的格式")
-    ####################################################################################################################
-    # 是否 重命名用户已拥有的字幕
-    bool_rename_subt = True if config_settings.get("字幕文件", "是否重命名已有的字幕文件？") == '是' else False
-    ####################################################################################################################
-    # 是否 归类jav
-    bool_classify = True if config_settings.get("归类影片", "是否归类影片？") == '是' else False
-    # 是否 针对“文件夹”归类jav，“否”即针对“文件”
-    bool_classify_folder = True if config_settings.get("归类影片", "针对文件还是文件夹？") == '文件夹' else False
-    # 自定义 路径 归类的jav放到哪
-    custom_root = config_settings.get("归类影片", "归类的根目录")
-    # 自定义 jav按什么类别标准来归类
-    custom_classify_basis = config_settings.get("归类影片", "归类的标准")
-    ####################################################################################################################
-    # 是否 下载图片
-    bool_jpg = True if config_settings.get("下载封面", "是否下载封面海报？") == '是' else False
-    # 自定义 命名 大封面fanart
-    custom_fanart = config_settings.get("下载封面", "DVD封面的格式")
-    # 自定义 命名 小海报poster
-    custom_poster = config_settings.get("下载封面", "海报的格式")
-    # 是否 如果视频有“中字”，给poster的左上角加上“中文字幕”的斜杠
-    bool_watermark_subt = True if config_settings.get("下载封面", "是否为海报加上中文字幕条幅？") == '是' else False
-    # 是否 如果视频是“无码流出”，给poster的右上角加上“无码流出”的斜杠
-    bool_watermark_divulge = True if config_settings.get("下载封面", "是否为海报加上无码流出条幅？") == '是' else False
-    ####################################################################################################################
-    # 是否 收集演员头像
-    bool_sculpture = True if config_settings.get("kodi专用", "是否收集演员头像？") == '是' else False
-    # 是否 对于多cd的影片，kodi只需要一份图片和nfo
-    bool_cd_only = True if config_settings.get("kodi专用", "是否对多cd只收集一份图片和nfo？") == '是' else False
-    ####################################################################################################################
-    # 是否 使用局部代理
-    bool_proxy = True if config_settings.get("局部代理", "是否使用局部代理？") == '是' else False
-    # 是否 使用http代理，否 就是socks5
-    bool_http = True if config_settings.get("局部代理", "http还是socks5？") == 'http' else False
-    # 代理端口
-    custom_proxy = config_settings.get("局部代理", "代理端口")
-    # 是否 代理javbus，还有代理javbus上的图片cdnbus
-    bool_bus_proxy = True if config_settings.get("局部代理", "是否代理javbus？") == '是' else False
-    # 是否 代理arzon
-    bool_arzon_proxy = True if config_settings.get("局部代理", "是否代理arzon？") == '是' else False
-    ####################################################################################################################
-    # 是否 使用简体中文 简介翻译的结果和jav特征会变成“简体”还是“繁体”
-    bool_zh = True if config_settings.get("其他设置", "简繁中文？") == '简' else False
-    # 自定义 文件类型 只有列举出的视频文件类型，才会被处理
-    custom_file_type = config_settings.get("其他设置", "扫描文件类型")
-    # 自定义 命名格式中“标题”的长度 windows只允许255字符，所以限制长度，但nfo中的标题是全部
-    int_title_len = int(config_settings.get("其他设置", "重命名中的标题长度（50~150）"))
-    ####################################################################################################################
-    # 自定义 素人车牌 素人需要去jav321处理，这里javbus直接跳过
-    custom_suren_pref = config_settings.get("信息来源", "列出车牌(素人为主，可自行添加)")
-    ####################################################################################################################
-    # 自定义 原影片性质 影片有中文，体现在视频名称中包含这些字符
-    custom_subt_video = config_settings.get("原影片文件的性质", "是否中字即文件名包含")
-    # 自定义 是否中字 这个元素的表现形式
-    custom_subt_expression = config_settings.get("原影片文件的性质", "是否中字的表现形式")
-    # 自定义 原影片性质 影片是无码流出片，体现在视频名称中包含这些字符
-    custom_divulge_video = config_settings.get("原影片文件的性质", "是否流出即文件名包含")
-    # 自定义 是否流出 这个元素的表现形式
-    custom_divulge_expression = config_settings.get("原影片文件的性质", "是否流出的表现形式")
-    ######################################## 不同之处 ####################################################
-    # 自定义 原影片性质 有码
-    custom_movie_type = config_settings.get("原影片文件的性质", "有码")
-    # 网址 javbus
-    url_web = config_settings.get("其他设置", "javbus网址")
-    # 自定义 无视的字母数字 去除影响搜索结果的字母数字 xhd1080、mm616、FHD-1080
-    custom_surplus_words = config_settings.get("原影片文件的性质", "无视有码、素人视频文件名中多余的形如abc123的字母数字")
-    # 是否 需要简介
-    bool_plot = True if config_settings.get("百度翻译API", "是否需要日语简介？") == '是' else False
-    # 是否 把日语简介翻译为中文
-    bool_tran = True if config_settings.get("百度翻译API", "是否翻译为中文？") == '是' else False
-    # 账户 百度翻译api
-    tran_id = config_settings.get("百度翻译API", "APP ID")
-    tran_sk = config_settings.get("百度翻译API", "密钥")
-except:
-    print(format_exc())
-    print('\n无法读取ini文件，请修改它为正确格式，或者打开“【ini】重新创建ini.exe”创建全新的ini！')
-    system('pause')
 
-# 未雨绸缪：如果需要为kodi整理头像，先检查演员头像ini、头像文件夹是否存在
-if bool_sculpture:
-    check_actors()
-print('\n读取ini文件成功!\n')
-# 初始化：代理设置，哪些站点需要代理
-if bool_proxy and custom_proxy:
-    if bool_http:
-        proxies = {"http": "http://" + custom_proxy, "https": "https://" + custom_proxy}
+#  main开始
+def process_youma(root_choose):
+    print('1、避开21:00-1:00，访问javbus和arzon很慢。\n'
+        '2、若一直连不上javbus，请在ini中更新防屏蔽网址\n')
+    # 读取配置文件，这个ini文件用来给用户设置
+    print('正在读取ini中的设置...', end='')
+    try:
+        config_settings = RawConfigParser()
+        config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+        print("config_path:", config_path)
+        config_settings.read(config_path, encoding='utf-8-sig')
+        ####################################################################################################################
+        # 是否 收集nfo
+        bool_nfo = True if config_settings.get("收集nfo", "是否收集nfo？") == '是' else False
+        # 是否 跳过已存在nfo的文件夹，不整理已有nfo的文件夹
+        bool_skip = True if config_settings.get("收集nfo", "是否跳过已存在nfo的文件夹？") == '是' else False
+        # 自定义 nfo中title的格式
+        custom_nfo_title = config_settings.get("收集nfo", "nfo中title的格式")
+        # 是否 去除 标题 末尾可能存在的演员姓名
+        bool_strip_actors = True if config_settings.get("收集nfo", "是否去除标题末尾可能存在的演员姓名？") == '是' else False
+        # 自定义 有些用户想把“发行年份”“影片类型”作为特征
+        custom_genres = config_settings.get("收集nfo", "额外将以下元素添加到特征中")
+        # 是否 将特征保存到风格中
+        bool_genre = True if config_settings.get("收集nfo", "是否将特征保存到genre？") == '是' else False
+        # 是否 将 片商 作为特征
+        bool_tag = True if config_settings.get("收集nfo", "是否将特征保存到tag？") == '是' else False
+        ####################################################################################################################
+        # 是否 重命名 视频
+        bool_rename_mp4 = True if config_settings.get("重命名影片", "是否重命名影片？") == '是' else False
+        # 自定义 重命名 视频
+        custom_video = config_settings.get("重命名影片", "重命名影片的格式")
+        # 是否 重命名视频所在文件夹，或者为它创建独立文件夹
+        bool_rename_folder = True if config_settings.get("修改文件夹", "是否重命名或创建独立文件夹？") == '是' else False
+        # 自定义 新的文件夹名
+        custom_folder = config_settings.get("修改文件夹", "新文件夹的格式")
+        ####################################################################################################################
+        # 是否 重命名用户已拥有的字幕
+        bool_rename_subt = True if config_settings.get("字幕文件", "是否重命名已有的字幕文件？") == '是' else False
+        ####################################################################################################################
+        # 是否 归类jav
+        bool_classify = True if config_settings.get("归类影片", "是否归类影片？") == '是' else False
+        # 是否 针对“文件夹”归类jav，“否”即针对“文件”
+        bool_classify_folder = True if config_settings.get("归类影片", "针对文件还是文件夹？") == '文件夹' else False
+        # 自定义 路径 归类的jav放到哪
+        custom_root = config_settings.get("归类影片", "归类的根目录")
+        # 自定义 jav按什么类别标准来归类
+        custom_classify_basis = config_settings.get("归类影片", "归类的标准")
+        ####################################################################################################################
+        # 是否 下载图片
+        bool_jpg = True if config_settings.get("下载封面", "是否下载封面海报？") == '是' else False
+        # 自定义 命名 大封面fanart
+        custom_fanart = config_settings.get("下载封面", "DVD封面的格式")
+        # 自定义 命名 小海报poster
+        custom_poster = config_settings.get("下载封面", "海报的格式")
+        # 是否 如果视频有“中字”，给poster的左上角加上“中文字幕”的斜杠
+        bool_watermark_subt = True if config_settings.get("下载封面", "是否为海报加上中文字幕条幅？") == '是' else False
+        # 是否 如果视频是“无码流出”，给poster的右上角加上“无码流出”的斜杠
+        bool_watermark_divulge = True if config_settings.get("下载封面", "是否为海报加上无码流出条幅？") == '是' else False
+        ####################################################################################################################
+        # 是否 收集演员头像
+        bool_sculpture = True if config_settings.get("kodi专用", "是否收集演员头像？") == '是' else False
+        # 是否 对于多cd的影片，kodi只需要一份图片和nfo
+        bool_cd_only = True if config_settings.get("kodi专用", "是否对多cd只收集一份图片和nfo？") == '是' else False
+        ####################################################################################################################
+        # 是否 使用局部代理
+        bool_proxy = True if config_settings.get("局部代理", "是否使用局部代理？") == '是' else False
+        # 是否 使用http代理，否 就是socks5
+        bool_http = True if config_settings.get("局部代理", "http还是socks5？") == 'http' else False
+        # 代理端口
+        custom_proxy = config_settings.get("局部代理", "代理端口")
+        # 是否 代理javbus，还有代理javbus上的图片cdnbus
+        bool_bus_proxy = True if config_settings.get("局部代理", "是否代理javbus？") == '是' else False
+        # 是否 代理arzon
+        bool_arzon_proxy = True if config_settings.get("局部代理", "是否代理arzon？") == '是' else False
+        ####################################################################################################################
+        # 是否 使用简体中文 简介翻译的结果和jav特征会变成“简体”还是“繁体”
+        bool_zh = True if config_settings.get("其他设置", "简繁中文？") == '简' else False
+        # 自定义 文件类型 只有列举出的视频文件类型，才会被处理
+        custom_file_type = config_settings.get("其他设置", "扫描文件类型")
+        # 自定义 命名格式中“标题”的长度 windows只允许255字符，所以限制长度，但nfo中的标题是全部
+        int_title_len = int(config_settings.get("其他设置", "重命名中的标题长度（50~150）"))
+        ####################################################################################################################
+        # 自定义 素人车牌 素人需要去jav321处理，这里javbus直接跳过
+        custom_suren_pref = config_settings.get("信息来源", "列出车牌(素人为主，可自行添加)")
+        ####################################################################################################################
+        # 自定义 原影片性质 影片有中文，体现在视频名称中包含这些字符
+        custom_subt_video = config_settings.get("原影片文件的性质", "是否中字即文件名包含")
+        # 自定义 是否中字 这个元素的表现形式
+        custom_subt_expression = config_settings.get("原影片文件的性质", "是否中字的表现形式")
+        # 自定义 原影片性质 影片是无码流出片，体现在视频名称中包含这些字符
+        custom_divulge_video = config_settings.get("原影片文件的性质", "是否流出即文件名包含")
+        # 自定义 是否流出 这个元素的表现形式
+        custom_divulge_expression = config_settings.get("原影片文件的性质", "是否流出的表现形式")
+        ######################################## 不同之处 ####################################################
+        # 自定义 原影片性质 有码
+        custom_movie_type = config_settings.get("原影片文件的性质", "有码")
+        # 网址 javbus
+        url_web = config_settings.get("其他设置", "javbus网址")
+        # 自定义 无视的字母数字 去除影响搜索结果的字母数字 xhd1080、mm616、FHD-1080
+        custom_surplus_words = config_settings.get("原影片文件的性质", "无视有码、素人视频文件名中多余的形如abc123的字母数字")
+        # 是否 需要简介
+        bool_plot = True if config_settings.get("百度翻译API", "是否需要日语简介？") == '是' else False
+        # 是否 把日语简介翻译为中文
+        bool_tran = True if config_settings.get("百度翻译API", "是否翻译为中文？") == '是' else False
+        # 账户 百度翻译api
+        tran_id = config_settings.get("百度翻译API", "APP ID")
+        tran_sk = config_settings.get("百度翻译API", "密钥")
+    except:
+        print(format_exc())
+        print('\n无法读取ini文件，请修改它为正确格式，或者打开“【ini】重新创建ini.exe”创建全新的ini！')
+        system('pause')
+
+    # 未雨绸缪：如果需要为kodi整理头像，先检查演员头像ini、头像文件夹是否存在
+    if bool_sculpture:
+        check_actors()
+    print('\n读取ini文件成功!\n')
+    # 初始化：代理设置，哪些站点需要代理
+    if bool_proxy and custom_proxy:
+        if bool_http:
+            proxies = {"http": "http://" + custom_proxy, "https": "https://" + custom_proxy}
+        else:
+            proxies = {"http": "socks5://" + custom_proxy, "https": "socks5://" + custom_proxy}
+        proxy_arzon = proxies if bool_arzon_proxy else {}    # 请求arzon时传递的参数
+        proxy_bus = proxies if bool_bus_proxy else {}    # 请求javbus时传递的参数
     else:
-        proxies = {"http": "socks5://" + custom_proxy, "https": "socks5://" + custom_proxy}
-    proxy_arzon = proxies if bool_arzon_proxy else {}    # 请求arzon时传递的参数
-    proxy_bus = proxies if bool_bus_proxy else {}    # 请求javbus时传递的参数
-else:
-    proxy_arzon = proxy_bus = {}   # 请求dmm图片时传递的参数
-# 初始化：如果需要日语简介，需要先获得arzon的cookie，通过成人验证
-acook = steal_arzon_cookies(proxy_arzon) if bool_plot and bool_nfo else {}
-# 初始化：jav网址，无论用户输不输人后面的斜杠 https://www.buscdn.work/
-if not url_web.endswith('/'):
-    url_web += '/'
-# 初始化：简/繁中文，影响影片特征和简介
-if bool_zh:
-    to_language = 'zh'          # 目标语言，百度翻译规定 zh是简体中文，cht是繁体中文
-else:
-    to_language = 'cht'
-# 初始化：“是否重命名或创建独立文件夹”，还会受到“归类影片”影响。
-if bool_classify:                            # 如果需要归类
-    if bool_classify_folder:                 # 并且是针对文件夹
-        bool_rename_folder = True            # 那么必须重命名文件夹或者创建新的文件夹
+        proxy_arzon = proxy_bus = {}   # 请求dmm图片时传递的参数
+    # 初始化：如果需要日语简介，需要先获得arzon的cookie，通过成人验证
+    acook = steal_arzon_cookies(proxy_arzon) if bool_plot and bool_nfo else {}
+    # 初始化：jav网址，无论用户输不输人后面的斜杠 https://www.buscdn.work/
+    if not url_web.endswith('/'):
+        url_web += '/'
+    # 初始化：简/繁中文，影响影片特征和简介
+    if bool_zh:
+        to_language = 'zh'          # 目标语言，百度翻译规定 zh是简体中文，cht是繁体中文
     else:
-        bool_rename_folder = False           # 否则不会操作新文件夹
-# 初始化 当前系统的路径分隔符 windows是“\”，linux和mac是“/”
-sep = os.sep
-# 初始化：存放影片信息，用于给用户自定义各种命名
-dict_nfo = {'空格': ' ', '车牌': 'ABC-123', '标题': '有码标题', '完整标题': '完整标题', '导演': '有码导演',
-            '发行年月日': '1970-01-01', '发行年份': '1970', '月': '01', '日': '01',
-            '片商': '有码片商', '评分': '0', '首个演员': '有码演员', '全部演员': '有码演员',
-            '片长': '0', '\\': sep, '/': sep, '是否中字': '', '视频': 'ABC-123', '车牌前缀': 'ABC',
-            '是否流出': '', '影片类型': custom_movie_type, '系列': '有码系列',
-            '原文件名': 'ABC-123', '原文件夹名': 'ABC-123', }
-# 初始化：将ini读取的各种自定义string，切割为list。如果是dict_nfo没有的、用户自己需要的元素，将它们放进dict_nfo中。
-list_extra_genres = custom_genres.split('、') if custom_genres else [] # 需要的额外特征
-# 是否需要把系列、片商加到特征中，如果没有明确的系列、片商，也不会加
-bool_write_series = True if '系列' in list_extra_genres else False
-bool_write_studio = True if '片商' in list_extra_genres else False
-list_extra_genres = [i for i in list_extra_genres if i != '系列' and i != '片商']
-list_suren_num = custom_suren_pref.split('、')          # 素人番号的列表
-list_rename_video = custom_video.split('+')             # 重命名视频的格式
-list_rename_folder = custom_folder.split('+')           # 重命名文件夹的格式
-tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
-list_name_nfo_title = custom_nfo_title.replace('标题', '完整标题', 1).split('+')  # nfo中title的写法
-list_name_fanart = custom_fanart.split('+')            # fanart的格式
-list_name_poster = custom_poster.split('+')            # poster的格式
-list_subt_video = custom_subt_video.split('、')        # 包含哪些特殊含义的文字，判断是否中字
-list_divulge_video = custom_divulge_video.split('、')          # 包含哪些特殊含义的文字，判断是否是无码流出片
-list_surplus_words = custom_surplus_words.split('、')  # 视频文件名包含哪些多余的字幕数字，需要无视
-# 七个for，如果有什么高效简介的办法，请告诉我
-for j in list_extra_genres:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_rename_video:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_rename_folder:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-list_classify_basis = []
-for i in custom_classify_basis.split('\\'):   # 归类标准，归类到哪个文件夹。不管是什么操作系统，用户写归类的规则，用“\”连接
-    for j in i.split('+'):
+        to_language = 'cht'
+    # 初始化：“是否重命名或创建独立文件夹”，还会受到“归类影片”影响。
+    if bool_classify:                            # 如果需要归类
+        if bool_classify_folder:                 # 并且是针对文件夹
+            bool_rename_folder = True            # 那么必须重命名文件夹或者创建新的文件夹
+        else:
+            bool_rename_folder = False           # 否则不会操作新文件夹
+    # 初始化 当前系统的路径分隔符 windows是“\”，linux和mac是“/”
+    sep = os.sep
+    # 初始化：存放影片信息，用于给用户自定义各种命名
+    dict_nfo = {'空格': ' ', '车牌': 'ABC-123', '标题': '有码标题', '完整标题': '完整标题', '导演': '有码导演',
+                '发行年月日': '1970-01-01', '发行年份': '1970', '月': '01', '日': '01',
+                '片商': '有码片商', '评分': '0', '首个演员': '有码演员', '全部演员': '有码演员',
+                '片长': '0', '\\': sep, '/': sep, '是否中字': '', '视频': 'ABC-123', '车牌前缀': 'ABC',
+                '是否流出': '', '影片类型': custom_movie_type, '系列': '有码系列',
+                '原文件名': 'ABC-123', '原文件夹名': 'ABC-123', }
+    # 初始化：将ini读取的各种自定义string，切割为list。如果是dict_nfo没有的、用户自己需要的元素，将它们放进dict_nfo中。
+    list_extra_genres = custom_genres.split('、') if custom_genres else [] # 需要的额外特征
+    # 是否需要把系列、片商加到特征中，如果没有明确的系列、片商，也不会加
+    bool_write_series = True if '系列' in list_extra_genres else False
+    bool_write_studio = True if '片商' in list_extra_genres else False
+    list_extra_genres = [i for i in list_extra_genres if i != '系列' and i != '片商']
+    list_suren_num = custom_suren_pref.split('、')          # 素人番号的列表
+    list_rename_video = custom_video.split('+')             # 重命名视频的格式
+    list_rename_folder = custom_folder.split('+')           # 重命名文件夹的格式
+    tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
+    list_name_nfo_title = custom_nfo_title.replace('标题', '完整标题', 1).split('+')  # nfo中title的写法
+    list_name_fanart = custom_fanart.split('+')            # fanart的格式
+    list_name_poster = custom_poster.split('+')            # poster的格式
+    list_subt_video = custom_subt_video.split('、')        # 包含哪些特殊含义的文字，判断是否中字
+    list_divulge_video = custom_divulge_video.split('、')          # 包含哪些特殊含义的文字，判断是否是无码流出片
+    list_surplus_words = custom_surplus_words.split('、')  # 视频文件名包含哪些多余的字幕数字，需要无视
+    # 七个for，如果有什么高效简介的办法，请告诉我
+    for j in list_extra_genres:
         if j not in dict_nfo:
             dict_nfo[j] = j
-        list_classify_basis.append(j)
-    list_classify_basis.append(sep)
-for j in list_name_nfo_title:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_name_fanart:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-for j in list_name_poster:
-    if j not in dict_nfo:
-        dict_nfo[j] = j
-# 特征，繁日转简
-dict_gen = {'中文字幕': '中文字幕', '无码流出': '无码流出',
-            '折磨': '折磨', '嘔吐': '呕吐', '觸手': '触手', '蠻橫嬌羞': '蛮横娇羞', '處男': '处男', '正太控': '正太控',
-            '出軌': '出轨', '瘙癢': '瘙痒', '運動': '运动', '女同接吻': '女同接吻', '性感的x': '性感的', '美容院': '美容院',
-            '處女': '处女', '爛醉如泥的': '烂醉如泥的', '殘忍畫面': '残忍画面', '妄想': '妄想', '惡作劇': '恶作剧', '學校作品': '学校作品',
-            '粗暴': '粗暴', '通姦': '通奸', '姐妹': '姐妹', '雙性人': '双性人', '跳舞': '跳舞', '性奴': '性奴',
-            '倒追': '倒追', '性騷擾': '性骚扰', '其他': '其他', '戀腿癖': '恋腿癖', '偷窥': '偷窥', '花癡': '花痴',
-            '男同性恋': '男同性恋', '情侶': '情侣', '戀乳癖': '恋乳癖', '亂倫': '乱伦', '其他戀物癖': '其他恋物癖', '偶像藝人': '偶像艺人',
-            '野外・露出': '野外・露出', '獵豔': '猎艳', '女同性戀': '女同性恋', '企畫': '企画', '10枚組': '10枚组', '性感的': '性感的',
-            '科幻': '科幻', '女優ベスト・総集編': '演员的总编', '温泉': '温泉', 'M男': 'M男', '原作コラボ': '原作协作',
-            '16時間以上作品': '16时间以上作品', 'デカチン・巨根': '巨根', 'ファン感謝・訪問': '感恩祭', '動画': '动画', '巨尻': '巨尻', 'ハーレム': '后宫',
-            '日焼け': '晒黑', '早漏': '早漏', 'キス・接吻': '接吻.', '汗だく': '汗流浃背', 'スマホ専用縦動画': '智能手机的垂直视频', 'Vシネマ': '电影放映',
-            'Don Cipote\'s choice': 'Don Cipote\'s choice', 'アニメ': '日本动漫', 'アクション': '动作', 'イメージビデオ（男性）': '（视频）男性', '孕ませ': '孕育', 'ボーイズラブ': '男孩恋爱',
-            'ビッチ': 'bitch', '特典あり（AVベースボール）': '特典（AV棒球）', 'コミック雑誌': '漫画雑志', '時間停止': '时间停止',
+    for j in list_rename_video:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_rename_folder:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    list_classify_basis = []
+    for i in custom_classify_basis.split('\\'):   # 归类标准，归类到哪个文件夹。不管是什么操作系统，用户写归类的规则，用“\”连接
+        for j in i.split('+'):
+            if j not in dict_nfo:
+                dict_nfo[j] = j
+            list_classify_basis.append(j)
+        list_classify_basis.append(sep)
+    for j in list_name_nfo_title:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_name_fanart:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    for j in list_name_poster:
+        if j not in dict_nfo:
+            dict_nfo[j] = j
+    # 特征，繁日转简
+    dict_gen = {'中文字幕': '中文字幕', '无码流出': '无码流出',
+                '折磨': '折磨', '嘔吐': '呕吐', '觸手': '触手', '蠻橫嬌羞': '蛮横娇羞', '處男': '处男', '正太控': '正太控',
+                '出軌': '出轨', '瘙癢': '瘙痒', '運動': '运动', '女同接吻': '女同接吻', '性感的x': '性感的', '美容院': '美容院',
+                '處女': '处女', '爛醉如泥的': '烂醉如泥的', '殘忍畫面': '残忍画面', '妄想': '妄想', '惡作劇': '恶作剧', '學校作品': '学校作品',
+                '粗暴': '粗暴', '通姦': '通奸', '姐妹': '姐妹', '雙性人': '双性人', '跳舞': '跳舞', '性奴': '性奴',
+                '倒追': '倒追', '性騷擾': '性骚扰', '其他': '其他', '戀腿癖': '恋腿癖', '偷窥': '偷窥', '花癡': '花痴',
+                '男同性恋': '男同性恋', '情侶': '情侣', '戀乳癖': '恋乳癖', '亂倫': '乱伦', '其他戀物癖': '其他恋物癖', '偶像藝人': '偶像艺人',
+                '野外・露出': '野外・露出', '獵豔': '猎艳', '女同性戀': '女同性恋', '企畫': '企画', '10枚組': '10枚组', '性感的': '性感的',
+                '科幻': '科幻', '女優ベスト・総集編': '演员的总编', '温泉': '温泉', 'M男': 'M男', '原作コラボ': '原作协作',
+                '16時間以上作品': '16时间以上作品', 'デカチン・巨根': '巨根', 'ファン感謝・訪問': '感恩祭', '動画': '动画', '巨尻': '巨尻', 'ハーレム': '后宫',
+                '日焼け': '晒黑', '早漏': '早漏', 'キス・接吻': '接吻.', '汗だく': '汗流浃背', 'スマホ専用縦動画': '智能手机的垂直视频', 'Vシネマ': '电影放映',
+                'Don Cipote\'s choice': 'Don Cipote\'s choice', 'アニメ': '日本动漫', 'アクション': '动作', 'イメージビデオ（男性）': '（视频）男性', '孕ませ': '孕育', 'ボーイズラブ': '男孩恋爱',
+                'ビッチ': 'bitch', '特典あり（AVベースボール）': '特典（AV棒球）', 'コミック雑誌': '漫画雑志', '時間停止': '时间停止',
 
-            '黑幫成員': '黑帮成员', '童年朋友': '童年朋友', '公主': '公主', '亞洲女演員': '亚洲女演员', '伴侶': '伴侣', '講師': '讲师',
-            '婆婆': '婆婆', '格鬥家': '格斗家', '女檢察官': '女检察官', '明星臉': '明星脸', '女主人、女老板': '女主人、女老板', '模特兒': '模特',
-            '秘書': '秘书', '美少女': '美少女', '新娘、年輕妻子': '新娘、年轻妻子', '姐姐': '姐姐', '車掌小姐': '车掌小姐',
-            '寡婦': '寡妇', '千金小姐': '千金小姐', '白人': '白人', '已婚婦女': '已婚妇女', '女醫生': '女医生', '各種職業': '各种职业',
-            '妓女': '妓女', '賽車女郎': '赛车女郎', '女大學生': '女大学生', '展場女孩': '展场女孩', '女教師': '女教师', '母親': '母亲',
-            '家教': '家教', '护士': '护士', '蕩婦': '荡妇', '黑人演員': '黑人演员', '女生': '女生', '女主播': '女主播',
-            '高中女生': '高中女生', '服務生': '服务生', '魔法少女': '魔法少女', '學生（其他）': '学生（其他）', '動畫人物': '动画人物', '遊戲的真人版': '游戏真人版',
-            '超級女英雄': '超级女英雄',
+                '黑幫成員': '黑帮成员', '童年朋友': '童年朋友', '公主': '公主', '亞洲女演員': '亚洲女演员', '伴侶': '伴侣', '講師': '讲师',
+                '婆婆': '婆婆', '格鬥家': '格斗家', '女檢察官': '女检察官', '明星臉': '明星脸', '女主人、女老板': '女主人、女老板', '模特兒': '模特',
+                '秘書': '秘书', '美少女': '美少女', '新娘、年輕妻子': '新娘、年轻妻子', '姐姐': '姐姐', '車掌小姐': '车掌小姐',
+                '寡婦': '寡妇', '千金小姐': '千金小姐', '白人': '白人', '已婚婦女': '已婚妇女', '女醫生': '女医生', '各種職業': '各种职业',
+                '妓女': '妓女', '賽車女郎': '赛车女郎', '女大學生': '女大学生', '展場女孩': '展场女孩', '女教師': '女教师', '母親': '母亲',
+                '家教': '家教', '护士': '护士', '蕩婦': '荡妇', '黑人演員': '黑人演员', '女生': '女生', '女主播': '女主播',
+                '高中女生': '高中女生', '服務生': '服务生', '魔法少女': '魔法少女', '學生（其他）': '学生（其他）', '動畫人物': '动画人物', '遊戲的真人版': '游戏真人版',
+                '超級女英雄': '超级女英雄',
 
-            '角色扮演': '角色扮演', '制服': '制服', '女戰士': '女战士', '及膝襪': '及膝袜', '娃娃': '娃娃', '女忍者': '女忍者',
-            '女裝人妖': '女装人妖', '內衣': '內衣', '猥褻穿著': '猥亵穿着', '兔女郎': '兔女郎', '貓耳女': '猫耳女', '女祭司': '女祭司',
-            '泡泡襪': '泡泡袜', '緊身衣': '紧身衣', '裸體圍裙': '裸体围裙', '迷你裙警察': '迷你裙警察', '空中小姐': '空中小姐',
-            '連褲襪': '连裤袜', '身體意識': '身体意识', 'OL': 'OL', '和服・喪服': '和服・丧服', '體育服': '体育服', '内衣': '内衣',
-            '水手服': '水手服', '學校泳裝': '学校泳装', '旗袍': '旗袍', '女傭': '女佣', '迷你裙': '迷你裙', '校服': '校服',
-            '泳裝': '泳装', '眼鏡': '眼镜', '哥德蘿莉': '哥德萝莉', '和服・浴衣': '和服・浴衣',
+                '角色扮演': '角色扮演', '制服': '制服', '女戰士': '女战士', '及膝襪': '及膝袜', '娃娃': '娃娃', '女忍者': '女忍者',
+                '女裝人妖': '女装人妖', '內衣': '內衣', '猥褻穿著': '猥亵穿着', '兔女郎': '兔女郎', '貓耳女': '猫耳女', '女祭司': '女祭司',
+                '泡泡襪': '泡泡袜', '緊身衣': '紧身衣', '裸體圍裙': '裸体围裙', '迷你裙警察': '迷你裙警察', '空中小姐': '空中小姐',
+                '連褲襪': '连裤袜', '身體意識': '身体意识', 'OL': 'OL', '和服・喪服': '和服・丧服', '體育服': '体育服', '内衣': '内衣',
+                '水手服': '水手服', '學校泳裝': '学校泳装', '旗袍': '旗袍', '女傭': '女佣', '迷你裙': '迷你裙', '校服': '校服',
+                '泳裝': '泳装', '眼鏡': '眼镜', '哥德蘿莉': '哥德萝莉', '和服・浴衣': '和服・浴衣',
 
-            '超乳': '超乳', '肌肉': '肌肉', '乳房': '乳房', '嬌小的': '娇小的', '屁股': '屁股', '高': '高',
-            '變性者': '变性人', '無毛': '无毛', '胖女人': '胖女人', '苗條': '苗条', '孕婦': '孕妇', '成熟的女人': '成熟的女人',
-            '蘿莉塔': '萝莉塔', '貧乳・微乳': '贫乳・微乳', '巨乳': '巨乳',
+                '超乳': '超乳', '肌肉': '肌肉', '乳房': '乳房', '嬌小的': '娇小的', '屁股': '屁股', '高': '高',
+                '變性者': '变性人', '無毛': '无毛', '胖女人': '胖女人', '苗條': '苗条', '孕婦': '孕妇', '成熟的女人': '成熟的女人',
+                '蘿莉塔': '萝莉塔', '貧乳・微乳': '贫乳・微乳', '巨乳': '巨乳',
 
 
-            '顏面騎乘': '颜面骑乘', '食糞': '食粪', '足交': '足交', '母乳': '母乳', '手指插入': '手指插入', '按摩': '按摩',
-            '女上位': '女上位', '舔陰': '舔阴', '拳交': '拳交', '深喉': '深喉', '69': '69', '淫語': '淫语',
-            '潮吹': '潮吹', '乳交': '乳交', '排便': '排便', '飲尿': '饮尿', '口交': '口交', '濫交': '滥交',
-            '放尿': '放尿', '打手槍': '打手枪', '吞精': '吞精', '肛交': '肛交', '顏射': '颜射', '自慰': '自慰',
-            '顏射x': '颜射', '中出': '中出', '肛内中出': '肛内中出',
+                '顏面騎乘': '颜面骑乘', '食糞': '食粪', '足交': '足交', '母乳': '母乳', '手指插入': '手指插入', '按摩': '按摩',
+                '女上位': '女上位', '舔陰': '舔阴', '拳交': '拳交', '深喉': '深喉', '69': '69', '淫語': '淫语',
+                '潮吹': '潮吹', '乳交': '乳交', '排便': '排便', '飲尿': '饮尿', '口交': '口交', '濫交': '滥交',
+                '放尿': '放尿', '打手槍': '打手枪', '吞精': '吞精', '肛交': '肛交', '顏射': '颜射', '自慰': '自慰',
+                '顏射x': '颜射', '中出': '中出', '肛内中出': '肛内中出',
 
-            '立即口交': '立即口交', '女優按摩棒': '演员按摩棒', '子宮頸': '子宫颈', '催眠': '催眠', '乳液': '乳液', '羞恥': '羞耻',
-            '凌辱': '凌辱', '拘束': '拘束', '輪姦': '轮奸', '插入異物': '插入异物', '鴨嘴': '鸭嘴', '灌腸': '灌肠',
-            '監禁': '监禁', '紧缚': '紧缚', '強姦': '强奸', '藥物': '药物', '汽車性愛': '汽车性爱', 'SM': 'SM',
-            '糞便': '粪便', '玩具': '玩具', '跳蛋': '跳蛋', '緊縛': '紧缚', '按摩棒': '按摩棒', '多P': '多P',
-            '性愛': '性爱', '假陽具': '假阳具', '逆強姦': '逆强奸',
+                '立即口交': '立即口交', '女優按摩棒': '演员按摩棒', '子宮頸': '子宫颈', '催眠': '催眠', '乳液': '乳液', '羞恥': '羞耻',
+                '凌辱': '凌辱', '拘束': '拘束', '輪姦': '轮奸', '插入異物': '插入异物', '鴨嘴': '鸭嘴', '灌腸': '灌肠',
+                '監禁': '监禁', '紧缚': '紧缚', '強姦': '强奸', '藥物': '药物', '汽車性愛': '汽车性爱', 'SM': 'SM',
+                '糞便': '粪便', '玩具': '玩具', '跳蛋': '跳蛋', '緊縛': '紧缚', '按摩棒': '按摩棒', '多P': '多P',
+                '性愛': '性爱', '假陽具': '假阳具', '逆強姦': '逆强奸',
 
-            '合作作品': '合作作品', '恐怖': '恐怖', '給女性觀眾': '女性向', '教學': '教学', 'DMM專屬': 'DMM专属', 'R-15': 'R-15',
-            'R-18': 'R-18', '戲劇': '戏剧', '3D': '3D', '特效': '特效', '故事集': '故事集', '限時降價': '限时降价',
-            '複刻版': '复刻版', '戲劇x': '戏剧', '戀愛': '恋爱', '高畫質': 'xxx', '主觀視角': '主观视角', '介紹影片': '介绍影片',
-            '4小時以上作品': '4小时以上作品', '薄馬賽克': '薄马赛克', '經典': '经典', '首次亮相': '首次亮相', '數位馬賽克': '数位马赛克', '投稿': '投稿',
-            '纪录片': '纪录片', '國外進口': '国外进口', '第一人稱攝影': '第一人称摄影', '業餘': '业余', '局部特寫': '局部特写', '獨立製作': '独立制作',
-            'DMM獨家': 'DMM独家', '單體作品': '单体作品', '合集': '合集', '高清': 'xxx', '字幕': 'xxx', '天堂TV': '天堂TV',
-            'DVD多士爐': 'DVD多士炉', 'AV OPEN 2014 スーパーヘビー': 'AV OPEN 2014 S级', 'AV OPEN 2014 ヘビー級': 'AV OPEN 2014重量级', 'AV OPEN 2014 ミドル級': 'AV OPEN 2014中量级',
-            'AV OPEN 2015 マニア/フェチ部門': 'AV OPEN 2015 狂热者/恋物癖部门', 'AV OPEN 2015 熟女部門': 'AV OPEN 2015 熟女部门',
-            'AV OPEN 2015 企画部門': 'AV OPEN 2015 企画部门', 'AV OPEN 2015 乙女部門': 'AV OPEN 2015 少女部',
-            'AV OPEN 2015 素人部門': 'AV OPEN 2015 素人部门', 'AV OPEN 2015 SM/ハード部門': 'AV OPEN 2015 SM/硬件',
-            'AV OPEN 2015 女優部門': 'AV OPEN 2015 演员部门', 'AVOPEN2016人妻・熟女部門': 'AVOPEN2016人妻・熟女部门',
-            'AVOPEN2016企画部門': 'AVOPEN2016企画部', 'AVOPEN2016ハード部門': 'AVOPEN2016ハード部',
-            'AVOPEN2016マニア・フェチ部門': 'AVOPEN2016疯狂恋物科', 'AVOPEN2016乙女部門': 'AVOPEN2016少女部',
-            'AVOPEN2016女優部門': 'AVOPEN2016演员部', 'AVOPEN2016ドラマ・ドキュメンタリー部門': 'AVOPEN2016电视剧纪录部',
-            'AVOPEN2016素人部門': 'AVOPEN2016素人部', 'AVOPEN2016バラエティ部門': 'AVOPEN2016娱乐部',
-            'VR専用': 'VR専用', '堵嘴·喜劇': '堵嘴·喜剧', '幻想': '幻想', '性別轉型·女性化': '性别转型·女性化',
-            '為智能手機推薦垂直視頻': '为智能手机推荐垂直视频', '設置項目': '设置项目', '迷你係列': '迷你系列',
-            '體驗懺悔': '体验忏悔', '黑暗系統': '黑暗系统',
+                '合作作品': '合作作品', '恐怖': '恐怖', '給女性觀眾': '女性向', '教學': '教学', 'DMM專屬': 'DMM专属', 'R-15': 'R-15',
+                'R-18': 'R-18', '戲劇': '戏剧', '3D': '3D', '特效': '特效', '故事集': '故事集', '限時降價': '限时降价',
+                '複刻版': '复刻版', '戲劇x': '戏剧', '戀愛': '恋爱', '高畫質': 'xxx', '主觀視角': '主观视角', '介紹影片': '介绍影片',
+                '4小時以上作品': '4小时以上作品', '薄馬賽克': '薄马赛克', '經典': '经典', '首次亮相': '首次亮相', '數位馬賽克': '数位马赛克', '投稿': '投稿',
+                '纪录片': '纪录片', '國外進口': '国外进口', '第一人稱攝影': '第一人称摄影', '業餘': '业余', '局部特寫': '局部特写', '獨立製作': '独立制作',
+                'DMM獨家': 'DMM独家', '單體作品': '单体作品', '合集': '合集', '高清': 'xxx', '字幕': 'xxx', '天堂TV': '天堂TV',
+                'DVD多士爐': 'DVD多士炉', 'AV OPEN 2014 スーパーヘビー': 'AV OPEN 2014 S级', 'AV OPEN 2014 ヘビー級': 'AV OPEN 2014重量级', 'AV OPEN 2014 ミドル級': 'AV OPEN 2014中量级',
+                'AV OPEN 2015 マニア/フェチ部門': 'AV OPEN 2015 狂热者/恋物癖部门', 'AV OPEN 2015 熟女部門': 'AV OPEN 2015 熟女部门',
+                'AV OPEN 2015 企画部門': 'AV OPEN 2015 企画部门', 'AV OPEN 2015 乙女部門': 'AV OPEN 2015 少女部',
+                'AV OPEN 2015 素人部門': 'AV OPEN 2015 素人部门', 'AV OPEN 2015 SM/ハード部門': 'AV OPEN 2015 SM/硬件',
+                'AV OPEN 2015 女優部門': 'AV OPEN 2015 演员部门', 'AVOPEN2016人妻・熟女部門': 'AVOPEN2016人妻・熟女部门',
+                'AVOPEN2016企画部門': 'AVOPEN2016企画部', 'AVOPEN2016ハード部門': 'AVOPEN2016ハード部',
+                'AVOPEN2016マニア・フェチ部門': 'AVOPEN2016疯狂恋物科', 'AVOPEN2016乙女部門': 'AVOPEN2016少女部',
+                'AVOPEN2016女優部門': 'AVOPEN2016演员部', 'AVOPEN2016ドラマ・ドキュメンタリー部門': 'AVOPEN2016电视剧纪录部',
+                'AVOPEN2016素人部門': 'AVOPEN2016素人部', 'AVOPEN2016バラエティ部門': 'AVOPEN2016娱乐部',
+                'VR専用': 'VR専用', '堵嘴·喜劇': '堵嘴·喜剧', '幻想': '幻想', '性別轉型·女性化': '性别转型·女性化',
+                '為智能手機推薦垂直視頻': '为智能手机推荐垂直视频', '設置項目': '设置项目', '迷你係列': '迷你系列',
+                '體驗懺悔': '体验忏悔', '黑暗系統': '黑暗系统',
 
-            'オナサポ': '手淫', 'アスリート': '运动员', '覆面・マスク': '蒙面具', 'ハイクオリティVR': '高品质VR', 'ヘルス・ソープ': '保健香皂', 'ホテル': '旅馆',
-            'アクメ・オーガズム': '绝顶高潮', '花嫁': '花嫁', 'デート': '约会', '軟体': '软体', '娘・養女': '养女', 'スパンキング': '打屁股',
-            'スワッピング・夫婦交換': '夫妇交换', '部下・同僚': '部下・同僚', '旅行': '旅行', '胸チラ': '露胸', 'バック': '后卫', 'エロス': '爱的欲望',
-            '男の潮吹き': '男人高潮', '女上司': '女上司', 'セクシー': '性感美女', '受付嬢': '接待小姐', 'ノーブラ': '不穿胸罩',
-            '白目・失神': '白眼失神', 'M女': 'M女', '女王様': '女王大人', 'ノーパン': '不穿内裤', 'セレブ': '名流', '病院・クリニック': '医院诊所',
-            '面接': '面试', 'お風呂': '浴室', '叔母さん': '叔母阿姨', '罵倒': '骂倒', 'お爺ちゃん': '爷爷', '逆レイプ': '强奸小姨子',
-            'ディルド': 'ディルド', 'ヨガ': '瑜伽', '飲み会・合コン': '酒会、联谊会', '部活・マネージャー': '社团经理', 'お婆ちゃん': '外婆', 'ビジネススーツ': '商务套装',
-            'チアガール': '啦啦队女孩', 'ママ友': '妈妈的朋友', 'エマニエル': '片商Emanieru熟女塾', '妄想族': '妄想族', '蝋燭': '蜡烛', '鼻フック': '鼻钩儿',
-            '放置': '放置', 'サンプル動画': '范例影片', 'サイコ・スリラー': '心理惊悚片', 'ラブコメ': '爱情喜剧', 'オタク': '御宅族',}
+                'オナサポ': '手淫', 'アスリート': '运动员', '覆面・マスク': '蒙面具', 'ハイクオリティVR': '高品质VR', 'ヘルス・ソープ': '保健香皂', 'ホテル': '旅馆',
+                'アクメ・オーガズム': '绝顶高潮', '花嫁': '花嫁', 'デート': '约会', '軟体': '软体', '娘・養女': '养女', 'スパンキング': '打屁股',
+                'スワッピング・夫婦交換': '夫妇交换', '部下・同僚': '部下・同僚', '旅行': '旅行', '胸チラ': '露胸', 'バック': '后卫', 'エロス': '爱的欲望',
+                '男の潮吹き': '男人高潮', '女上司': '女上司', 'セクシー': '性感美女', '受付嬢': '接待小姐', 'ノーブラ': '不穿胸罩',
+                '白目・失神': '白眼失神', 'M女': 'M女', '女王様': '女王大人', 'ノーパン': '不穿内裤', 'セレブ': '名流', '病院・クリニック': '医院诊所',
+                '面接': '面试', 'お風呂': '浴室', '叔母さん': '叔母阿姨', '罵倒': '骂倒', 'お爺ちゃん': '爷爷', '逆レイプ': '强奸小姨子',
+                'ディルド': 'ディルド', 'ヨガ': '瑜伽', '飲み会・合コン': '酒会、联谊会', '部活・マネージャー': '社团经理', 'お婆ちゃん': '外婆', 'ビジネススーツ': '商务套装',
+                'チアガール': '啦啦队女孩', 'ママ友': '妈妈的朋友', 'エマニエル': '片商Emanieru熟女塾', '妄想族': '妄想族', '蝋燭': '蜡烛', '鼻フック': '鼻钩儿',
+                '放置': '放置', 'サンプル動画': '范例影片', 'サイコ・スリラー': '心理惊悚片', 'ラブコメ': '爱情喜剧', 'オタク': '御宅族',}
 
-# 用户输入“回车”就继续选择文件夹整理
-input_start_key = ''
-while input_start_key == '':
-    # 用户选择需要整理的文件夹
-    print('请选择要整理的文件夹：', end='')
-    root_choose = choose_directory()
+
     print(root_choose)
     # 在txt中记录一下用户的这次操作
     record_start(root_choose)
@@ -362,6 +360,7 @@ while input_start_key == '':
                     list_jav_videos.append(jav_struct)
                 else:
                     print('>>无法处理：' + root.replace(root_choose, '') + sep + file_raw)
+
         # 判定影片所在文件夹是否是独立文件夹
         if dict_car_pref:  # 这一层文件夹下有jav
             if len(dict_car_pref) > 1 or num_videos_include > len(list_jav_videos) or exist_extra_folders(dirs):
@@ -862,26 +861,26 @@ while input_start_key == '':
                 record_fail('    >第' + str(num_fail) + '个失败！发生错误，如一直在该影片报错请截图并联系作者：' + path_relative + '\n' + format_exc() + '\n')
                 continue   # 【退出对该jav的整理】
 
-    # 完结撒花
-    print('\n当前文件夹完成，', end='')
-    if num_fail > 0:
-        print('失败', num_fail, '个!  ', root_choose, '\n')
-        line = -1
-        with open('【记得清理它】失败记录.txt', 'r', encoding="utf-8") as f:
-            content = list(f)
-        while 1:
-            if content[line].startswith('已'):
-                break
-            line -= 1
-        for i in range(line+1, 0):
-            print(content[i], end='')
-        print('\n“【记得清理它】失败记录.txt”已记录错误\n')
-    else:
-        print(' “0”失败！  ', root_choose, '\n')
-    if num_warn > 0:
-        print('“警告信息.txt”还记录了', num_warn, '个警告信息！\n')
-    # os.system('pause')
-    #print(root_choose)
-    print(clean(root_choose)) #clean  folder size less than 116MB
+        # 完结撒花
+        print('\n当前文件夹完成，', end='')
+        if num_fail > 0:
+            print('失败', num_fail, '个!  ', root_choose, '\n')
+            line = -1
+            with open('【记得清理它】失败记录.txt', 'r', encoding="utf-8") as f:
+                content = list(f)
+            while 1:
+                if content[line].startswith('已'):
+                    break
+                line -= 1
+            for i in range(line+1, 0):
+                print(content[i], end='')
+            print('\n“【记得清理它】失败记录.txt”已记录错误\n')
+        else:
+            print(' “0”失败！  ', root_choose, '\n')
+        if num_warn > 0:
+            print('“警告信息.txt”还记录了', num_warn, '个警告信息！\n')
+        # os.system('pause')
+        #print(root_choose)
+        
 
-    input_start_key = input('回车继续选择文件-夹整理：')
+        

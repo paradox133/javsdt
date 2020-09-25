@@ -3,8 +3,8 @@ from javbus_youma_google import process_youma
 from functions_preparation import choose_directory
 
 
-#config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 google.ini' #my drive
-config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 migration.ini' #my migration
+config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 google.ini' #my drive
+#config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 migration.ini' #my migration
 #config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 local.ini' #my drive
 
 

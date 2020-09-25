@@ -1,0 +1,5 @@
+
+from functions_dbcheck import process_sql_table_column
+
+table_name="mydrive_trashed_file"
+process_sql_table_column(table_name)

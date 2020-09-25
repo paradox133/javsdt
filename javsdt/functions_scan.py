@@ -6,19 +6,37 @@ from functions_preparation import JavFile
 from functions_dbcheck import pure_check_if_ID_exist
 import pandas as pd
 from pandas import DataFrame
+import numpy as np
 #read txt row seperated by first and last comma
 
 def read_to_db(txt_file):
-    my_file = open(txt_file)
-    text = [[k.split()[0]]+[''.join(k.split()[1:-2])]+[k.split()[-1]] for k in my_file.readlines()]
-    print(text)
+    my_file = open(txt_file, encoding="utf-8")
+    arr=np.array([]).reshape(0,3)
+    for k in my_file.readlines():
+        # print (k)
+        string1=str(k.split(",")[0])
+        len1=len(string1)
+        string3=str(k.split(",")[-1])
+        len3=len(string3)
+        stringfull=str(k)
+        fulllen=len(stringfull)
+        posstart=len1+1
+        posend=fulllen-1-len3
+        string2=str(k)[posstart:posend]
+        rowtext=[string1,string2,string3]
+        # print (k.split(","))
+        # print(k.split(",")[1])
+        # print(k.split(",")[-2])
+        # text = [k.split(",")[0]]+[''.join(k.split(",")[1:-2])]+[k.split(",")[-1]] 
+        newarr=np.array(rowtext)
+        arr=np.vstack((arr,newarr))
+    text=arr
     my_file.close()
     df= pd.DataFrame(text)
     # next line is optional, just if you want named columns
     df.columns = ['file_ID','file_path','size']
-    print(df)
+    # print(df)
     return df
-
 
 
 # get folder size

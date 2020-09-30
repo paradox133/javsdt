@@ -1,0 +1,96 @@
+start
+有码 Temporary move is started
+orginal_choose: G:\My Drive\Video\Torrent_F\有码
+root_to_compare: V:\Torrent\Format\有码
+root_to_remove: V:\Torrent\ToRemove
+root_to_remove1: V:\Torrent\ToRemove1
+1 : MMPP-002 (7.05, 'GB') > (7.05, 'GB')
+V:\Torrent\Format\有码\MMPP\MMPP-002 is removed to V:\Torrent\ToRemove\MMPP-002
+2 : VGD-210 (5.48, 'GB') > (5.48, 'GB')
+V:\Torrent\Format\有码\VGD\VGD-210 is removed to V:\Torrent\ToRemove\VGD-210
+3 : CADV-783 (19.9, 'GB') > (19.9, 'GB')
+V:\Torrent\Format\有码\CADV\CADV-783 is removed to V:\Torrent\ToRemove\CADV-783
+4 : AUKS-118 (7.75, 'GB') > (7.75, 'GB')
+V:\Torrent\Format\有码\AUKS\AUKS-118 is removed to V:\Torrent\ToRemove\AUKS-118
+5 : KTKZ-074 (5.81, 'GB') > (5.81, 'GB')
+V:\Torrent\Format\有码\KTKZ\KTKZ-074 is removed to V:\Torrent\ToRemove\KTKZ-074
+6 : MACB-019 (5.03, 'GB') > (5.03, 'GB')
+V:\Torrent\Format\有码\MACB\MACB-019 is removed to V:\Torrent\ToRemove\MACB-019
+7 : CHN-085 (5.84, 'GB') > (5.84, 'GB')
+V:\Torrent\Format\有码\CHN\CHN-085 is removed to V:\Torrent\ToRemove\CHN-085
+8 : SORA-268 (5.61, 'GB') > (5.61, 'GB')
+V:\Torrent\Format\有码\SORA\SORA-268 is removed to V:\Torrent\ToRemove\SORA-268
+9 : SHMO-162 (4.34, 'GB') > (4.34, 'GB')
+V:\Torrent\Format\有码\SHMO\SHMO-162 is removed to V:\Torrent\ToRemove\SHMO-162
+10 : MDUD-444 (5.87, 'GB') > (5.87, 'GB')
+V:\Torrent\Format\有码\MDUD\MDUD-444 is removed to V:\Torrent\ToRemove\MDUD-444
+11 : SHN-060 (6.57, 'GB') > (6.57, 'GB')
+V:\Torrent\Format\有码\SHN\SHN-060 is removed to V:\Torrent\ToRemove\SHN-060
+12 : DAVK-059 (0, 'B') < (5.01, 'GB')
+13 : SDJS-085 (5.88, 'GB') > (5.88, 'GB')
+V:\Torrent\Format\有码\SDJS\SDJS-085 is removed to V:\Torrent\ToRemove\SDJS-085
+14 : SDAB-144 (5.73, 'GB') > (5.73, 'GB')
+V:\Torrent\Format\有码\SDAB\SDAB-144 is removed to V:\Torrent\ToRemove\SDAB-144
+15 : VNDS-3348 (5.22, 'GB') > (5.22, 'GB')
+V:\Torrent\Format\有码\VNDS\VNDS-3348 is removed to V:\Torrent\ToRemove\VNDS-3348
+16 : SHM-027 (4.12, 'GB') > (4.12, 'GB')
+V:\Torrent\Format\有码\SHM\SHM-027 is removed to V:\Torrent\ToRemove\SHM-027
+17 : NEM-043 (5.05, 'GB') > (5.05, 'GB')
+V:\Torrent\Format\有码\NEM\NEM-043 is removed to V:\Torrent\ToRemove\NEM-043
+18 : YTR-147 (10.04, 'GB') > (10.04, 'GB')
+V:\Torrent\Format\有码\YTR\YTR-147 is removed to V:\Torrent\ToRemove\YTR-147
+19 : FF-030 (2.33, 'GB') > (2.33, 'GB')
+V:\Torrent\Format\有码\FF\FF-030 is removed to V:\Torrent\ToRemove\FF-030
+20 : SOAV-069 (4.19, 'GB') > (4.19, 'GB')
+V:\Torrent\Format\有码\SOAV\SOAV-069 is removed to V:\Torrent\ToRemove\SOAV-069
+21 : XRW-923 (6.29, 'GB') > (6.29, 'GB')
+V:\Torrent\Format\有码\XRW\XRW-923 is removed to V:\Torrent\ToRemove\XRW-923
+22 : HOIZ-008 (2.55, 'GB') > (2.55, 'GB')
+V:\Torrent\Format\有码\HOIZ\HOIZ-008 is removed to V:\Torrent\ToRemove\HOIZ-008
+23 : DGCESD-928 (6.37, 'GB') > (6.37, 'GB')
+V:\Torrent\Format\有码\DGCESD\DGCESD-928 is removed to V:\Torrent\ToRemove\DGCESD-928
+24 : SDAM-054 (7.56, 'GB') > (7.56, 'GB')
+V:\Torrent\Format\有码\SDAM\SDAM-054 is removed to V:\Torrent\ToRemove\SDAM-054
+25 : KTKY-051 (10.05, 'GB') > (10.05, 'GB')
+V:\Torrent\Format\有码\KTKY\KTKY-051 is removed to V:\Torrent\ToRemove\KTKY-051
+26 : KIRE-001 (5.08, 'GB') > (5.08, 'GB')
+V:\Torrent\Format\有码\KIRE\KIRE-001 is removed to V:\Torrent\ToRemove\KIRE-001
+有码 Temporary move is done
+有码 Permanent remove is started
+root_to_remove: V:\Torrent\ToRemove
+1 : AUKS-118 is removed from V:\Torrent\ToRemove
+2 : CADV-783 is removed from V:\Torrent\ToRemove
+3 : CHN-085 is removed from V:\Torrent\ToRemove
+4 : DGCESD-928 is removed from V:\Torrent\ToRemove
+5 : FF-030 is removed from V:\Torrent\ToRemove
+6 : HOIZ-008 is removed from V:\Torrent\ToRemove
+7 : KIRE-001 is removed from V:\Torrent\ToRemove
+8 : KTKY-051 is removed from V:\Torrent\ToRemove
+9 : KTKZ-074 is removed from V:\Torrent\ToRemove
+10 : MACB-019 is removed from V:\Torrent\ToRemove
+11 : MDUD-444 is removed from V:\Torrent\ToRemove
+12 : MMPP-002 is removed from V:\Torrent\ToRemove
+13 : NEM-043 is removed from V:\Torrent\ToRemove
+14 : SDAB-144 is removed from V:\Torrent\ToRemove
+15 : SDAM-054 is removed from V:\Torrent\ToRemove
+16 : SDJS-085 is removed from V:\Torrent\ToRemove
+17 : SHM-027 is removed from V:\Torrent\ToRemove
+18 : SHMO-162 is removed from V:\Torrent\ToRemove
+19 : SHN-060 is removed from V:\Torrent\ToRemove
+20 : SOAV-069 is removed from V:\Torrent\ToRemove
+21 : SORA-268 is removed from V:\Torrent\ToRemove
+22 : VGD-210 is removed from V:\Torrent\ToRemove
+23 : VNDS-3348 is removed from V:\Torrent\ToRemove
+24 : XRW-923 is removed from V:\Torrent\ToRemove
+25 : YTR-147 is removed from V:\Torrent\ToRemove
+有码 Permanent remove is done
+素人 Temporary move is started
+orginal_choose: G:\My Drive\Video\Torrent_F\素人
+root_to_compare: V:\Torrent\Format\素人
+root_to_remove: V:\Torrent\ToRemove
+root_to_remove1: V:\Torrent\ToRemove1
+素人 Temporary move is done
+素人 Permanent remove is started
+root_to_remove: V:\Torrent\ToRemove
+素人 Permanent remove is done
+End

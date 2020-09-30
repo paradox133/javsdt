@@ -32,8 +32,12 @@ def format_bytes(size):
 
 #create level one folder name list
 def list_creation(path):
-    scope= next(os.walk(path))[1]
-    return scope
+    try:
+        scope= next(os.walk(path))[1]
+        return scope
+    except StopIteration:
+        pass
+    
 
 # move_folder
 def move_folder(old_folder_path, new_folder_path):
@@ -67,15 +71,11 @@ def process_folder(folder_name):
     root_to_compare1+=folder_name
     print("root_to_compare:", root_to_compare1)
 
-    
-
     root_to_remove="V:\Torrent\ToRemove"
     print("root_to_remove:", root_to_remove)
 
     root_to_remove1="V:\Torrent\ToRemove1"
     print("root_to_remove1:", root_to_remove1)
-
-
 
     count=0
     for i in same_list_creation(root_choose1,root_to_compare1):

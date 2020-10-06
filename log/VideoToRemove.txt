@@ -4,93 +4,455 @@ orginal_choose: G:\My Drive\Video\Torrent_F\有码
 root_to_compare: V:\Torrent\Format\有码
 root_to_remove: V:\Torrent\ToRemove
 root_to_remove1: V:\Torrent\ToRemove1
-1 : MMPP-002 (7.05, 'GB') > (7.05, 'GB')
-V:\Torrent\Format\有码\MMPP\MMPP-002 is removed to V:\Torrent\ToRemove\MMPP-002
-2 : VGD-210 (5.48, 'GB') > (5.48, 'GB')
-V:\Torrent\Format\有码\VGD\VGD-210 is removed to V:\Torrent\ToRemove\VGD-210
-3 : CADV-783 (19.9, 'GB') > (19.9, 'GB')
-V:\Torrent\Format\有码\CADV\CADV-783 is removed to V:\Torrent\ToRemove\CADV-783
-4 : AUKS-118 (7.75, 'GB') > (7.75, 'GB')
-V:\Torrent\Format\有码\AUKS\AUKS-118 is removed to V:\Torrent\ToRemove\AUKS-118
-5 : KTKZ-074 (5.81, 'GB') > (5.81, 'GB')
-V:\Torrent\Format\有码\KTKZ\KTKZ-074 is removed to V:\Torrent\ToRemove\KTKZ-074
-6 : MACB-019 (5.03, 'GB') > (5.03, 'GB')
-V:\Torrent\Format\有码\MACB\MACB-019 is removed to V:\Torrent\ToRemove\MACB-019
-7 : CHN-085 (5.84, 'GB') > (5.84, 'GB')
-V:\Torrent\Format\有码\CHN\CHN-085 is removed to V:\Torrent\ToRemove\CHN-085
-8 : SORA-268 (5.61, 'GB') > (5.61, 'GB')
-V:\Torrent\Format\有码\SORA\SORA-268 is removed to V:\Torrent\ToRemove\SORA-268
-9 : SHMO-162 (4.34, 'GB') > (4.34, 'GB')
-V:\Torrent\Format\有码\SHMO\SHMO-162 is removed to V:\Torrent\ToRemove\SHMO-162
-10 : MDUD-444 (5.87, 'GB') > (5.87, 'GB')
-V:\Torrent\Format\有码\MDUD\MDUD-444 is removed to V:\Torrent\ToRemove\MDUD-444
-11 : SHN-060 (6.57, 'GB') > (6.57, 'GB')
-V:\Torrent\Format\有码\SHN\SHN-060 is removed to V:\Torrent\ToRemove\SHN-060
-12 : DAVK-059 (0, 'B') < (5.01, 'GB')
-13 : SDJS-085 (5.88, 'GB') > (5.88, 'GB')
-V:\Torrent\Format\有码\SDJS\SDJS-085 is removed to V:\Torrent\ToRemove\SDJS-085
-14 : SDAB-144 (5.73, 'GB') > (5.73, 'GB')
-V:\Torrent\Format\有码\SDAB\SDAB-144 is removed to V:\Torrent\ToRemove\SDAB-144
-15 : VNDS-3348 (5.22, 'GB') > (5.22, 'GB')
-V:\Torrent\Format\有码\VNDS\VNDS-3348 is removed to V:\Torrent\ToRemove\VNDS-3348
-16 : SHM-027 (4.12, 'GB') > (4.12, 'GB')
-V:\Torrent\Format\有码\SHM\SHM-027 is removed to V:\Torrent\ToRemove\SHM-027
-17 : NEM-043 (5.05, 'GB') > (5.05, 'GB')
-V:\Torrent\Format\有码\NEM\NEM-043 is removed to V:\Torrent\ToRemove\NEM-043
-18 : YTR-147 (10.04, 'GB') > (10.04, 'GB')
-V:\Torrent\Format\有码\YTR\YTR-147 is removed to V:\Torrent\ToRemove\YTR-147
-19 : FF-030 (2.33, 'GB') > (2.33, 'GB')
-V:\Torrent\Format\有码\FF\FF-030 is removed to V:\Torrent\ToRemove\FF-030
-20 : SOAV-069 (4.19, 'GB') > (4.19, 'GB')
-V:\Torrent\Format\有码\SOAV\SOAV-069 is removed to V:\Torrent\ToRemove\SOAV-069
-21 : XRW-923 (6.29, 'GB') > (6.29, 'GB')
-V:\Torrent\Format\有码\XRW\XRW-923 is removed to V:\Torrent\ToRemove\XRW-923
-22 : HOIZ-008 (2.55, 'GB') > (2.55, 'GB')
-V:\Torrent\Format\有码\HOIZ\HOIZ-008 is removed to V:\Torrent\ToRemove\HOIZ-008
-23 : DGCESD-928 (6.37, 'GB') > (6.37, 'GB')
-V:\Torrent\Format\有码\DGCESD\DGCESD-928 is removed to V:\Torrent\ToRemove\DGCESD-928
-24 : SDAM-054 (7.56, 'GB') > (7.56, 'GB')
-V:\Torrent\Format\有码\SDAM\SDAM-054 is removed to V:\Torrent\ToRemove\SDAM-054
-25 : KTKY-051 (10.05, 'GB') > (10.05, 'GB')
-V:\Torrent\Format\有码\KTKY\KTKY-051 is removed to V:\Torrent\ToRemove\KTKY-051
-26 : KIRE-001 (5.08, 'GB') > (5.08, 'GB')
-V:\Torrent\Format\有码\KIRE\KIRE-001 is removed to V:\Torrent\ToRemove\KIRE-001
+1 : GAS-479 (5.75, 'GB') > (5.75, 'GB')
+V:\Torrent\Format\有码\GAS\GAS-479 is removed to V:\Torrent\ToRemove\GAS-479
+2 : EMOT-012 (5.02, 'GB') > (5.02, 'GB')
+V:\Torrent\Format\有码\EMOT\EMOT-012 is removed to V:\Torrent\ToRemove\EMOT-012
+3 : DKWT-002 (6.79, 'GB') > (6.79, 'GB')
+V:\Torrent\Format\有码\DKWT\DKWT-002 is removed to V:\Torrent\ToRemove\DKWT-002
+4 : SGSR-264 (10.4, 'GB') > (10.4, 'GB')
+V:\Torrent\Format\有码\SGSR\SGSR-264 is removed to V:\Torrent\ToRemove\SGSR-264
+5 : RVG-122 (4.38, 'GB') > (4.38, 'GB')
+V:\Torrent\Format\有码\RVG\RVG-122 is removed to V:\Torrent\ToRemove\RVG-122
+6 : DBER-081 (5.48, 'GB') > (5.48, 'GB')
+V:\Torrent\Format\有码\DBER\DBER-081 is removed to V:\Torrent\ToRemove\DBER-081
+7 : DBER-082 (6.12, 'GB') > (6.12, 'GB')
+V:\Torrent\Format\有码\DBER\DBER-082 is removed to V:\Torrent\ToRemove\DBER-082
+8 : NGOD-133 (5.27, 'GB') > (5.27, 'GB')
+V:\Torrent\Format\有码\NGOD\NGOD-133 is removed to V:\Torrent\ToRemove\NGOD-133
+9 : C-2573 (5.03, 'GB') > (5.03, 'GB')
+V:\Torrent\Format\有码\C\C-2573 is removed to V:\Torrent\ToRemove\C-2573
+10 : SSPD-164 (5.0, 'GB') > (5.0, 'GB')
+V:\Torrent\Format\有码\SSPD\SSPD-164 is removed to V:\Torrent\ToRemove\SSPD-164
+11 : JJDA-010 (5.0, 'GB') > (5.0, 'GB')
+V:\Torrent\Format\有码\JJDA\JJDA-010 is removed to V:\Torrent\ToRemove\JJDA-010
+12 : DTT-066 (3.87, 'GB') > (3.87, 'GB')
+V:\Torrent\Format\有码\DTT\DTT-066 is removed to V:\Torrent\ToRemove\DTT-066
+13 : OKB-093 (4.04, 'GB') > (4.04, 'GB')
+V:\Torrent\Format\有码\OKB\OKB-093 is removed to V:\Torrent\ToRemove\OKB-093
+14 : YAKO-016 (7.02, 'GB') > (7.02, 'GB')
+V:\Torrent\Format\有码\YAKO\YAKO-016 is removed to V:\Torrent\ToRemove\YAKO-016
+15 : BANK-003 (5.72, 'GB') > (5.72, 'GB')
+V:\Torrent\Format\有码\BANK\BANK-003 is removed to V:\Torrent\ToRemove\BANK-003
+16 : GONE-014 (5.73, 'GB') > (5.73, 'GB')
+V:\Torrent\Format\有码\GONE\GONE-014 is removed to V:\Torrent\ToRemove\GONE-014
+17 : RCTD-354 (5.38, 'GB') > (5.38, 'GB')
+V:\Torrent\Format\有码\RCTD\RCTD-354 is removed to V:\Torrent\ToRemove\RCTD-354
+18 : VPC-002 (10.86, 'GB') > (10.86, 'GB')
+V:\Torrent\Format\有码\VPC\VPC-002 is removed to V:\Torrent\ToRemove\VPC-002
+19 : NACR-356 (5.04, 'GB') > (5.04, 'GB')
+V:\Torrent\Format\有码\NACR\NACR-356 is removed to V:\Torrent\ToRemove\NACR-356
+20 : NACR-358 (5.1, 'GB') > (5.1, 'GB')
+V:\Torrent\Format\有码\NACR\NACR-358 is removed to V:\Torrent\ToRemove\NACR-358
+21 : NACR-357 (5.03, 'GB') > (5.03, 'GB')
+V:\Torrent\Format\有码\NACR\NACR-357 is removed to V:\Torrent\ToRemove\NACR-357
+22 : NACR-359 (5.04, 'GB') > (5.04, 'GB')
+V:\Torrent\Format\有码\NACR\NACR-359 is removed to V:\Torrent\ToRemove\NACR-359
+23 : NACR-355 (5.17, 'GB') > (5.17, 'GB')
+V:\Torrent\Format\有码\NACR\NACR-355 is removed to V:\Torrent\ToRemove\NACR-355
+24 : SOUD-005 (4.48, 'GB') > (4.48, 'GB')
+V:\Torrent\Format\有码\SOUD\SOUD-005 is removed to V:\Torrent\ToRemove\SOUD-005
+25 : ONEZ-256 (4.97, 'GB') > (4.97, 'GB')
+V:\Torrent\Format\有码\ONEZ\ONEZ-256 is removed to V:\Torrent\ToRemove\ONEZ-256
+26 : ONEZ-259 (5.01, 'GB') > (5.01, 'GB')
+V:\Torrent\Format\有码\ONEZ\ONEZ-259 is removed to V:\Torrent\ToRemove\ONEZ-259
+27 : ONEZ-258 (5.01, 'GB') > (5.01, 'GB')
+V:\Torrent\Format\有码\ONEZ\ONEZ-258 is removed to V:\Torrent\ToRemove\ONEZ-258
+28 : ONEZ-242 (5.03, 'GB') > (5.03, 'GB')
+V:\Torrent\Format\有码\ONEZ\ONEZ-242 is removed to V:\Torrent\ToRemove\ONEZ-242
+29 : ONEZ-257 (5.13, 'GB') > (5.13, 'GB')
+V:\Torrent\Format\有码\ONEZ\ONEZ-257 is removed to V:\Torrent\ToRemove\ONEZ-257
+30 : CLOT-013 (5.02, 'GB') > (5.02, 'GB')
+V:\Torrent\Format\有码\CLOT\CLOT-013 is removed to V:\Torrent\ToRemove\CLOT-013
+31 : ATID-440 (4.94, 'GB') > (4.94, 'GB')
+V:\Torrent\Format\有码\ATID\ATID-440 is removed to V:\Torrent\ToRemove\ATID-440
+32 : ATID-443 (5.19, 'GB') > (5.19, 'GB')
+V:\Torrent\Format\有码\ATID\ATID-443 is removed to V:\Torrent\ToRemove\ATID-443
+33 : ATID-444 (6.06, 'GB') > (6.06, 'GB')
+V:\Torrent\Format\有码\ATID\ATID-444 is removed to V:\Torrent\ToRemove\ATID-444
+34 : MIHA-049 (1.23, 'GB') > (1.23, 'GB')
+V:\Torrent\Format\有码\MIHA\MIHA-049 is removed to V:\Torrent\ToRemove\MIHA-049
+35 : MIHA-047 (1.68, 'GB') > (1.68, 'GB')
+V:\Torrent\Format\有码\MIHA\MIHA-047 is removed to V:\Torrent\ToRemove\MIHA-047
+36 : MIHA-048 (1.21, 'GB') > (1.21, 'GB')
+V:\Torrent\Format\有码\MIHA\MIHA-048 is removed to V:\Torrent\ToRemove\MIHA-048
+37 : AMBS-063 (10.24, 'GB') > (10.24, 'GB')
+V:\Torrent\Format\有码\AMBS\AMBS-063 is removed to V:\Torrent\ToRemove\AMBS-063
+38 : OBA-409 (5.2, 'GB') > (5.2, 'GB')
+V:\Torrent\Format\有码\OBA\OBA-409 is removed to V:\Torrent\ToRemove\OBA-409
+39 : ITSR-084 (2.32, 'GB') > (2.32, 'GB')
+V:\Torrent\Format\有码\ITSR\ITSR-084 is removed to V:\Torrent\ToRemove\ITSR-084
+40 : SABA-648 (14.11, 'GB') > (14.11, 'GB')
+V:\Torrent\Format\有码\SABA\SABA-648 is removed to V:\Torrent\ToRemove\SABA-648
+41 : MGMQ-057 (4.96, 'GB') > (4.96, 'GB')
+V:\Torrent\Format\有码\MGMQ\MGMQ-057 is removed to V:\Torrent\ToRemove\MGMQ-057
+42 : OKAX-663 (4.59, 'GB') > (4.59, 'GB')
+V:\Torrent\Format\有码\OKAX\OKAX-663 is removed to V:\Torrent\ToRemove\OKAX-663
+43 : OKAX-661 (4.57, 'GB') > (4.57, 'GB')
+V:\Torrent\Format\有码\OKAX\OKAX-661 is removed to V:\Torrent\ToRemove\OKAX-661
+44 : ZMAR-027 (10.21, 'GB') > (10.21, 'GB')
+V:\Torrent\Format\有码\ZMAR\ZMAR-027 is removed to V:\Torrent\ToRemove\ZMAR-027
+45 : ZMAR-026 (10.4, 'GB') > (10.4, 'GB')
+V:\Torrent\Format\有码\ZMAR\ZMAR-026 is removed to V:\Torrent\ToRemove\ZMAR-026
+46 : BDSR-427 (4.58, 'GB') > (4.58, 'GB')
+V:\Torrent\Format\有码\BDSR\BDSR-427 is removed to V:\Torrent\ToRemove\BDSR-427
+47 : BDSR-428 (4.58, 'GB') > (4.58, 'GB')
+V:\Torrent\Format\有码\BDSR\BDSR-428 is removed to V:\Torrent\ToRemove\BDSR-428
+48 : SQIM-002 (5.08, 'GB') > (5.08, 'GB')
+V:\Torrent\Format\有码\SQIM\SQIM-002 is removed to V:\Torrent\ToRemove\SQIM-002
+49 : ABW-015 (6.68, 'GB') > (6.68, 'GB')
+V:\Torrent\Format\有码\ABW\ABW-015 is removed to V:\Torrent\ToRemove\ABW-015
+50 : ABW-016 (4.74, 'GB') > (4.74, 'GB')
+V:\Torrent\Format\有码\ABW\ABW-016 is removed to V:\Torrent\ToRemove\ABW-016
+51 : BBAN-296 (5.91, 'GB') > (5.91, 'GB')
+V:\Torrent\Format\有码\BBAN\BBAN-296 is removed to V:\Torrent\ToRemove\BBAN-296
+52 : BBAN-297 (6.41, 'GB') > (6.41, 'GB')
+V:\Torrent\Format\有码\BBAN\BBAN-297 is removed to V:\Torrent\ToRemove\BBAN-297
+53 : HODV-21517 (5.84, 'GB') > (5.84, 'GB')
+V:\Torrent\Format\有码\HODV\HODV-21517 is removed to V:\Torrent\ToRemove\HODV-21517
+54 : HODV-21518 (5.25, 'GB') > (5.25, 'GB')
+V:\Torrent\Format\有码\HODV\HODV-21518 is removed to V:\Torrent\ToRemove\HODV-21518
+55 : HODV-21514 (5.68, 'GB') > (5.68, 'GB')
+V:\Torrent\Format\有码\HODV\HODV-21514 is removed to V:\Torrent\ToRemove\HODV-21514
+56 : HODV-21516 (5.57, 'GB') > (5.57, 'GB')
+V:\Torrent\Format\有码\HODV\HODV-21516 is removed to V:\Torrent\ToRemove\HODV-21516
+57 : HODV-21515 (6.47, 'GB') > (6.47, 'GB')
+V:\Torrent\Format\有码\HODV\HODV-21515 is removed to V:\Torrent\ToRemove\HODV-21515
+58 : FIV-070 (10.39, 'GB') > (10.39, 'GB')
+V:\Torrent\Format\有码\FIV\FIV-070 is removed to V:\Torrent\ToRemove\FIV-070
+59 : NKKD-181 (7.17, 'GB') > (7.17, 'GB')
+V:\Torrent\Format\有码\NKKD\NKKD-181 is removed to V:\Torrent\ToRemove\NKKD-181
+60 : NKKD-179 (5.37, 'GB') > (5.37, 'GB')
+V:\Torrent\Format\有码\NKKD\NKKD-179 is removed to V:\Torrent\ToRemove\NKKD-179
+61 : NKKD-180 (8.26, 'GB') > (8.26, 'GB')
+V:\Torrent\Format\有码\NKKD\NKKD-180 is removed to V:\Torrent\ToRemove\NKKD-180
+62 : NKKD-177 (6.39, 'GB') > (6.39, 'GB')
+V:\Torrent\Format\有码\NKKD\NKKD-177 is removed to V:\Torrent\ToRemove\NKKD-177
+63 : NASH-374 (4.57, 'GB') > (4.57, 'GB')
+V:\Torrent\Format\有码\NASH\NASH-374 is removed to V:\Torrent\ToRemove\NASH-374
+64 : NACX-063 (10.11, 'GB') > (10.11, 'GB')
+V:\Torrent\Format\有码\NACX\NACX-063 is removed to V:\Torrent\ToRemove\NACX-063
+65 : MBM-214 (10.08, 'GB') > (10.08, 'GB')
+V:\Torrent\Format\有码\MBM\MBM-214 is removed to V:\Torrent\ToRemove\MBM-214
+66 : DBVB-027 (5.14, 'GB') > (5.14, 'GB')
+V:\Torrent\Format\有码\DBVB\DBVB-027 is removed to V:\Torrent\ToRemove\DBVB-027
+67 : JRZD-995 (5.61, 'GB') > (5.61, 'GB')
+V:\Torrent\Format\有码\JRZD\JRZD-995 is removed to V:\Torrent\ToRemove\JRZD-995
+68 : JRZD-996 (5.4, 'GB') > (5.4, 'GB')
+V:\Torrent\Format\有码\JRZD\JRZD-996 is removed to V:\Torrent\ToRemove\JRZD-996
+69 : RVH-003 (10.05, 'GB') > (10.05, 'GB')
+V:\Torrent\Format\有码\RVH\RVH-003 is removed to V:\Torrent\ToRemove\RVH-003
+70 : MKMP-355 (18.27, 'GB') > (18.27, 'GB')
+V:\Torrent\Format\有码\MKMP\MKMP-355 is removed to V:\Torrent\ToRemove\MKMP-355
+71 : PRED-257 (5.15, 'GB') > (5.15, 'GB')
+V:\Torrent\Format\有码\PRED\PRED-257 is removed to V:\Torrent\ToRemove\PRED-257
+72 : PRED-259 (5.21, 'GB') > (5.21, 'GB')
+V:\Torrent\Format\有码\PRED\PRED-259 is removed to V:\Torrent\ToRemove\PRED-259
+73 : PRED-258 (5.15, 'GB') > (5.15, 'GB')
+V:\Torrent\Format\有码\PRED\PRED-258 is removed to V:\Torrent\ToRemove\PRED-258
+74 : PRED-260 (5.19, 'GB') > (5.19, 'GB')
+V:\Torrent\Format\有码\PRED\PRED-260 is removed to V:\Torrent\ToRemove\PRED-260
+75 : PRED-261 (5.17, 'GB') > (5.17, 'GB')
+V:\Torrent\Format\有码\PRED\PRED-261 is removed to V:\Torrent\ToRemove\PRED-261
+76 : SHIC-189 (5.28, 'GB') > (5.28, 'GB')
+V:\Torrent\Format\有码\SHIC\SHIC-189 is removed to V:\Torrent\ToRemove\SHIC-189
+77 : GIGL-620 (7.05, 'GB') > (7.05, 'GB')
+V:\Torrent\Format\有码\GIGL\GIGL-620 is removed to V:\Torrent\ToRemove\GIGL-620
+78 : JBJB-016 (4.96, 'GB') > (4.96, 'GB')
+V:\Torrent\Format\有码\JBJB\JBJB-016 is removed to V:\Torrent\ToRemove\JBJB-016
+79 : KTB-017 (1.05, 'GB') > (1.05, 'GB')
+V:\Torrent\Format\有码\KTB\KTB-017 is removed to V:\Torrent\ToRemove\KTB-017
+80 : KTB-024 (1.38, 'GB') > (1.38, 'GB')
+V:\Torrent\Format\有码\KTB\KTB-024 is removed to V:\Torrent\ToRemove\KTB-024
+81 : RBD-991 (4.71, 'GB') > (4.71, 'GB')
+V:\Torrent\Format\有码\RBD\RBD-991 is removed to V:\Torrent\ToRemove\RBD-991
+82 : RBD-990 (3.98, 'GB') > (3.98, 'GB')
+V:\Torrent\Format\有码\RBD\RBD-990 is removed to V:\Torrent\ToRemove\RBD-990
+83 : RBD-989 (4.12, 'GB') > (4.12, 'GB')
+V:\Torrent\Format\有码\RBD\RBD-989 is removed to V:\Torrent\ToRemove\RBD-989
+84 : MARA-056 (5.2, 'GB') > (5.2, 'GB')
+V:\Torrent\Format\有码\MARA\MARA-056 is removed to V:\Torrent\ToRemove\MARA-056
+85 : MCSR-408 (4.44, 'GB') > (4.44, 'GB')
+V:\Torrent\Format\有码\MCSR\MCSR-408 is removed to V:\Torrent\ToRemove\MCSR-408
+86 : MCSR-407 (4.37, 'GB') > (4.37, 'GB')
+V:\Torrent\Format\有码\MCSR\MCSR-407 is removed to V:\Torrent\ToRemove\MCSR-407
+87 : MCSR-409 (3.68, 'GB') > (3.68, 'GB')
+V:\Torrent\Format\有码\MCSR\MCSR-409 is removed to V:\Torrent\ToRemove\MCSR-409
+88 : XRW-925 (8.88, 'GB') > (8.88, 'GB')
+V:\Torrent\Format\有码\XRW\XRW-925 is removed to V:\Torrent\ToRemove\XRW-925
+89 : XRW-927 (12.55, 'GB') > (12.55, 'GB')
+V:\Torrent\Format\有码\XRW\XRW-927 is removed to V:\Torrent\ToRemove\XRW-927
+90 : BF-617 (5.62, 'GB') > (5.62, 'GB')
+V:\Torrent\Format\有码\BF\BF-617 is removed to V:\Torrent\ToRemove\BF-617
+91 : BF-616 (10.28, 'GB') > (10.28, 'GB')
+V:\Torrent\Format\有码\BF\BF-616 is removed to V:\Torrent\ToRemove\BF-616
+92 : BF-618 (5.98, 'GB') > (5.98, 'GB')
+V:\Torrent\Format\有码\BF\BF-618 is removed to V:\Torrent\ToRemove\BF-618
+93 : HUNTA-864 (10.41, 'GB') > (10.41, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-864 is removed to V:\Torrent\ToRemove\HUNTA-864
+94 : HUNTA-867 (10.41, 'GB') > (10.41, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-867 is removed to V:\Torrent\ToRemove\HUNTA-867
+95 : HUNTA-862 (8.19, 'GB') > (8.19, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-862 is removed to V:\Torrent\ToRemove\HUNTA-862
+96 : HUNTA-860 (10.19, 'GB') > (10.19, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-860 is removed to V:\Torrent\ToRemove\HUNTA-860
+97 : HUNTA-866 (10.26, 'GB') > (10.26, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-866 is removed to V:\Torrent\ToRemove\HUNTA-866
+98 : HUNTA-861 (9.23, 'GB') > (9.23, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-861 is removed to V:\Torrent\ToRemove\HUNTA-861
+99 : HUNTA-858 (7.84, 'GB') > (7.84, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-858 is removed to V:\Torrent\ToRemove\HUNTA-858
+100 : HUNTA-859 (10.38, 'GB') > (10.38, 'GB')
+V:\Torrent\Format\有码\HUNTA\HUNTA-859 is removed to V:\Torrent\ToRemove\HUNTA-859
+101 : KBI-045 (4.27, 'GB') > (4.27, 'GB')
+V:\Torrent\Format\有码\KBI\KBI-045 is removed to V:\Torrent\ToRemove\KBI-045
+102 : SGM-040 (5.06, 'GB') > (5.06, 'GB')
+V:\Torrent\Format\有码\SGM\SGM-040 is removed to V:\Torrent\ToRemove\SGM-040
+103 : PRTD-029 (5.0, 'GB') > (5.0, 'GB')
+V:\Torrent\Format\有码\PRTD\PRTD-029 is removed to V:\Torrent\ToRemove\PRTD-029
+104 : JUL-334 (4.98, 'GB') > (4.98, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-334 is removed to V:\Torrent\ToRemove\JUL-334
+105 : JUL-336 (7.33, 'GB') > (7.33, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-336 is removed to V:\Torrent\ToRemove\JUL-336
+106 : JUL-344 (5.1, 'GB') > (5.1, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-344 is removed to V:\Torrent\ToRemove\JUL-344
+107 : JUL-335 (6.21, 'GB') > (6.21, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-335 is removed to V:\Torrent\ToRemove\JUL-335
+108 : JUL-331 (5.09, 'GB') > (5.09, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-331 is removed to V:\Torrent\ToRemove\JUL-331
+109 : JUL-343 (5.05, 'GB') > (5.05, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-343 is removed to V:\Torrent\ToRemove\JUL-343
+110 : JUL-332 (6.85, 'GB') > (6.85, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-332 is removed to V:\Torrent\ToRemove\JUL-332
+111 : JUL-333 (5.06, 'GB') > (5.06, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-333 is removed to V:\Torrent\ToRemove\JUL-333
+112 : JUL-328 (5.14, 'GB') > (5.14, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-328 is removed to V:\Torrent\ToRemove\JUL-328
+113 : JUL-330 (5.07, 'GB') > (5.07, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-330 is removed to V:\Torrent\ToRemove\JUL-330
+114 : JUL-342 (6.03, 'GB') > (6.03, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-342 is removed to V:\Torrent\ToRemove\JUL-342
+115 : JUL-329 (6.42, 'GB') > (6.42, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-329 is removed to V:\Torrent\ToRemove\JUL-329
+116 : JUL-341 (5.12, 'GB') > (5.12, 'GB')
+V:\Torrent\Format\有码\JUL\JUL-341 is removed to V:\Torrent\ToRemove\JUL-341
+117 : MDBK-131 (7.09, 'GB') > (7.09, 'GB')
+V:\Torrent\Format\有码\MDBK\MDBK-131 is removed to V:\Torrent\ToRemove\MDBK-131
+118 : SUPA-541 (4.61, 'GB') > (4.61, 'GB')
+V:\Torrent\Format\有码\SUPA\SUPA-541 is removed to V:\Torrent\ToRemove\SUPA-541
+119 : JKSR-464 (3.69, 'GB') > (3.69, 'GB')
+V:\Torrent\Format\有码\JKSR\JKSR-464 is removed to V:\Torrent\ToRemove\JKSR-464
+120 : JKSR-463 (4.58, 'GB') > (4.58, 'GB')
+V:\Torrent\Format\有码\JKSR\JKSR-463 is removed to V:\Torrent\ToRemove\JKSR-463
+121 : JKSR-461 (3.5, 'GB') > (3.5, 'GB')
+V:\Torrent\Format\有码\JKSR\JKSR-461 is removed to V:\Torrent\ToRemove\JKSR-461
+122 : SCPX-406 (7.06, 'GB') > (7.06, 'GB')
+V:\Torrent\Format\有码\SCPX\SCPX-406 is removed to V:\Torrent\ToRemove\SCPX-406
+123 : SSNI-878 (5.12, 'GB') > (5.12, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-878 is removed to V:\Torrent\ToRemove\SSNI-878
+124 : SSNI-887 (6.47, 'GB') > (6.47, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-887 is removed to V:\Torrent\ToRemove\SSNI-887
+125 : SSNI-879 (5.18, 'GB') > (5.18, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-879 is removed to V:\Torrent\ToRemove\SSNI-879
+126 : SSNI-884 (5.19, 'GB') > (5.19, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-884 is removed to V:\Torrent\ToRemove\SSNI-884
+127 : SSNI-882 (5.14, 'GB') > (5.14, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-882 is removed to V:\Torrent\ToRemove\SSNI-882
+128 : SSNI-880 (5.06, 'GB') > (5.06, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-880 is removed to V:\Torrent\ToRemove\SSNI-880
+129 : SSNI-881 (7.48, 'GB') > (7.48, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-881 is removed to V:\Torrent\ToRemove\SSNI-881
+130 : SSNI-885 (6.27, 'GB') > (6.27, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-885 is removed to V:\Torrent\ToRemove\SSNI-885
+131 : SSNI-883 (5.01, 'GB') > (5.01, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-883 is removed to V:\Torrent\ToRemove\SSNI-883
+132 : SSNI-886 (6.24, 'GB') > (6.24, 'GB')
+V:\Torrent\Format\有码\SSNI\SSNI-886 is removed to V:\Torrent\ToRemove\SSNI-886
+133 : ADN-267 (4.74, 'GB') > (4.74, 'GB')
+V:\Torrent\Format\有码\ADN\ADN-267 is removed to V:\Torrent\ToRemove\ADN-267
+134 : ADN-266 (5.19, 'GB') > (5.19, 'GB')
+V:\Torrent\Format\有码\ADN\ADN-266 is removed to V:\Torrent\ToRemove\ADN-266
+135 : ADN-265 (5.02, 'GB') > (5.02, 'GB')
+V:\Torrent\Format\有码\ADN\ADN-265 is removed to V:\Torrent\ToRemove\ADN-265
+136 : ADN-268 (3.73, 'GB') > (3.73, 'GB')
+V:\Torrent\Format\有码\ADN\ADN-268 is removed to V:\Torrent\ToRemove\ADN-268
+137 : ADN-264 (4.54, 'GB') > (4.54, 'GB')
+V:\Torrent\Format\有码\ADN\ADN-264 is removed to V:\Torrent\ToRemove\ADN-264
+138 : SHKD-909 (5.42, 'GB') > (5.42, 'GB')
+V:\Torrent\Format\有码\SHKD\SHKD-909 is removed to V:\Torrent\ToRemove\SHKD-909
+139 : SKMJ-125 (11.39, 'GB') > (11.39, 'GB')
+V:\Torrent\Format\有码\SKMJ\SKMJ-125 is removed to V:\Torrent\ToRemove\SKMJ-125
+140 : PYM-351 (9.92, 'GB') > (9.92, 'GB')
+V:\Torrent\Format\有码\PYM\PYM-351 is removed to V:\Torrent\ToRemove\PYM-351
+141 : AMBI-114 (4.88, 'GB') > (4.88, 'GB')
+V:\Torrent\Format\有码\AMBI\AMBI-114 is removed to V:\Torrent\ToRemove\AMBI-114
+142 : HDKA-218 (5.43, 'GB') > (5.43, 'GB')
+V:\Torrent\Format\有码\HDKA\HDKA-218 is removed to V:\Torrent\ToRemove\HDKA-218
 有码 Temporary move is done
 有码 Permanent remove is started
 root_to_remove: V:\Torrent\ToRemove
-1 : AUKS-118 is removed from V:\Torrent\ToRemove
-2 : CADV-783 is removed from V:\Torrent\ToRemove
-3 : CHN-085 is removed from V:\Torrent\ToRemove
-4 : DGCESD-928 is removed from V:\Torrent\ToRemove
-5 : FF-030 is removed from V:\Torrent\ToRemove
-6 : HOIZ-008 is removed from V:\Torrent\ToRemove
-7 : KIRE-001 is removed from V:\Torrent\ToRemove
-8 : KTKY-051 is removed from V:\Torrent\ToRemove
-9 : KTKZ-074 is removed from V:\Torrent\ToRemove
-10 : MACB-019 is removed from V:\Torrent\ToRemove
-11 : MDUD-444 is removed from V:\Torrent\ToRemove
-12 : MMPP-002 is removed from V:\Torrent\ToRemove
-13 : NEM-043 is removed from V:\Torrent\ToRemove
-14 : SDAB-144 is removed from V:\Torrent\ToRemove
-15 : SDAM-054 is removed from V:\Torrent\ToRemove
-16 : SDJS-085 is removed from V:\Torrent\ToRemove
-17 : SHM-027 is removed from V:\Torrent\ToRemove
-18 : SHMO-162 is removed from V:\Torrent\ToRemove
-19 : SHN-060 is removed from V:\Torrent\ToRemove
-20 : SOAV-069 is removed from V:\Torrent\ToRemove
-21 : SORA-268 is removed from V:\Torrent\ToRemove
-22 : VGD-210 is removed from V:\Torrent\ToRemove
-23 : VNDS-3348 is removed from V:\Torrent\ToRemove
-24 : XRW-923 is removed from V:\Torrent\ToRemove
-25 : YTR-147 is removed from V:\Torrent\ToRemove
+1 : ABW-015 is removed from V:\Torrent\ToRemove
+2 : ABW-016 is removed from V:\Torrent\ToRemove
+3 : ADN-264 is removed from V:\Torrent\ToRemove
+4 : ADN-265 is removed from V:\Torrent\ToRemove
+5 : ADN-266 is removed from V:\Torrent\ToRemove
+6 : ADN-267 is removed from V:\Torrent\ToRemove
+7 : ADN-268 is removed from V:\Torrent\ToRemove
+8 : AMBI-114 is removed from V:\Torrent\ToRemove
+9 : AMBS-063 is removed from V:\Torrent\ToRemove
+10 : ATID-440 is removed from V:\Torrent\ToRemove
+11 : ATID-443 is removed from V:\Torrent\ToRemove
+12 : ATID-444 is removed from V:\Torrent\ToRemove
+13 : BANK-003 is removed from V:\Torrent\ToRemove
+14 : BBAN-296 is removed from V:\Torrent\ToRemove
+15 : BBAN-297 is removed from V:\Torrent\ToRemove
+16 : BDSR-427 is removed from V:\Torrent\ToRemove
+17 : BDSR-428 is removed from V:\Torrent\ToRemove
+18 : BF-616 is removed from V:\Torrent\ToRemove
+19 : BF-617 is removed from V:\Torrent\ToRemove
+20 : BF-618 is removed from V:\Torrent\ToRemove
+21 : C-2573 is removed from V:\Torrent\ToRemove
+22 : CLOT-013 is removed from V:\Torrent\ToRemove
+23 : DBER-081 is removed from V:\Torrent\ToRemove
+24 : DBER-082 is removed from V:\Torrent\ToRemove
+25 : DBVB-027 is removed from V:\Torrent\ToRemove
+26 : DKWT-002 is removed from V:\Torrent\ToRemove
+27 : DTT-066 is removed from V:\Torrent\ToRemove
+28 : EMOT-012 is removed from V:\Torrent\ToRemove
+29 : FIV-070 is removed from V:\Torrent\ToRemove
+30 : GAS-479 is removed from V:\Torrent\ToRemove
+31 : GIGL-620 is removed from V:\Torrent\ToRemove
+32 : GONE-014 is removed from V:\Torrent\ToRemove
+33 : HDKA-218 is removed from V:\Torrent\ToRemove
+34 : HODV-21514 is removed from V:\Torrent\ToRemove
+35 : HODV-21515 is removed from V:\Torrent\ToRemove
+36 : HODV-21516 is removed from V:\Torrent\ToRemove
+37 : HODV-21517 is removed from V:\Torrent\ToRemove
+38 : HODV-21518 is removed from V:\Torrent\ToRemove
+39 : HUNTA-858 is removed from V:\Torrent\ToRemove
+40 : HUNTA-859 is removed from V:\Torrent\ToRemove
+41 : HUNTA-860 is removed from V:\Torrent\ToRemove
+42 : HUNTA-861 is removed from V:\Torrent\ToRemove
+43 : HUNTA-862 is removed from V:\Torrent\ToRemove
+44 : HUNTA-864 is removed from V:\Torrent\ToRemove
+45 : HUNTA-866 is removed from V:\Torrent\ToRemove
+46 : HUNTA-867 is removed from V:\Torrent\ToRemove
+47 : ITSR-084 is removed from V:\Torrent\ToRemove
+48 : JBJB-016 is removed from V:\Torrent\ToRemove
+49 : JJDA-010 is removed from V:\Torrent\ToRemove
+50 : JKSR-461 is removed from V:\Torrent\ToRemove
+51 : JKSR-463 is removed from V:\Torrent\ToRemove
+52 : JKSR-464 is removed from V:\Torrent\ToRemove
+53 : JRZD-995 is removed from V:\Torrent\ToRemove
+54 : JRZD-996 is removed from V:\Torrent\ToRemove
+55 : JUL-328 is removed from V:\Torrent\ToRemove
+56 : JUL-329 is removed from V:\Torrent\ToRemove
+57 : JUL-330 is removed from V:\Torrent\ToRemove
+58 : JUL-331 is removed from V:\Torrent\ToRemove
+59 : JUL-332 is removed from V:\Torrent\ToRemove
+60 : JUL-333 is removed from V:\Torrent\ToRemove
+61 : JUL-334 is removed from V:\Torrent\ToRemove
+62 : JUL-335 is removed from V:\Torrent\ToRemove
+63 : JUL-336 is removed from V:\Torrent\ToRemove
+64 : JUL-341 is removed from V:\Torrent\ToRemove
+65 : JUL-342 is removed from V:\Torrent\ToRemove
+66 : JUL-343 is removed from V:\Torrent\ToRemove
+67 : JUL-344 is removed from V:\Torrent\ToRemove
+68 : KBI-045 is removed from V:\Torrent\ToRemove
+69 : KTB-017 is removed from V:\Torrent\ToRemove
+70 : KTB-024 is removed from V:\Torrent\ToRemove
+71 : MARA-056 is removed from V:\Torrent\ToRemove
+72 : MBM-214 is removed from V:\Torrent\ToRemove
+73 : MCSR-407 is removed from V:\Torrent\ToRemove
+74 : MCSR-408 is removed from V:\Torrent\ToRemove
+75 : MCSR-409 is removed from V:\Torrent\ToRemove
+76 : MDBK-131 is removed from V:\Torrent\ToRemove
+77 : MGMQ-057 is removed from V:\Torrent\ToRemove
+78 : MIHA-047 is removed from V:\Torrent\ToRemove
+79 : MIHA-048 is removed from V:\Torrent\ToRemove
+80 : MIHA-049 is removed from V:\Torrent\ToRemove
+81 : MKMP-355 is removed from V:\Torrent\ToRemove
+82 : NACR-355 is removed from V:\Torrent\ToRemove
+83 : NACR-356 is removed from V:\Torrent\ToRemove
+84 : NACR-357 is removed from V:\Torrent\ToRemove
+85 : NACR-358 is removed from V:\Torrent\ToRemove
+86 : NACR-359 is removed from V:\Torrent\ToRemove
+87 : NACX-063 is removed from V:\Torrent\ToRemove
+88 : NASH-374 is removed from V:\Torrent\ToRemove
+89 : NGOD-133 is removed from V:\Torrent\ToRemove
+90 : NKKD-177 is removed from V:\Torrent\ToRemove
+91 : NKKD-179 is removed from V:\Torrent\ToRemove
+92 : NKKD-180 is removed from V:\Torrent\ToRemove
+93 : NKKD-181 is removed from V:\Torrent\ToRemove
+94 : OBA-409 is removed from V:\Torrent\ToRemove
+95 : OKAX-661 is removed from V:\Torrent\ToRemove
+96 : OKAX-663 is removed from V:\Torrent\ToRemove
+97 : OKB-093 is removed from V:\Torrent\ToRemove
+98 : ONEZ-242 is removed from V:\Torrent\ToRemove
+99 : ONEZ-256 is removed from V:\Torrent\ToRemove
+100 : ONEZ-257 is removed from V:\Torrent\ToRemove
+101 : ONEZ-258 is removed from V:\Torrent\ToRemove
+102 : ONEZ-259 is removed from V:\Torrent\ToRemove
+103 : PRED-257 is removed from V:\Torrent\ToRemove
+104 : PRED-258 is removed from V:\Torrent\ToRemove
+105 : PRED-259 is removed from V:\Torrent\ToRemove
+106 : PRED-260 is removed from V:\Torrent\ToRemove
+107 : PRED-261 is removed from V:\Torrent\ToRemove
+108 : PRTD-029 is removed from V:\Torrent\ToRemove
+109 : PYM-351 is removed from V:\Torrent\ToRemove
+110 : RBD-989 is removed from V:\Torrent\ToRemove
+111 : RBD-990 is removed from V:\Torrent\ToRemove
+112 : RBD-991 is removed from V:\Torrent\ToRemove
+113 : RCTD-354 is removed from V:\Torrent\ToRemove
+114 : RVG-122 is removed from V:\Torrent\ToRemove
+115 : RVH-003 is removed from V:\Torrent\ToRemove
+116 : SABA-648 is removed from V:\Torrent\ToRemove
+117 : SCPX-406 is removed from V:\Torrent\ToRemove
+118 : SGM-040 is removed from V:\Torrent\ToRemove
+119 : SGSR-264 is removed from V:\Torrent\ToRemove
+120 : SHIC-189 is removed from V:\Torrent\ToRemove
+121 : SHKD-909 is removed from V:\Torrent\ToRemove
+122 : SKMJ-125 is removed from V:\Torrent\ToRemove
+123 : SOUD-005 is removed from V:\Torrent\ToRemove
+124 : SQIM-002 is removed from V:\Torrent\ToRemove
+125 : SSNI-878 is removed from V:\Torrent\ToRemove
+126 : SSNI-879 is removed from V:\Torrent\ToRemove
+127 : SSNI-880 is removed from V:\Torrent\ToRemove
+128 : SSNI-881 is removed from V:\Torrent\ToRemove
+129 : SSNI-882 is removed from V:\Torrent\ToRemove
+130 : SSNI-883 is removed from V:\Torrent\ToRemove
+131 : SSNI-884 is removed from V:\Torrent\ToRemove
+132 : SSNI-885 is removed from V:\Torrent\ToRemove
+133 : SSNI-886 is removed from V:\Torrent\ToRemove
+134 : SSNI-887 is removed from V:\Torrent\ToRemove
+135 : SSPD-164 is removed from V:\Torrent\ToRemove
+136 : SUPA-541 is removed from V:\Torrent\ToRemove
+137 : VPC-002 is removed from V:\Torrent\ToRemove
+138 : XRW-925 is removed from V:\Torrent\ToRemove
+139 : XRW-927 is removed from V:\Torrent\ToRemove
+140 : YAKO-016 is removed from V:\Torrent\ToRemove
+141 : ZMAR-026 is removed from V:\Torrent\ToRemove
+142 : ZMAR-027 is removed from V:\Torrent\ToRemove
 有码 Permanent remove is done
 素人 Temporary move is started
 orginal_choose: G:\My Drive\Video\Torrent_F\素人
 root_to_compare: V:\Torrent\Format\素人
 root_to_remove: V:\Torrent\ToRemove
 root_to_remove1: V:\Torrent\ToRemove1
+1 : LUXU-974 (4.94, 'GB') > (4.94, 'GB')
+V:\Torrent\Format\素人\LUXU\LUXU-974 is removed to V:\Torrent\ToRemove\LUXU-974
+2 : EMOI-016 (1.47, 'GB') > (1.47, 'GB')
+V:\Torrent\Format\素人\EMOI\EMOI-016 is removed to V:\Torrent\ToRemove\EMOI-016
+3 : MIUM-403 (7.68, 'GB') > (7.68, 'GB')
+V:\Torrent\Format\素人\MIUM\MIUM-403 is removed to V:\Torrent\ToRemove\MIUM-403
+4 : OTIM-040 (2.31, 'GB') > (2.31, 'GB')
+V:\Torrent\Format\素人\OTIM\OTIM-040 is removed to V:\Torrent\ToRemove\OTIM-040
 素人 Temporary move is done
 素人 Permanent remove is started
 root_to_remove: V:\Torrent\ToRemove
+1 : EMOI-016 is removed from V:\Torrent\ToRemove
+2 : LUXU-974 is removed from V:\Torrent\ToRemove
+3 : MIUM-403 is removed from V:\Torrent\ToRemove
+4 : OTIM-040 is removed from V:\Torrent\ToRemove
 素人 Permanent remove is done
 End

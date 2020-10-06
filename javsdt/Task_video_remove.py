@@ -3,32 +3,13 @@
 import os, re,sys
 import shutil
 from os.path import exists
+from functions_scan import get_size, format_bytes
 
 
 sep = os.sep
 sys.stdout = open('log/VideoToRemove.txt', 'w')
 
-# get folder size
-def get_size(start_path):
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(start_path):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            # skip if it is symbolic link
-            if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
-    return total_size
 
-# Convert bytes to KB, MB, GB, TB
-def format_bytes(size):
-# 2**10 = 1024
-    power = 2**10
-    n = 0
-    power_labels = {0 : 'B', 1: 'KB', 2: 'MB', 3: 'GB', 4: 'TB'}
-    while size > power:
-        size /= power
-        n += 1
-    return round(size,2), power_labels[n]
 
 #create level one folder name list
 def list_creation(path):

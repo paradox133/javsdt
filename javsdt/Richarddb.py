@@ -9,7 +9,7 @@ def db_table_create(database_name,table_name,conn):
     cursor = conn.cursor() # The database will be saved in the location where your 'py' file is saved
     dropcommand='DROP TABLE '+ table_name 
     createcommand='CREATE TABLE '+ table_name +'([file_id] text PRIMARY KEY, [file_path] text, [Size] integer)'
-    cursor.execute(dropcommand) #for the first time has to comment this line of the code
+    # cursor.execute(dropcommand) #for the first time has to comment this line of the code
     # Create table - VIDEO FOLDER
     cursor.execute(createcommand)
     conn.commit()

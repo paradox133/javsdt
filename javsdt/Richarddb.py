@@ -2,7 +2,7 @@ import sqlite3
 import sys
 import pandas as pd
 
-from functions_scan import read_to_db, db_generation
+from functions_scan import read_to_db, db_csv_generation
 
 
 def db_table_create(database_name,table_name,conn):
@@ -26,7 +26,6 @@ def pd_to_db(database_name,table_name,text_file):
 def db_process():
     conn = sqlite3.connect('TestDB.db')  
     cursor = conn.cursor() # The database will be saved in the location where your 'py' file is saved
-
     cursor.execute('''
                 DROP TABLE "VIDEO_FOLDER"
                 ''')
@@ -39,7 +38,7 @@ def db_process():
     #              ([bus_id] text, [size] integer, [Path] text,[video_count] integer, [modifed_date] date)''')          
 
     conn.commit()
-    db_generation()
+    db_csv_generation()
     read_clients = pd.read_csv (r'E:\VS Projects\Vscode\javsdt\GlobalScan.csv')
     read_clients.to_sql('VIDEO_FOLDER', conn, if_exists='append', index=False) 
 
@@ -54,7 +53,7 @@ def db_process():
                         ORDER BY ID
                     ''')
     conn.commit()
-    print("db is updated to the latest")
+    # print("db is updated to the latest")
 
 
 

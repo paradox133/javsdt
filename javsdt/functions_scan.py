@@ -69,6 +69,23 @@ def list_creation(path):
     except StopIteration:
         pass
 
+# move_folder
+def move_folder(old_folder_path, new_folder_path):
+    if(old_folder_path!=new_folder_path) and (not exists(new_folder_path)):
+        os.rename(old_folder_path, new_folder_path)
+        print(old_folder_path +" is removed to "+ new_folder_path)
+        return True
+    else:
+        print("Error: will try to move"+ old_folder_path +"  to folder remove1")
+        return False
+           
+def same_list_creation(c,d):
+    same_folder_list=[]
+    a=list_creation(c)
+    b=list_creation(d)
+    same_folder_list=list(set(a).intersection(b))
+    return same_folder_list
+
 
 def creation_date(path_to_file):
     if platform.system() == 'Windows':
@@ -89,7 +106,7 @@ def process_folder(path,sub_folder_name):
     #path="G:\My Drive\Video\Torrent_F\有码"
     path+=sub_folder_name  
 
-    count=0
+    # count=0
     # i='ABP'
     for i in list_creation(path):
         # sub_folder_path="G:\My Drive\Video\Torrent_F\有码\ABP"
@@ -99,13 +116,13 @@ def process_folder(path,sub_folder_name):
             sub_folder_path2=os.path.join(sub_folder_path, j)
             size=get_size(sub_folder_path2)
              #cdate=creation_date(sub_folder_path)
-            count+=1
-            print( j,',', size)
+            # count+=1
+            print(j,',',size,sep='') #remove wtite spaces around variables
 
 
 
 # db generation for my drive and migration shared drive
-def db_generation():
+def db_csv_generation():
     sys.stdout = open('E:\VS Projects\Vscode\javsdt\GlobalScan.csv', 'w')
     print( 'ID,Size') #print the label on the table
     sub_folder_name=['有码','素人']

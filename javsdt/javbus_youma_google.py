@@ -378,7 +378,7 @@ def process_youma(root_choose,config_path):
             num_all_episodes = dict_car_pref[jav_raw_num]  # 该车牌总共多少集
             jav_file = jav.file    # 完整的原文件名  abc-123.mp4
             jav_epi = jav.episodes  # 这是第几集？一般都只有一集
-            if not if_ID_exist(jav_num,"DISTINCTID") or num_all_episodes>1:
+            if not if_ID_exist(jav_raw_num,"DISTINCTID") or num_all_episodes>1:
                 path_jav = root + sep + jav_file  # jav的起始路径
                 path_relative = sep + path_jav.replace(root_choose, '')   # 影片的相对于所选文件夹的路径，用于报错
                 print('>>正在处理：', jav_file)

@@ -3,41 +3,12 @@
 import os, re,sys
 import shutil
 from os.path import exists
-from functions_scan import get_size, format_bytes
-
+from functions_scan import get_size, format_bytes, list_creation, move_folder,same_list_creation
 
 sep = os.sep
 sys.stdout = open('log/VideoToRemove.txt', 'w')
 
-
-
-#create level one folder name list
-def list_creation(path):
-    try:
-        scope= next(os.walk(path))[1]
-        return scope
-    except StopIteration:
-        pass
     
-
-# move_folder
-def move_folder(old_folder_path, new_folder_path):
-    if(old_folder_path!=new_folder_path) and (not exists(new_folder_path)):
-        os.rename(old_folder_path, new_folder_path)
-        print(old_folder_path +" is removed to "+ new_folder_path)
-        return True
-    else:
-        print("Error: will try to move"+ old_folder_path +"  to folder remove1")
-        return False
-           
-def same_list_creation(c,d):
-    same_folder_list=[]
-    a=list_creation(c)
-    b=list_creation(d)
-    same_folder_list=list(set(a).intersection(b))
-    return same_folder_list
-
-
 #  main
 # compare the local with my google drive
 # if file exist and size is the same, then delete the local version. 

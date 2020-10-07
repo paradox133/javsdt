@@ -9,53 +9,11 @@ from shutil import copyfile
 from traceback import format_exc
 from tkinter import filedialog, Tk
 
+from functions_scan import get_size, format_bytes, list_creation, move_folder,same_list_creation
+
 sep = os.sep
 sys.stdout = open('log/CompareList.txt', 'w')
 
-# get folder size
-def get_size(start_path):
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(start_path):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            # skip if it is symbolic link
-            if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
-    return total_size
-
-# Convert bytes to KB, MB, GB, TB
-def format_bytes(size):
-# 2**10 = 1024
-    power = 2**10
-    n = 0
-    power_labels = {0 : 'B', 1: 'KB', 2: 'MB', 3: 'GB', 4: 'TB'}
-    while size > power:
-        size /= power
-        n += 1
-    return round(size,2), power_labels[n]
-
-#create level one folder name list
-def list_creation(path):
-    folder_list=[]
-    scope= next(os.walk(path))[1]
-    return scope
-
-# move_folder
-def move_folder(old_folder_path, new_folder_path):
-    if(old_folder_path!=new_folder_path) and (not exists(new_folder_path)):
-        os.rename(old_folder_path, new_folder_path)
-        print(old_folder_path +" is removed to "+ new_folder_path)
-        return True
-    else:
-        print("Error: will try to move"+ old_folder_path +"  to folder remove1")
-        return False
-        
-def same_list_creation(c,d):
-    same_folder_list=[]
-    a=list_creation(c)
-    b=list_creation(d)
-    same_folder_list=list(set(a).intersection(b))
-    return same_folder_list
 
 def process_folder(folder_name):
     

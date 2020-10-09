@@ -1,11 +1,7 @@
 from jav321_suren_google import process_suren
 from javbus_youma_google import process_youma
 from functions_preparation import choose_directory
-from Richarddb import db_process
 
-# update the current ID existing in the mydrive and migration
-db_process()
-print ("db has been updated")
 
 # need to fix the cd1 cd2 order bug
 

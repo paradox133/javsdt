@@ -1,6 +1,7 @@
 from functions_scan import scan_path
 from functions_preparation import choose_directory
 
+
 #Just pure scan the file 
 #output will be a list csv file
 
@@ -16,6 +17,8 @@ from functions_preparation import choose_directory
 #Temp list want to skip
 skipList=["MD","X","S","D","DAY","HD"]
 
+
+
 # 用户输入“回车”就继续选择文件夹整理
 input_start_key = ''
 while input_start_key == '':
@@ -24,6 +27,7 @@ while input_start_key == '':
     root_choose = choose_directory()
     print(root_choose)
     csv_name="testexport_derek"
+
     scan_path(root_choose,csv_name,skipList)
 
     

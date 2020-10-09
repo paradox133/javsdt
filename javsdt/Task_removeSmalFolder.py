@@ -12,4 +12,6 @@ root_choose = "G:\My Drive\SHARE COPY"
 foldersize=247 #(247B)
 
 
+
+
 print(cleanfolder(root_choose,foldersize)) #clean  folder size less than 200MB

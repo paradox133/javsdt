@@ -5,7 +5,7 @@ from os.path import exists
 from re import findall
 from functions_scan import get_size, format_bytes, list_creation, move_folder,same_list_creation
 
-
+#cleanPathOneLevelDown
 def cleanfolder(root_choose,foldersizelimit):
           
     #  main开始
@@ -29,5 +29,7 @@ def cleanfolder(root_choose,foldersizelimit):
     print("done")
     #sys.stdout.close() 
     return True
+
+
 
 

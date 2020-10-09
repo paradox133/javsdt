@@ -4127,3 +4127,6 @@ shutil.SameFileError: 'G:\\My Drive\\Video\\To Process\\Chinese subtitle AV\\A-Z
 已选择文件夹：G:\My Drive\SHARE COPY  2020-10-09 16:32:59
 已选择文件夹：V:\Torrent\Auto  2020-10-09 16:33:25
 已选择文件夹：V:\Torrent\Auto  2020-10-09 16:33:28
+    >第1个失败！javbus有码找不到该车牌的信息：UUN-56，\\HHGT004\uun56.mp4
+    >第2个失败！javbus有码找不到该车牌的信息：UUN-59，\\HHGT004\uun59.mp4
+    >第3个失败！javbus有码找不到该车牌的信息：UUN-62，\\HPOW-001\点击观看 房间火爆 uun62.com.mp4

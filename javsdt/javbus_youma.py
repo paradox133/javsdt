@@ -20,7 +20,7 @@ from functions_picture import add_watermark_divulge, crop_poster_youma
 from functions_requests import steal_arzon_cookies, get_arzon_html, find_plot_arzon, get_bus_html
 #############################################################################
 from functions_dbcheck import if_ID_exist
-from functions_clean import clean
+from functions_clean import cleanfolder
 
 
 #  main开始

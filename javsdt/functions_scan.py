@@ -1,6 +1,6 @@
 import os, re, sys
 import platform
-
+from os.path import exists
 from functions_process import find_num_bus
 from functions_preparation import JavFile
 from functions_dbcheck import pure_check_if_ID_exist
@@ -123,20 +123,22 @@ def process_folder(path,sub_folder_name):
 
 # db generation for my drive and migration shared drive
 def db_csv_generation():
-    sys.stdout = open('E:\VS Projects\Vscode\javsdt\GlobalScan.csv', 'w')
+    f=open('E:\VS Projects\Vscode\javsdt\GlobalScan.csv', 'w')
+    sys.stdout = f
     print( 'ID,Size') #print the label on the table
     sub_folder_name=['有码','素人']
     path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
     for pathname in path:
         for foldername in sub_folder_name:
             process_folder(pathname,foldername)
+    f.close()
 
 # Function: scan other shared drive to get the ID list
-def scan_path(root_choose,csv_name):
+def scan_path(root_choose,csv_name,skipList):
     # 初始化 当前系统的路径分隔符 windows是“\”，linux和mac是“/”
     sep = os.sep
     custom_file_type = "MP4、MKV、AVI、WMV、ISO、RMVB、FLV、TS、RM"
-    custom_surplus_words="XHD1080、MM616、FHD-1080、BIG-2048、big2048、FENGNIAO、nyap2p.com、UUE29、UUF39、UUF87、UUP87、UUW62、UUS75、UUV97、VIP1196、A57X"
+    custom_surplus_words="XHD1080、MM616、FHD-1080、BIG-2048、big2048、FENGNIAO、nyap2p.com、UUE29、UUF39、UUF87、UUP87、UUW62、UUS75、UUV97、VIP1196、A57X、QQ视频、IMG-、VID-20、x264、BeautyBox_20、TS_、hlq8712"
     custom_suren_pref="BMH、BNJC、CUTE、DCV、EMOI、EVA、EWDX、EXMU、EZD、FAD、FCTD、GANA、GAREA、GAV、GERBM、GERK、HEN、HMDN、HOI、HSAM、HYPN、IMDK、INST、ION、\
         JAC、JKK、JKZ、JOTK、KAGD、KJN、KNB、KSKO、KURO、LADY、LAFBD、LAS、LUXU、MAAN、MGDN、MISM、MIUM、MMGH、MMH、MNTJ、MTP、MY、NAMA、NNPJ、NTK、NTTR、OBUT、\
         ORE、OREBMS、OREC、OREP、ORERB、ORETD、ORETDP、OREX、OTIM、PAPA、PER、PKJD、REP、SCP、SCUTE、SHOW、SHYN、SIMM、SIRO、SPOR、SPRM、SQB、SRCN、SRHO、SRTD、SSAN、STKO、SUKE、SVMM、SWEET、SYBI、URF、VOV、YKMC"
@@ -188,15 +190,53 @@ def scan_path(root_choose,csv_name):
             jav_raw_num = jav.num  # 车牌  abc-123
             jav_already_have= pure_check_if_ID_exist(jav_raw_num,table_name)
             if not jav_already_have:
-                jav_file = jav.file    # 完整的原文件名  abc-123.mp4
-                jav_epi = jav.episodes  # 这是第几集？一般都只有一集
-                num_all_episodes = dict_car_pref[jav_raw_num]  # 该车牌总共多少集
-                path_jav = root + sep + jav_file
-                record_content_without_path=jav_raw_num+','+ jav_file+','+str(jav_already_have)+','+str(jav_epi)+ '/' +str(num_all_episodes)
-                record_content=record_content_without_path+','+path_jav
-                str_content = record_content.encode().decode('utf-8')
-                fp.write(str_content)
-                fp.write("\n")
-                print(record_content_without_path)
-
+                #check the front id we already collect
+                if pure_check_if_Front_ID_collect(jav_raw_num,Full_ID_List()):
+                    if not pure_check_if_want_to_skip(jav_raw_num,skipList):
+                        jav_file = jav.file    # 完整的原文件名  abc-123.mp4
+                        jav_epi = jav.episodes  # 这是第几集？一般都只有一集
+                        num_all_episodes = dict_car_pref[jav_raw_num]  # 该车牌总共多少集
+                        path_jav = root + sep + jav_file
+                        # record_content_without_path=jav_raw_num+','+ jav_file+','+str(jav_already_have)+','+str(jav_epi)+ '/' +str(num_all_episodes)
+                        record_content_without_path=jav_raw_num+','+ jav_file+','+str(jav_epi)+ '/' +str(num_all_episodes)
+                        record_content=record_content_without_path+','+path_jav
+                        str_content = record_content.encode().decode('utf-8')
+                        fp.write(str_content)
+                        fp.write("\n")
+                        print(record_content_without_path)
     fp.close() 
+
+#combine two list with order
+def combine_List(L1,L2):
+    set1=set(L1)
+    set2=set(L2)
+    set_union=set1.union(set2)
+    result=sorted(set_union)
+    return result
+
+#list all combination
+def Full_ID_List():
+    sub_folder_name=['有码','素人']
+    path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
+    
+    List=[]
+    for pathname in path:
+        for foldername in sub_folder_name:
+            path=pathname+foldername
+            List=combine_List(list_creation(path),List)
+    return List
+
+#check if we collect this front id
+def pure_check_if_Front_ID_collect(jav_raw_num,List):
+    front_id=jav_raw_num.split('-')[0]
+    if front_id in List:
+        return True
+    else:
+        return False
+
+def pure_check_if_want_to_skip(jav_raw_num,List):
+    front_id=jav_raw_num.split('-')[0]
+    if front_id in List:
+        return True
+    else:
+        return False

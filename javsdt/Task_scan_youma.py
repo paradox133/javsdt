@@ -15,7 +15,16 @@ from functions_preparation import choose_directory
 
 
 #Temp list want to skip
-skipList=["MD","X","S","D","DAY","HD"]
+skipList=["MD","MDS","X","S","D","DAY","HD"]
+
+# SCAN THE TWO SHARED DRIVES
+root_choose='G:\Shared drives\Dexter_N_01\TG_JAPAN'
+csv_name="testexport_derek"
+scan_path(root_choose,csv_name,skipList)
+ 
+root_choose='G:\Shared drives\乱葬岗——云大佬备份库1\Drive'
+csv_name="testexport_dashen"
+scan_path(root_choose,csv_name,skipList)
 
 
 
@@ -26,10 +35,8 @@ while input_start_key == '':
     print('请选择要整理的文件夹：', end='')
     root_choose = choose_directory()
     print(root_choose)
-    csv_name="testexport_derek"
-
+    csv_name="testexport_dashen"
     scan_path(root_choose,csv_name,skipList)
 
-    
     input_start_key = input('回车继续选择文件-夹整理：')
     

@@ -9,6 +9,8 @@ db_process()
 #30290 10072020
 #30391 10082020
 #30526 10092020
+#30835 10102020
+#30952 10112020
 
 # NEED TO FIX THE id+SPACE #checked
 # NEED TO FIX THE id update checked? compare the csv and db table #checked

@@ -685,13 +685,14 @@ def process_suren(root_choose,config_path):
                             path_poster = path_poster.replace(str_cd, '')
                         # emby需要多份，现在不是第一集，直接复制第一集的图片
                         elif jav_epi != 1:
-                            try:
-                                copyfile(path_fanart.replace(str_cd, '-cd1'), path_fanart)
-                                print('    >fanart.jpg复制成功')
-                                copyfile(path_poster.replace(str_cd, '-cd1'), path_poster)
-                                print('    >poster.jpg复制成功')
-                            except FileNotFoundError:
-                                pass
+                            if not os.path.exists(path_fanart):# make sure it's not there, otherwise donothing about it
+                                try:
+                                    copyfile(path_fanart.replace(str_cd, '-cd1'), path_fanart)
+                                    print('    >fanart.jpg复制成功')
+                                    copyfile(path_poster.replace(str_cd, '-cd1'), path_poster)
+                                    print('    >poster.jpg复制成功')
+                                except FileNotFoundError:
+                                    pass
                         # kodi或者emby需要的第一份图片
                         if check_pic(path_fanart):
                             # print('    >已有fanart.jpg')

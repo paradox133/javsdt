@@ -1,5 +1,6 @@
 from jav321_suren_google import process_suren
 from javbus_youma_google import process_youma
+from javlibrary_google import process_youma_javlib
 from functions_preparation import choose_directory
 
 
@@ -17,7 +18,9 @@ while input_start_key == '':
     print('请选择要整理的文件夹：', end='')
     root_choose = choose_directory()
     print(root_choose)
+    #to decide what engine to use
     process_suren(root_choose,config_path)
     process_youma(root_choose,config_path)
+    process_youma_javlib(root_choose,config_path)
     
     input_start_key = input('回车继续选择文件-夹整理：')

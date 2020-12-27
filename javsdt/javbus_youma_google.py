@@ -19,7 +19,7 @@ from functions_translate import tran_plot
 from functions_picture import add_watermark_divulge, crop_poster_youma
 from functions_requests import steal_arzon_cookies, get_arzon_html, find_plot_arzon, get_bus_html
 #############################################################################
-from functions_dbcheck import if_ID_exist
+from functions_dbcheck import if_ID_exist_and_record
 from functions_clean import cleanfolder
 
 
@@ -373,12 +373,13 @@ def process_youma(root_choose,config_path):
             continue    # 【跳出1】
         # 正式开始
         # print(list_jav_videos)
+        IDlist=[]
         for jav in list_jav_videos:
             jav_raw_num = jav.num  # 车牌  abc-123
             num_all_episodes = dict_car_pref[jav_raw_num]  # 该车牌总共多少集
             jav_file = jav.file    # 完整的原文件名  abc-123.mp4
             jav_epi = jav.episodes  # 这是第几集？一般都只有一集
-            if not if_ID_exist(jav_raw_num,"DISTINCTID") or num_all_episodes>1:
+            if not if_ID_exist_and_record(jav_raw_num,"DISTINCTID",IDlist) or (jav_raw_num in IDlist):
                 path_jav = root + sep + jav_file  # jav的起始路径
                 path_relative = sep + path_jav.replace(root_choose, '')   # 影片的相对于所选文件夹的路径，用于报错
                 print('>>正在处理：', jav_file)
@@ -795,13 +796,14 @@ def process_youma(root_choose,config_path):
                             path_poster = path_poster.replace(str_cd, '')
                         # emby需要多份，现在不是第一集，直接复制第一集的图片
                         elif jav_epi != 1:
-                            try:
-                                copyfile(path_fanart.replace(str_cd, '-cd1'), path_fanart)
-                                print('    >fanart.jpg复制成功')
-                                copyfile(path_poster.replace(str_cd, '-cd1'), path_poster)
-                                print('    >poster.jpg复制成功')
-                            except FileNotFoundError:
-                                pass
+                            if not os.path.exists(path_fanart):# make sure it's not there, otherwise donothing about it
+                                try:
+                                    copyfile(path_fanart.replace(str_cd, '-cd1'), path_fanart)
+                                    print('    >fanart.jpg复制成功')
+                                    copyfile(path_poster.replace(str_cd, '-cd1'), path_poster)
+                                    print('    >poster.jpg复制成功')
+                                except FileNotFoundError:
+                                    pass
                         # kodi或者emby需要的第一份图片
                         if check_pic(path_fanart):
                             # print('    >已有fanart.jpg')

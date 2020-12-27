@@ -7,6 +7,7 @@ from functions_dbcheck import pure_check_if_ID_exist
 import pandas as pd
 from pandas import DataFrame
 import numpy as np
+from os import walk
 #read txt row seperated by first and last comma
 
 def read_to_db(txt_file):
@@ -50,16 +51,23 @@ def get_size(start_path):
                 total_size += os.path.getsize(fp)
     return total_size
 
-# Convert bytes to KB, MB, GB, TB
+# Convert bytes to KB, MB, GB, TB, PB
 def format_bytes(size):
 # 2**10 = 1024
     power = 2**10
     n = 0
-    power_labels = {0 : 'B', 1: 'KB', 2: 'MB', 3: 'GB', 4: 'TB'}
-    while size > power:
-        size /= power
-        n += 1
-    return round(size,2), power_labels[n]
+    power_labels = {0 : 'B', 1: 'KB', 2: 'MB', 3: 'GB', 4: 'TB', 5: 'PB'}
+    if size >=0:
+        while size > power:
+            size /= power
+            n += 1
+        return round(size,2), power_labels[n]
+    else:
+        size= -size
+        while size > power:
+            size /= power
+            n += 1
+        return -round(size,2), power_labels[n]
 
 #create level one folder name list
 def list_creation(path):
@@ -73,7 +81,7 @@ def list_creation(path):
 def move_folder(old_folder_path, new_folder_path):
     if(old_folder_path!=new_folder_path) and (not exists(new_folder_path)):
         os.rename(old_folder_path, new_folder_path)
-        print(old_folder_path +" is removed to "+ new_folder_path)
+        # print(old_folder_path +" is removed to "+ new_folder_path)
         return True
     else:
         print("Error: will try to move"+ old_folder_path +"  to folder remove1")
@@ -83,8 +91,34 @@ def same_list_creation(c,d):
     same_folder_list=[]
     a=list_creation(c)
     b=list_creation(d)
-    same_folder_list=list(set(a).intersection(b))
-    return same_folder_list
+    try:
+        same_folder_list=list(set(a).intersection(b))
+        return same_folder_list
+    except:
+        return []
+    
+
+def file_list_creation(path):
+    flist = []
+    try:
+        for (dirpath, dirnames, filenames) in walk(path):
+            flist.extend(filenames)
+            break
+        return flist
+    except StopIteration:
+        pass
+
+def file_list_compare(c,d):
+    same_file_list={}
+    a=set(file_list_creation(c))
+    b=set(file_list_creation(d))
+    same_file_list=set(a).intersection(b)
+    if same_file_list==b:
+        stringset="a: ", len(a)," b: ", len(b)," files are the same"
+        return [True,stringset]
+    else: 
+        stringset="a: ", len(a)," b: ", len(b)," files are different"
+        return [False,stringset]
 
 
 def creation_date(path_to_file):
@@ -127,7 +161,8 @@ def db_csv_generation():
     sys.stdout = f
     print( 'ID,Size') #print the label on the table
     sub_folder_name=['有码','素人']
-    path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
+    path=["G:\My Drive\Video\Torrent_F\\"]
+    # path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
     for pathname in path:
         for foldername in sub_folder_name:
             process_folder(pathname,foldername)
@@ -139,9 +174,8 @@ def scan_path(root_choose,csv_name,skipList):
     sep = os.sep
     custom_file_type = "MP4、MKV、AVI、WMV、ISO、RMVB、FLV、TS、RM"
     custom_surplus_words="XHD1080、MM616、FHD-1080、BIG-2048、big2048、FENGNIAO、nyap2p.com、UUE29、UUF39、UUF87、UUP87、UUW62、UUS75、UUV97、VIP1196、A57X、QQ视频、IMG-、VID-20、x264、BeautyBox_20、TS_、hlq8712"
-    custom_suren_pref="BMH、BNJC、CUTE、DCV、EMOI、EVA、EWDX、EXMU、EZD、FAD、FCTD、GANA、GAREA、GAV、GERBM、GERK、HEN、HMDN、HOI、HSAM、HYPN、IMDK、INST、ION、\
-        JAC、JKK、JKZ、JOTK、KAGD、KJN、KNB、KSKO、KURO、LADY、LAFBD、LAS、LUXU、MAAN、MGDN、MISM、MIUM、MMGH、MMH、MNTJ、MTP、MY、NAMA、NNPJ、NTK、NTTR、OBUT、\
-        ORE、OREBMS、OREC、OREP、ORERB、ORETD、ORETDP、OREX、OTIM、PAPA、PER、PKJD、REP、SCP、SCUTE、SHOW、SHYN、SIMM、SIRO、SPOR、SPRM、SQB、SRCN、SRHO、SRTD、SSAN、STKO、SUKE、SVMM、SWEET、SYBI、URF、VOV、YKMC"
+    custom_suren_pref="AID、AKDL、ARA、BMH、BNJC、BZDC、CUTE、DCV、EMOI、ENDX、ETQR、EVA、EWDX、EXMU、EZD、FAD、FCTD、GANA、GAREA、GAV、GERBM、GERK、HEN、HMDN、HOI、HSAM、HYPN、IMDK、INST、ION、JAC、JKK、JKZ、JNT、JOTK、JTR、KAGD、KIRAY、KITAIKE、KJN、KMTU、KNB、KSKO、KURO、LADY、LAFBD、LAS、LUXU、MAAN、MAG、MGDN、MISM、MIUM、MMGH、MMH、MNTJ、MTP、MY、NAMA、NKR、NNPJ、NTK、NTTR、OBUT、OKYH、ONS、ORE、OREBMS、OREC、OREP、ORERB、ORETD、ORETDP、OREX、OTIM、PAPA、PER、PIZ、PKJD、RCTS、REG、REP、SCP、SCUTE、SENN、SHOW、SHYN、SIMM、SIRO、SPOR、SPRM、SQB、SRCN、SRHO、SRTD、SSAN、STKO、SUKE、SVMM、SWEET、SYBI、URF、VOV、YKMC"
+
     tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
     list_surplus_words = custom_surplus_words.split('、')
     list_suren_num = custom_suren_pref.split('、') 
@@ -217,7 +251,9 @@ def combine_List(L1,L2):
 #list all combination
 def Full_ID_List():
     sub_folder_name=['有码','素人']
-    path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
+    path=["G:\My Drive\Video\Torrent_F\\"]
+    # removed
+    # path=["G:\My Drive\Video\Torrent_F\\","G:\Shared drives\Migration\Torrent_F\\"]
     
     List=[]
     for pathname in path:

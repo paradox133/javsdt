@@ -6,8 +6,9 @@ from javbus_youma import process_youma
 from functions_clean import cleanfolder
 
 
-root_choose = "V:\Torrent\Auto"
-foldersize=209715200 #(200MB=1024^2*200)
+# root_choose = "V:\Torrent\Auto"
+root_choose = "V:\Torrent\AriaData\Complete"
+foldersize=270532608 #(258MB=1024^2*258)
 
 print(root_choose)
 process_suren(root_choose)

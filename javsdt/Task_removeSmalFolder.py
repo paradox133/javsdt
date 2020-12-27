@@ -8,7 +8,10 @@ from functions_clean import cleanfolder
 # while input_start_key == '':
 #     # 用户选择需要整理的文件夹
 #     print('请选择要整理的文件夹：', end='')
-root_choose = "G:\My Drive\SHARE COPY"
+# root_choose = "G:\My Drive\SHARE COPY"
+# root_choose = "G:\Shared drives\Migration\Torrent_F\素人"
+# root_choose = "G:\Shared drives\Migration\Torrent_F\素人"
+root_choose = "G:\Shared drives\Migration\Torrent_F\有码"
 foldersize=247 #(247B)
 
 

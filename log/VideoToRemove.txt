@@ -1,0 +1,50 @@
+start
+有码 Temporary move is started
+orginal_choose: G:\My Drive\Video\Torrent_F\有码
+root_to_compare: V:\Torrent\Format\有码
+root_to_remove: V:\Torrent\ToRemove
+root_to_remove1: V:\Torrent\ToRemove1
+1 : NTRD-085 (5.61, 'GB') > (5.61, 'GB')
+2 : IESP-672 (5.56, 'GB') > (5.56, 'GB')
+3 : SPRD-1359 (5.21, 'GB') > (5.21, 'GB')
+4 : SPRD-1357 (4.56, 'GB') > (4.56, 'GB')
+5 : SPRD-1361 (4.6, 'GB') > (4.6, 'GB')
+6 : SPRD-1358 (4.39, 'GB') > (4.39, 'GB')
+7 : SPRD-1360 (4.45, 'GB') > (4.45, 'GB')
+8 : HAWA-224 (8.0, 'GB') > (8.0, 'GB')
+9 : NHDTB-474 (6.8, 'GB') > (6.8, 'GB')
+10 : NHDTB-472 (8.84, 'GB') > (8.84, 'GB')
+11 : DANDY-743 (9.88, 'GB') > (9.88, 'GB')
+12 : DANDY-742 (8.15, 'GB') > (8.15, 'GB')
+13 : MOND-206 (4.87, 'GB') > (4.87, 'GB')
+14 : SVDVD-833 (6.86, 'GB') > (6.86, 'GB')
+15 : ECB-143 (5.37, 'GB') > (5.37, 'GB')
+有码 Temporary move is done
+有码 Permanent remove is started
+root_to_remove: V:\Torrent\ToRemove
+1 : DANDY-742 is removed from V:\Torrent\ToRemove
+2 : DANDY-743 is removed from V:\Torrent\ToRemove
+3 : ECB-143 is removed from V:\Torrent\ToRemove
+4 : HAWA-224 is removed from V:\Torrent\ToRemove
+5 : IESP-672 is removed from V:\Torrent\ToRemove
+6 : MOND-206 is removed from V:\Torrent\ToRemove
+7 : NHDTB-472 is removed from V:\Torrent\ToRemove
+8 : NHDTB-474 is removed from V:\Torrent\ToRemove
+9 : NTRD-085 is removed from V:\Torrent\ToRemove
+10 : SPRD-1357 is removed from V:\Torrent\ToRemove
+11 : SPRD-1358 is removed from V:\Torrent\ToRemove
+12 : SPRD-1359 is removed from V:\Torrent\ToRemove
+13 : SPRD-1360 is removed from V:\Torrent\ToRemove
+14 : SPRD-1361 is removed from V:\Torrent\ToRemove
+15 : SVDVD-833 is removed from V:\Torrent\ToRemove
+有码 Permanent remove is done
+素人 Temporary move is started
+orginal_choose: G:\My Drive\Video\Torrent_F\素人
+root_to_compare: V:\Torrent\Format\素人
+root_to_remove: V:\Torrent\ToRemove
+root_to_remove1: V:\Torrent\ToRemove1
+素人 Temporary move is done
+素人 Permanent remove is started
+root_to_remove: V:\Torrent\ToRemove
+素人 Permanent remove is done
+End

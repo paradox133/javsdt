@@ -2,9 +2,10 @@
 from os import system
 from re import search, findall
 from time import sleep
-from requests import Session, get, post
+from requests import Session, get, post, exceptions
 from PIL import Image
 from cloudscraper import get_cookie_string
+
 # from traceback import format_exc
 
 # 功能：请求各大jav网站和arzon的网页
@@ -285,15 +286,22 @@ def post_321_html(url, data, proxy):
 #################################################### javdb ########################################################
 # 搜索javdb，得到搜索结果网页，返回html。
 def get_search_db_html(url, proxy):
+    headers = {
+    'User-Agent	' : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0', 
+    }
+    Referer_url="https://javdb.com/"
+    if Referer_url:
+        headers['Referer'] = Referer_url
+    
     for retry in range(1, 11):
         if retry % 4 == 0:
             print('    >睡眠5分钟...')
             sleep(300)
         try:
             if proxy:
-                rqs = get(url, proxies=proxy, timeout=(6, 7))
+                rqs = get(url, headers=headers, proxies=proxy, timeout=(6, 7))
             else:
-                rqs = get(url, timeout=(6, 7))
+                rqs = get(url, headers=headers, timeout=(6, 7))
         except:
             # print(format_exc())
             print('    >打开网页失败，重新尝试...')
@@ -303,6 +311,92 @@ def get_search_db_html(url, proxy):
         if search(r'JavDB', rqs_content):
             if search(r'搜索結果', rqs_content):
                 return rqs_content
+            else:
+                print('    >睡眠5分钟...')
+                sleep(30)
+                continue
+        else:
+            print('    >打开网页失败，空返回...重新尝试...')
+            continue
+    print('>>请检查你的网络环境是否可以打开：', url)
+    system('pause')
+
+
+# 请求jav在javdb上的网页，返回html
+def get_db_html(url, proxy):
+    headers = {
+    'User-Agent	' : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0', 
+    }
+    Referer_url="https://javdb.com/"
+    if Referer_url:
+        headers['Referer'] = Referer_url
+    for retry in range(1, 11):
+        if retry % 4 == 0:
+            print('    >睡眠5分钟...')
+            sleep(300)
+        try:
+            if proxy:
+                rqs = get(url, headers=headers, proxies=proxy, timeout=(6, 7))
+            else:
+                rqs = get(url, headers=headers, timeout=(6, 7))
+        except:
+            # print(format_exc())
+            print('    >打开网页失败，重新尝试...')
+            continue
+        rqs.encoding = 'utf-8'
+        rqs_content = rqs.text
+        if search(r'JavDB', rqs_content):
+            if search(r'<strong>番號:</strong>', rqs_content):
+                return rqs_content
+            else:
+                print('    >睡眠5分钟...')
+                sleep(300)
+                continue
+        else:
+            print('    >打开网页失败，空返回...重新尝试...')
+            continue
+    print('>>请检查你的网络环境是否可以打开：', url)
+    system('pause')
+
+# 搜索javdb，得到搜索结果网页，返回html。
+def get_search_db_html_with_cookie(url, cookies, proxy):
+    headers = {
+    'User-Agent	' : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0', 
+    }
+    Referer_url="https://javdb.com/"
+    if Referer_url:
+        headers['Referer'] = Referer_url
+    for retry in range(1, 11):
+        if retry % 4 == 0:
+            print('    >睡眠5分钟...')
+            sleep(300)
+        try:
+            if proxy:
+                rqs = get(url, headers=headers,cookies=cookies, proxies=proxy, timeout=(6, 7))
+            else:
+                rqs = get(url, headers=headers,cookies=cookies, timeout=(6, 7))
+        except exceptions.ProxyError:
+            # print(format_exc())
+            print('    >通过局部代理失败，重新尝试...')
+            continue
+        except:
+            # print(format_exc())
+            print('    >打开网页失败，重新尝试...')
+            continue
+        rqs.encoding = 'utf-8'
+        rqs_content = rqs.text
+        if search(r'JavDB', rqs_content):
+            if search(r'搜索結果', rqs_content):
+                return rqs_content, cookies
+            elif search(r'登入 | JavDB', rqs_content):
+                # cfduid = input('请输入cfduid：')
+                # jdb_session = input('请输入jdb_session：')
+                cfduid="d53aa3a414e7047047808595c109adeb41610720472"
+                jdb_session="oUTzfXYxA1v64haSHLrfRbdkzaz5pXM%2FKaQ5e1ftGwZXF2gLWMZen4iJQWIKhcaDRUecF9HHOA8PwhwfwKTEu5OBdTquZc6FggIdkkRXeizBwenV9X9iuHp6C7wrNhjiZLYIVvEbqddS69jVCYEREmcBCwu86P8piH6gP0ad%2FqrGQVq3UU9cqN%2BhLFp0a2z1R2mcxGvEPJx6ZF3ANc4IliBHvKWdSV4eMK5eJS84NEm%2BV7rw85s7ZalOMMLTfwMcxEGCpeUt%2BALzorrjfCKnuTW3WkBwcS6ayfMdoKqwPCes7ZgjvXYciRuc%2F0FSdOa0BGww9Eu9s2KfqVgjoWYrLPgc--%2F%2BeBqLyHtkFIqndD--15ZPxRB4oEys2vXe%2Fc%2FvMA%3D%3D"
+                cookies = {
+                    "__cfduid": cfduid,
+                    "_jdb_session": jdb_session,
+                }
             else:
                 print('    >睡眠5分钟...')
                 sleep(300)
@@ -315,25 +409,46 @@ def get_search_db_html(url, proxy):
 
 
 # 请求jav在javdb上的网页，返回html
-def get_db_html(url, proxy):
+def get_db_html_with_cookie(url, cookies, proxy):
+    headers = {
+    'User-Agent	' : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0', 
+    }
+    Referer_url="https://javdb.com/"
+    if Referer_url:
+        headers['Referer'] = Referer_url
     for retry in range(1, 11):
         if retry % 4 == 0:
             print('    >睡眠5分钟...')
             sleep(300)
         try:
             if proxy:
-                rqs = get(url, proxies=proxy, timeout=(6, 7))
+                rqs = get(url, headers=headers,cookies=cookies, proxies=proxy, timeout=(6, 7))
             else:
-                rqs = get(url, timeout=(6, 7))
+                rqs = get(url, headers=headers,cookies=cookies, timeout=(6, 7))
+        except exceptions.ProxyError:
+            # print(format_exc())
+            print('    >通过局部代理失败，重新尝试...')
+            continue
         except:
             # print(format_exc())
             print('    >打开网页失败，重新尝试...')
             continue
         rqs.encoding = 'utf-8'
         rqs_content = rqs.text
+        # print(rqs_content)
         if search(r'JavDB', rqs_content):
-            if search(r'content="JavDB', rqs_content):
-                return rqs_content
+            if search(r'link rel="canonical"', rqs_content):
+                return rqs_content, cookies
+            elif search(r'登入 | JavDB', rqs_content):
+                cfduid="d53aa3a414e7047047808595c109adeb41610720472"
+                jdb_session="oUTzfXYxA1v64haSHLrfRbdkzaz5pXM%2FKaQ5e1ftGwZXF2gLWMZen4iJQWIKhcaDRUecF9HHOA8PwhwfwKTEu5OBdTquZc6FggIdkkRXeizBwenV9X9iuHp6C7wrNhjiZLYIVvEbqddS69jVCYEREmcBCwu86P8piH6gP0ad%2FqrGQVq3UU9cqN%2BhLFp0a2z1R2mcxGvEPJx6ZF3ANc4IliBHvKWdSV4eMK5eJS84NEm%2BV7rw85s7ZalOMMLTfwMcxEGCpeUt%2BALzorrjfCKnuTW3WkBwcS6ayfMdoKqwPCes7ZgjvXYciRuc%2F0FSdOa0BGww9Eu9s2KfqVgjoWYrLPgc--%2F%2BeBqLyHtkFIqndD--15ZPxRB4oEys2vXe%2Fc%2FvMA%3D%3D"
+
+                # cfduid = input('请粘贴cfduid：')
+                # jdb_session = input('请粘贴jdb_session：')
+                cookies = {
+                    "__cfduid": cfduid,
+                    "_jdb_session": jdb_session,
+                }
             else:
                 print('    >睡眠5分钟...')
                 sleep(300)
@@ -343,7 +458,6 @@ def get_db_html(url, proxy):
             continue
     print('>>请检查你的网络环境是否可以打开：', url)
     system('pause')
-
 
 #################################################### 下载图片 ########################################################
 # 下载图片，无返回

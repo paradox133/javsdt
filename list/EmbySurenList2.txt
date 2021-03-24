@@ -118,4 +118,10 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/VOV</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/RCTS</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/SWEET</Path>
+    </MediaPathInfo>
 

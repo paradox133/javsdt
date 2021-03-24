@@ -15,7 +15,7 @@ from functions_picture import check_pic, add_watermark_subt
 from functions_requests import download_pic
 ########################################################################################################################
 from functions_picture import add_watermark_divulge, crop_poster_baidu, crop_poster_default
-from functions_requests import get_search_db_html, get_db_html
+from functions_requests import get_search_db_html, get_db_html_with_cookie, get_search_db_html_with_cookie
 
 
 #  main开始
@@ -28,7 +28,8 @@ print('正在读取ini中的设置...', end='')
 try:
     config_settings = RawConfigParser()
     # config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
-    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+    # config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+    config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 google.ini'
     print("config_path:", config_path)
     config_settings.read(config_path, encoding='utf-8-sig')
     ####################################################################################################################
@@ -120,6 +121,21 @@ except:
     print('\n无法读取ini文件，请修改它为正确格式，或者打开“【ini】重新创建ini.exe”创建全新的ini！')
     os.system('pause')
 print('\n读取ini文件成功!\n')
+
+print('进入javdb网站 => 点击主页上的FC2，登录账号 => 键盘按“F12”再按“F5” => 点击“fc2”，复制cfduid和jdb_session')
+print('需要看护值守，及时更新它们')
+# cfduid = input('请粘贴cfduid：')
+# jdb_session = input('请粘贴jdb_session：')
+cfduid="d53aa3a414e7047047808595c109adeb41610720472"
+jdb_session="oUTzfXYxA1v64haSHLrfRbdkzaz5pXM%2FKaQ5e1ftGwZXF2gLWMZen4iJQWIKhcaDRUecF9HHOA8PwhwfwKTEu5OBdTquZc6FggIdkkRXeizBwenV9X9iuHp6C7wrNhjiZLYIVvEbqddS69jVCYEREmcBCwu86P8piH6gP0ad%2FqrGQVq3UU9cqN%2BhLFp0a2z1R2mcxGvEPJx6ZF3ANc4IliBHvKWdSV4eMK5eJS84NEm%2BV7rw85s7ZalOMMLTfwMcxEGCpeUt%2BALzorrjfCKnuTW3WkBwcS6ayfMdoKqwPCes7ZgjvXYciRuc%2F0FSdOa0BGww9Eu9s2KfqVgjoWYrLPgc--%2F%2BeBqLyHtkFIqndD--15ZPxRB4oEys2vXe%2Fc%2FvMA%3D%3D"
+
+
+cookies = {
+    "__cfduid": cfduid,
+    "_jdb_session": jdb_session,
+}
+
+
 # 初始化：代理设置，哪些站点需要代理
 if bool_proxy and custom_proxy:
     if bool_http:
@@ -316,7 +332,7 @@ while input_start_key == '':
                     url_search_web = url_web + 'search?q=' + jav_raw_num + '&f=all'
                     print('    >搜索车牌：', url_search_web)
                     # 得到javdb搜索网页html
-                    html_web = get_search_db_html(url_search_web, proxy_db)
+                    html_web, cookies = get_search_db_html_with_cookie(url_search_web, cookies, proxy_db)
                     # 尝试找movie-box   0链接 1车牌
                     list_search_results = findall(r'href="/v/(.+?)" class="box" title=".+?"[\s\S]*?uid">(.+?)</div>', html_web, re.DOTALL)  # 匹配处理“标题”
                     # print(list_search_results)
@@ -369,7 +385,7 @@ while input_start_key == '':
                 # 经过上面的三种情况，可能找到了jav在web上的网页链接url_on_web
                 print('    >获取信息：', url_on_web)
                 # 得到最终的jav所在网页
-                html_web = get_db_html(url_on_web, proxy_db)
+                html_web, cookies = get_db_html_with_cookie(url_on_web, cookies, proxy_db)
                 html = html_web
                 # print(html_web)
 
@@ -704,7 +720,7 @@ while input_start_key == '':
                         for i in jav_files:
                             os.rename(root_now + sep + i, root_now_new + sep + i)
                         # 删除“旧房子”，这是javsdt唯一的删除操作，而且os.rmdir只能删除空文件夹
-                        os.rmdir(root_now)
+                        # os.rmdir(root_now) #comment if use on cloud
                         print('    >归类文件夹完成')
                     # 用户已经有了这个车牌的文件夹
                     else:

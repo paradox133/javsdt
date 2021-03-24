@@ -472,4 +472,37 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/有码/JUAN</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JTDK</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JKW</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/KIWVR</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JPSVR</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JNT</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JJBB</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/KSBB</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/KING</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/KNTR</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/JGAHO</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/KKJN</Path>
+    </MediaPathInfo>
 

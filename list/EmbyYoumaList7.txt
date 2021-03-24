@@ -142,4 +142,10 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/гаТы/RYOJ</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/гаТы/RBK</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/гаТы/REIW</Path>
+    </MediaPathInfo>
 

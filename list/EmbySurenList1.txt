@@ -157,4 +157,10 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/ETQR</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/ION</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/Àÿ»À/HOI</Path>
+    </MediaPathInfo>
 

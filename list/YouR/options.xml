@@ -151,6 +151,12 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/有码/RYOJ</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/RBK</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/有码/REIW</Path>
+    </MediaPathInfo>
   </PathInfos>
   <IgnoreHiddenFiles>false</IgnoreHiddenFiles>
   <IgnoreFileExtensions />

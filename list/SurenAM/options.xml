@@ -166,6 +166,12 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/素人/ETQR</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/素人/ION</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/素人/HOI</Path>
+    </MediaPathInfo>
   </PathInfos>
   <IgnoreHiddenFiles>false</IgnoreHiddenFiles>
   <IgnoreFileExtensions />

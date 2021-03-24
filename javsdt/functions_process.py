@@ -47,6 +47,8 @@ def find_num_bus(file_temp, list_suren_num):
         file_temp=file_temp.replace('BIG2048.COM@','')
     elif search(r'FUN2048.COM@', file_temp):
         file_temp=file_temp.replace('FUN2048.COM@','')
+    elif search(r'@h_1248', file_temp):
+        file_temp=file_temp.replace('@h_1248','')
     if search(r'[^A-Z]?T28[-_ ]*\d\d+', file_temp):
         jav_pref = 'T28-'
         jav_suf = search(r'T28[-_ ]*(\d\d+)', file_temp).group(1)
@@ -57,8 +59,10 @@ def find_num_bus(file_temp, list_suren_num):
     elif search(r'[A-Z]+[-_ ]*\d\d+', file_temp):
         video_numg = search(r'([A-Z]+)[-_ ]*(\d\d+)', file_temp)
         jav_pref = video_numg.group(1)
-        if jav_pref in list_suren_num or jav_pref in ['HEYZO', 'PONDO', 'CARIB', 'OKYOHOT']:
+        if jav_pref in ['HEYZO', 'PONDO', 'CARIB', 'OKYOHOT']:
             return ''
+        # if jav_pref in list_suren_num or jav_pref in ['HEYZO', 'PONDO', 'CARIB', 'OKYOHOT']:  #comment after GAV-045 not recoginzed by the jav321
+        #     return ''
         jav_pref = jav_pref + '-'
         jav_suf = video_numg.group(2)
     else:

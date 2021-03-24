@@ -2,6 +2,7 @@ from jav321_suren_google import process_suren
 from javbus_youma_google import process_youma
 from javlibrary_google import process_youma_javlib
 from functions_preparation import choose_directory
+from javdb_youma_google import process_javdb_youma
 
 
 # need to fix the cd1 cd2 order bug
@@ -21,6 +22,7 @@ while input_start_key == '':
     #to decide what engine to use
     process_suren(root_choose,config_path)
     process_youma(root_choose,config_path)
-    process_youma_javlib(root_choose,config_path)
+    # process_youma_javlib(root_choose,config_path)
+    process_javdb_youma(root_choose)
     
     input_start_key = input('回车继续选择文件-夹整理：')

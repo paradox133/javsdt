@@ -4,9 +4,10 @@ import os, re,sys
 import shutil
 from os.path import exists
 from functions_scan import get_size, format_bytes, list_creation, move_folder,same_list_creation
+from Task_SurenYoumaLocal import task_surenYoumaLocalMain
 
 sep = os.sep
-sys.stdout = open('log/VideoToRemove.txt', 'w')
+# sys.stdout = open('log/VideoToRemove.txt', 'w')
 
     
 #  main
@@ -78,3 +79,6 @@ folder_to_Process=['有码','素人']
 for i in folder_to_Process:
     process_folder(i)
 print("End")
+
+#start to organize the videos
+task_surenYoumaLocalMain()

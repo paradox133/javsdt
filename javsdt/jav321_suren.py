@@ -349,7 +349,7 @@ def process_suren(root_choose):
                 # 有大部分信息的html_web
                 html_web = search(r'(h3>.+?)async', html_web).group(1)
                 # 车牌
-                dict_nfo['车牌'] = jav_num = search(r'番.</b>: (.+?)<br>', html_web).group(1).upper()
+                dict_nfo['车牌'] = jav_num = search(r'番</b>: (.+?)<br>', html_web).group(1).upper()
                 dict_nfo['车牌前缀'] = jav_num.split('-')[0]
                 # jav321上素人的title开头不是车牌
                 title = jav_num + ' ' + title_only
@@ -382,7 +382,7 @@ def process_suren(root_choose):
                 else:
                     url_poster = ''
                 # 发行日期
-                premieredg = search(r'日期</b>: (\d\d\d\d-\d\d-\d\d)<br>', html_web)
+                premieredg = search(r'開始日</b>: (\d\d\d\d-\d\d-\d\d)<br>', html_web)
                 if str(premieredg) != 'None':
                     dict_nfo['发行年月日'] = time_premiered = premieredg.group(1)
                     dict_nfo['发行年份'] = time_premiered[0:4]

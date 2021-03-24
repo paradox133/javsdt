@@ -539,7 +539,8 @@ def process_youma(root_choose):
                 else:
                     dict_nfo['标题'] = title_only
                 # 特点
-                genres = findall(r'genre"><a href=".+?">(.+?)</a></span>', html_web)
+                # genres = findall(r'genre"><a href=".+?">(.+?)</a></span>', html_web)
+                genres = findall(r'genre"><label><input type="checkbox" name="gr_sel" value=".+?"><a href=".+?">(.+?)</a></label></span>', html_web)
                 genres = [i for i in genres if i != '字幕' and i != '高清' and i != '高畫質' and i != '60fps' and i != '1080p']    # 这些特征 没有参考意义，为用户删去
                 if bool_subt:  # 有“中字“，加上特征”中文字幕”
                     genres.append('中文字幕')

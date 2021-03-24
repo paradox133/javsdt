@@ -127,6 +127,12 @@
     <MediaPathInfo> 
      <Path>/volume1/GDrive1/Video/Torrent_F/素人/VOV</Path>
     </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/素人/RCTS</Path>
+    </MediaPathInfo>
+    <MediaPathInfo> 
+     <Path>/volume1/GDrive1/Video/Torrent_F/素人/SWEET</Path>
+    </MediaPathInfo>
   </PathInfos>
   <IgnoreHiddenFiles>false</IgnoreHiddenFiles>
   <IgnoreFileExtensions />

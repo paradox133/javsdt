@@ -1,5 +1,5 @@
 
-from Richarddb import pd_to_db
+from function_database import pd_to_db
 
 #main import and reformat the txt(from rclone) to db 
 

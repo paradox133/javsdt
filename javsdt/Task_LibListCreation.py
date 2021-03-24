@@ -9,7 +9,6 @@ from functions_scan import list_creation
 
 
 
-
 def List_filter(folderlist, patternName):
     if folderlist is None:
         return None

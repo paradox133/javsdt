@@ -3,7 +3,7 @@ import os
 import httplib2
 from oauth2client import file,client, tools
 from googleapiclient  import discovery
-from Richarddb import pd_to_db
+from function_database import pd_to_db
 
 
 def trash_file(service, file_id):

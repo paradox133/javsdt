@@ -1,13 +1,14 @@
 import os, re, sys
 import platform
-from os.path import exists
-from functions_process import find_num_bus
-from functions_preparation import JavFile
-from functions_dbcheck import pure_check_if_ID_exist
 import pandas as pd
 from pandas import DataFrame
 import numpy as np
 from os import walk
+from os.path import exists
+from functions_process import find_num_bus
+from functions_preparation import JavFile
+from functions_dbcheck import pure_check_if_ID_exist
+
 #read txt row seperated by first and last comma
 
 def read_to_db(txt_file):

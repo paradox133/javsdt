@@ -1,7 +1,4 @@
-from Richarddb import db_process
 
-# update the current ID existing in the mydrive and migration
-db_process()
 
 #26396
 #26403
@@ -36,3 +33,8 @@ db_process()
 # NEED TO FIX THE id update checked? compare the csv and db table #checked
     # error_bad_lines=True
     # need to close the file after editting
+
+from function_database import db_process
+
+# update the current ID existing in the mydrive and migration
+db_process()

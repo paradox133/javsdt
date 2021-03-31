@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
-import os, re, sys
+import os
 import shutil  
-from os.path import exists
-from re import findall
 from functions_scan import get_size, format_bytes, list_creation, move_folder,same_list_creation
 
 #cleanPathOneLevelDown

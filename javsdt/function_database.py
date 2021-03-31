@@ -1,10 +1,7 @@
 import sqlite3 
-import sys
-import time
 import pandas as pd
 
 from functions_scan import read_to_db, db_csv_generation
-
 
 
 def db_table_create(database_name,table_name,conn):
@@ -24,7 +21,6 @@ def pd_to_db(database_name,table_name,text_file):
     conn.commit()
     print("pd_to_db is done")
 
-
 def db_process():
     # conn = sqlite3.connect('E:\VS Projects\Vscode\javcrawler\Javbus_crawler\TestDB.db')  
     conn = sqlite3.connect('TestDB.db')  
@@ -43,9 +39,8 @@ def db_process():
     conn.commit()
     db_csv_generation()
     # time.sleep(20)
-    read_clients = pd.read_csv (r'E:\VS Projects\Vscode\javsdt\GlobalScan.csv',error_bad_lines=True)
+    read_clients = pd.read_csv (r'E:\VS Projects\Vscode\javsdt0\GlobalScan.csv',error_bad_lines=True)
     read_clients.to_sql('VIDEO_FOLDER', conn, if_exists='append', index=False) 
-
 
     #remove the duplicates
     cursor.execute('''

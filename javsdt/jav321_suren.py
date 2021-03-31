@@ -30,7 +30,7 @@ def process_suren(root_choose):
     try:
         config_settings = RawConfigParser()
         # config_settings.read('【点我设置整理规则】.ini', encoding='utf-8-sig')
-        config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】.ini'
+        config_path='E:\VS Projects\Vscode\javsdt0\javsdt\【点我设置整理规则】.ini'
         print("config_path:", config_path)
         config_settings.read(config_path, encoding='utf-8-sig')
         ####################################################################################################################

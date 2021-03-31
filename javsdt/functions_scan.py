@@ -44,7 +44,7 @@ def read_to_db(txt_file):
 # get folder size
 def get_size(start_path):
     total_size = 0
-    for dirpath, dirnames, filenames in os.walk(start_path):
+    for dirpath, filenames in os.walk(start_path):
         for f in filenames:
             fp = os.path.join(dirpath, f)
             # skip if it is symbolic link
@@ -102,7 +102,7 @@ def same_list_creation(c,d):
 def file_list_creation(path):
     flist = []
     try:
-        for (dirpath, dirnames, filenames) in walk(path):
+        for (filenames) in walk(path):
             flist.extend(filenames)
             break
         return flist
@@ -158,7 +158,7 @@ def process_folder(path,sub_folder_name):
 
 # db generation for my drive and migration shared drive
 def db_csv_generation():
-    f=open('E:\VS Projects\Vscode\javsdt\GlobalScan.csv', 'w')
+    f=open('E:\VS Projects\Vscode\javsdt0\GlobalScan.csv', 'w')
     sys.stdout = f
     print( 'ID,Size') #print the label on the table
     sub_folder_name=['有码','素人']
@@ -180,7 +180,7 @@ def scan_path(root_choose,csv_name,skipList):
     tuple_type = tuple(custom_file_type.split('、'))        # 需要扫描的文件的类型
     list_surplus_words = custom_surplus_words.split('、')
     list_suren_num = custom_suren_pref.split('、') 
-    file_path_name='E:\VS Projects\Vscode\javsdt\\'+csv_name+'.csv'
+    file_path_name='E:\VS Projects\Vscode\javsdt0\\'+csv_name+'.csv'
     table_name="DISTINCTID"
     #sys.stdout = open(file_path_name, 'w')
     fp=open(file_path_name, 'w', encoding='utf-8')

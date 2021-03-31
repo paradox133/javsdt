@@ -7,7 +7,7 @@ from javdb_youma_google import process_javdb_youma
 
 # need to fix the cd1 cd2 order bug
 
-config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 google.ini' #my drive
+config_path='E:\VS Projects\Vscode\javsdt0\javsdt\【点我设置整理规则】 google.ini' #my drive
 #config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 migration.ini' #my migration
 #config_path='E:\VS Projects\Vscode\javsdt\javsdt\【点我设置整理规则】 local.ini' #my drive
 

@@ -164,7 +164,7 @@ def replacetext(file, pattern, subst):
 #  main开始
 modelpath='C:\\Users\\Richard\\Desktop\\emby\\default\\model\\options.xml'
 liblist=['YouAC','YouDF','YouGI','YouJK','YouLM','YouNQ','YouR','YouS','YouT','YouUZ']
-destinationpath='E:\VS Projects\Vscode\javsdt\list'
+destinationpath='E:\VS Projects\Vscode\javsdt0\list'
 # orig_stdout = sys.stdout
 # sys.stdout=orig_stdout
 
